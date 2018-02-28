@@ -1,0 +1,61 @@
+﻿body:not(.menu-on-top).desktop-detected {
+     min-height: inherit!important
+}
+.menu-on-top .menu-item-parent {
+    max-width: 175px !important;
+}
+div .content-left{
+    margin-top:2%;   
+    margin-left:8%;
+    margin-bottom:4%;
+    height:500px; 
+    float:left;
+    width:40%
+}
+div .content-right{
+    float:left;
+    margin-left:2%;
+    margin-bottom:4%;
+    width:45%;
+}
+.arrow {
+	margin-right:5px;
+    float: left;
+	line-height: 1.5;
+}
+
+.fa.arrow:before {
+    content: "\f0da";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f0dd";
+}
+.form-rewrite{
+
+    margin:25px;
+}
+.rewrite{
+
+    display:inline;
+    width:80%;
+}
+.label-rewrite{
+    font-size:14px;
+    margin:10px;
+    width:71px
+}
+.btn-rewrite {   
+    margin:5px;
+}
+.success:hover {background-color: #2E2EFE;}
+.foot{
+    margin-left:25%;
+}
+.customDD{
+    float:left;
+    width:80%;
+}
+.dd-rewrite{
+    margin:10px;
+}

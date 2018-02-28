@@ -1,0 +1,14 @@
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\Edenrose.Data.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\Edenrose.Data.pdb
+D:\Edenrose\code\Edenrose\Edenrose.Data\obj\Debug\Edenrose.Data.csprojResolveAssemblyReference.cache
+D:\Edenrose\code\Edenrose\Edenrose.Data\obj\Debug\Edenrose.Data.csproj.CoreCompileInputs.cache
+D:\Edenrose\code\Edenrose\Edenrose.Data\obj\Debug\Edenrose.Data.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\obj\Debug\Edenrose.Data.pdb
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\Edenrose.Data.dll.config
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\Edenrose.Common.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\EntityFramework.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\System.Web.Mvc.dll
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\Edenrose.Common.pdb
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\EntityFramework.xml
+D:\Edenrose\code\Edenrose\Edenrose.Data\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EdenroseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Articles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleHome" Type="nvarchar" MaxLength="300" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+    <Property Name="ContentDetail" Type="nvarchar(max)" />
+    <Property Name="Picture" Type="varchar" MaxLength="200" />
+    <Property Name="Url" Type="nvarchar" MaxLength="200" />
+    <Property Name="TypeArticle" Type="int" />
+    <Property Name="SeoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="SeoDescription" Type="nvarchar(max)" />
+    <Property Name="SeoKeywords" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Visits" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Value" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="varchar" MaxLength="500" />
+    <Property Name="TopicId" Type="int" />
+  </EntityType>
+  <EntityType Name="Topics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="key" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="ShortDescription" Type="nvarchar(max)" />
+    <Property Name="ContentDetail" Type="nvarchar(max)" />
+    <Property Name="SeoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="SeoDescription" Type="nvarchar(max)" />
+    <Property Name="SeoKeywords" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Picture" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="EdenroseModelStoreContainer">
+    <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

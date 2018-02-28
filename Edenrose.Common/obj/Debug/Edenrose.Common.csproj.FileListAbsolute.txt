@@ -1,0 +1,7 @@
+D:\Edenrose\code\Edenrose\Edenrose.Common\obj\Debug\Edenrose.Common.csprojResolveAssemblyReference.cache
+D:\Edenrose\code\Edenrose\Edenrose.Common\obj\Debug\Edenrose.Common.csproj.CoreCompileInputs.cache
+D:\Edenrose\code\Edenrose\Edenrose.Common\bin\Debug\Edenrose.Common.dll
+D:\Edenrose\code\Edenrose\Edenrose.Common\bin\Debug\Edenrose.Common.pdb
+D:\Edenrose\code\Edenrose\Edenrose.Common\bin\Debug\System.Web.Mvc.dll
+D:\Edenrose\code\Edenrose\Edenrose.Common\obj\Debug\Edenrose.Common.dll
+D:\Edenrose\code\Edenrose\Edenrose.Common\obj\Debug\Edenrose.Common.pdb

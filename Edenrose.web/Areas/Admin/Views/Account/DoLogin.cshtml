@@ -1,0 +1,176 @@
+﻿
+@{
+    Layout = null;
+}
+@model Edenrose.web.Areas.Admin.Account.LoginModel
+
+
+<!DOCTYPE html>
+<html lang="en-us" id="extr-page">
+
+<!-- Mirrored from 192.241.236.31/themes/preview/smartadmin/1.8.x/ajax/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Mar 2017 03:59:47 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title> Ứng dụng Báo cáo thống kê</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-skins.min.css">
+
+    <!-- SmartAdmin RTL Support -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-rtl.min.css">
+
+    <!-- We recommend you use "your_style.css" to override SmartAdmin
+         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+    <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/demo.min.css">
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- #GOOGLE FONT -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+    <!-- #APP SCREEN / ICONS -->
+    <!-- Specifying a Webpage Icon for Web Clip
+         Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+    <link rel="apple-touch-icon" href="/img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/splash/touch-icon-ipad-retina.png">
+
+    <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Startup image for web apps -->
+    <link rel="apple-touch-startup-image" href="/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInDown" style="overflow-x: hidden">
+    <div id="main" role="main">
+        <!-- MAIN CONTENT -->
+        <div id="content" class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="well no-padding">
+                        <form action="/Account/DoLogin" id="login-form" class="smart-form client-form" method="POST">
+                            <header class="text-center">Đăng nhập hệ thống</header>
+                            <fieldset>
+                                @if (Model != null)
+                                {
+                                    if (Model.ErrMess != null)
+                                    {
+                                        @Html.Raw(Model.ErrMess)
+                                    }
+                                }
+
+                                @if (string.IsNullOrEmpty(ViewBag.ReturnUrl))
+                                {
+                                    <input type="hidden" name="returnUrl">
+                                }
+                                else
+                                {
+                                    <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl">
+                                }
+                                <section>
+                                    <label class="label">Tên đăng nhập</label>
+                                    <label class="input">
+                                        <input type="text" name="Email">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Xin mời nhập Tên đăng nhập</b>
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </label>
+
+                                </section>
+
+                                <section>
+                                    <label class="label">Mật khẩu</label>
+                                    <label class="input">
+                                        <input type="password" name="Password">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Mật khẩu của Anh/chị</b>
+                                        @Html.ValidationMessageFor(model => model.Password)
+                                    </label>
+
+                                </section>
+                            </fieldset>
+                            <footer class="text-center">
+                                <button type="submit" class="btn btn-primary" style="float:none; margin-bottom: 10px !important">
+                                    Đăng nhập
+                                </button><br />
+                            </footer>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/js/libs/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (e) {
+            if ($('#hfTmpErrorMsg').val().length > 0) {
+                toastr["error"]($('#hfTmpErrorMsg').val(), "Thông báo");
+            }
+            if ($('#hfTmpSuccessMsg').val().length > 0) {
+                toastr["success"]($('#hfTmpSuccessMsg').val(), "Thông báo");
+            }
+            $('#login-form').submit(function () {
+                // Get the Login Name value and trim it
+                var name = $.trim($('input[name=Email]').val());
+                var pwd = $.trim($('input[name=Password]').val());
+
+                // Check if empty of not
+                if (name === '') {
+                    $('input[name=Email]').focus();
+                    return false;
+                }
+                if (pwd === '') {
+                    $('input[name=Password]').focus();
+                    return false;
+                }
+            });
+            $(document).on('click', 'button.close', function(e) {
+                e.preventDefault();
+                $(this).parent().remove();
+            });
+        })
+    </script>
+</body>
+</html>
+<style>
+    .client-form header, .btn-primary {
+        background-color: #169bd5 !important;
+        color: white;
+    }
+
+    .footera {
+        bottom: 0;
+        width: 100%;
+        background-color: #0769bb;
+        padding: 1rem;
+        position: absolute;
+    }
+
+    body {
+        height: 100vh;
+    }
+</style>
