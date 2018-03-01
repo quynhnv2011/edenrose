@@ -21,7 +21,10 @@ namespace Edenrose.Data.Service
         {
             try
             {
-                return _context.Topics.SingleOrDefault(x => x.key == key);
+                var model =  _context.Topics.SingleOrDefault(x => x.key == key);
+                if (model == null) model = new Topic();
+                model.ListPicture = _context.Pictures.Where(x => x.Key == key).ToList();
+                return model;
             }catch(Exception ex)
             {
                 throw ex;
@@ -53,7 +56,7 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
-        public bool Update(Topic entity)
+        public bool Update(Topic entity, int key = 0)
         {
             try
             {
@@ -61,6 +64,12 @@ namespace Edenrose.Data.Service
                 if (objOld.id > 0)
                 {
                     ObjectUtils.CopyObject(entity, ref objOld, true);
+                    if(entity.ListPicture != null && entity.ListPicture.Count > 0)
+                    {
+                        var ListOldPicture = _context.Pictures.Where(x => x.Key == key);
+                        _context.Pictures.RemoveRange(ListOldPicture);
+                        _context.Pictures.AddRange(entity.ListPicture);
+                    }
                     _context.SaveChanges();
                     return true;
                 }

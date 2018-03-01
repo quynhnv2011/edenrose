@@ -38,6 +38,8 @@
     <Property Name="Title" Type="nvarchar" MaxLength="500" />
     <Property Name="Url" Type="varchar" MaxLength="500" />
     <Property Name="TopicId" Type="int" />
+    <Property Name="Key" Type="int" />
+    <Property Name="DisplayOrder" Type="int" />
   </EntityType>
   <EntityType Name="Topics">
     <Key>

@@ -38,6 +38,8 @@
     <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="TopicId" Type="Int32" />
+    <Property Name="Key" Type="Int32" />
+    <Property Name="DisplayOrder" Type="Int32" />
   </EntityType>
   <EntityType Name="Topic">
     <Key>

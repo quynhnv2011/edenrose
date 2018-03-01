@@ -43,6 +43,8 @@
           <Property Name="Title" Type="nvarchar" MaxLength="500" />
           <Property Name="Url" Type="varchar" MaxLength="500" />
           <Property Name="TopicId" Type="int" />
+          <Property Name="Key" Type="int" />
+          <Property Name="DisplayOrder" Type="int" />
         </EntityType>
         <EntityType Name="Topics">
           <Key>
@@ -107,6 +109,8 @@
           <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="TopicId" Type="Int32" />
+          <Property Name="Key" Type="Int32" />
+          <Property Name="DisplayOrder" Type="Int32" />
         </EntityType>
         <EntityType Name="Topic">
           <Key>
@@ -170,6 +174,8 @@
           <EntitySetMapping Name="Pictures">
             <EntityTypeMapping TypeName="EdenroseModel.Picture">
               <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Url" ColumnName="Url" />

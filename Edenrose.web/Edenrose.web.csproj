@@ -160,6 +160,7 @@
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TienIchController.cs" />
     <Compile Include="Areas\Admin\Controllers\TongQuanController.cs" />
     <Compile Include="Areas\Admin\Controllers\ViTriController.cs" />
     <Compile Include="Areas\Admin\Models\Account\LoginModel.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Areas\Admin\Models\BaseListModel.cs" />
     <Compile Include="Areas\Admin\Models\BaseModel.cs" />
     <Compile Include="Areas\Admin\Models\Mapper.cs" />
+    <Compile Include="Areas\Admin\Models\TienIch\TienIchViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanItemModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1321,6 +1323,8 @@
     <Content Include="Areas\Admin\Views\Article\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Article\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ViTri\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TienIch\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TienIch\_GetListPicture.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

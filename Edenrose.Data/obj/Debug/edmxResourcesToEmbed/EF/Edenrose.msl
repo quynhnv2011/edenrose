@@ -36,6 +36,8 @@
     <EntitySetMapping Name="Pictures">
       <EntityTypeMapping TypeName="EdenroseModel.Picture">
         <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Url" ColumnName="Url" />
