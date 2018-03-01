@@ -47,6 +47,10 @@ namespace Edenrose.Data.Service
             try
             {
                 _context.Topics.Add(entity);
+                if(entity.ListPicture != null && entity.ListPicture.Count > 0)
+                {
+                    _context.Pictures.AddRange(entity.ListPicture);
+                }
                 _context.SaveChanges();
                 return true;
             }
@@ -66,7 +70,7 @@ namespace Edenrose.Data.Service
                     ObjectUtils.CopyObject(entity, ref objOld, true);
                     if(entity.ListPicture != null && entity.ListPicture.Count > 0)
                     {
-                        var ListOldPicture = _context.Pictures.Where(x => x.Key == key);
+                        var ListOldPicture = _context.Pictures.Where(x => x.Key == key).ToList();
                         _context.Pictures.RemoveRange(ListOldPicture);
                         _context.Pictures.AddRange(entity.ListPicture);
                     }

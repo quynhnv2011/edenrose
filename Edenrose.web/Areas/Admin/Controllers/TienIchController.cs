@@ -38,20 +38,23 @@ namespace Edenrose.web.Areas.Admin.Controllers
             {
                 try
                 {
+                    var ListPicture = Session["ListPicture"] as List<Picture>;
+                    model.ListPicture = ListPicture;
+                    model.ListPicture.ForEach(x => x.Key = (int)TypeTopic.TienIch);
                     if (model != null)
                     {
                         var result = false;
                         if (model.id == 0)
                         {
                             model.UpdateDate = DateTime.Now;
-                            model.key = (int)TypeTopic.ViTri;
+                            model.key = (int)TypeTopic.TienIch;
                             result = _topicService.Add(model);
                         }
                         else
                         {
                             model.UpdateDate = DateTime.Now;
-                            model.key = (int)TypeTopic.ViTri;
-                            result = _topicService.Update(model);
+                            model.key = (int)TypeTopic.TienIch;
+                            result = _topicService.Update(model, (int)TypeTopic.TienIch);
                         }
                         if (result)
                             TempData["SuccessMsg"] = "Cập nhật trang tiện ích thành công";
