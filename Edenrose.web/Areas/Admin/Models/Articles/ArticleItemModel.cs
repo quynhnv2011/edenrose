@@ -17,6 +17,7 @@ namespace Edenrose.web.Areas.Admin.Models
         public string ContentDetail { get; set; }
         [Required(ErrorMessage = "Mời bạn chọn ảnh đại diện cho bài viết")]
         public string Picture { get; set; }
+        public string TitleHome { get; set; }
         public string Url { get; set; }
         public int TypeArticle { get; set; }
         public string SeoTitle { get; set; }
@@ -28,5 +29,6 @@ namespace Edenrose.web.Areas.Admin.Models
         public Nullable<int> DisplayOrder { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public Nullable<bool> Deleted { get; set; }
+        public bool IsShow { get; set; }
     }
 }

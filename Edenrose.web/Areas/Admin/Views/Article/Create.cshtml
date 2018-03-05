@@ -127,6 +127,12 @@
                                                 @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", @style = "width:80px", @id = "OrderIndex" })
                                             </label>
                                         </section>
+                                        <section class="col col-3">
+                                            <label class="label">Hiển thị</label>
+                                            <label>
+                                                @Html.CheckBoxFor(x => x.IsShow)
+                                            </label>
+                                        </section>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div class="row">

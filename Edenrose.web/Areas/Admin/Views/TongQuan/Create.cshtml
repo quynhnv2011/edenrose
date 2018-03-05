@@ -135,6 +135,12 @@
                                                 @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", @style = "width:80px", @id = "OrderIndex" })
                                             </label>
                                         </section>
+                                        <section class="col col-3">
+                                            <label class="label">Hiển thị</label>
+                                            <label>
+                                                @Html.CheckBoxFor(x => x.IsShow)
+                                            </label>
+                                        </section>
                                         @*<section class="col col-3">
                                             <label class="label">Trạng thái</label>
                                             <div class="col-md-12">
@@ -194,6 +200,17 @@
         var editor = CKEDITOR.replace('txtContent', {
             customConfig: '/plugins/ckeditor/config.js'
         });
+        var editor1 = CKEDITOR.replace('txtmota', {
+            customConfig: '/plugins/ckeditor/config1.js',
+           // heigh: ['350px']
+        });
+      //  editor1.config.height = "300px"
+      //  editor1.replace('body', { height: 200 });
+        //CKEDITOR.replace("txtmota",
+        //    {
+        //        height: 200
+        //    });
+        
         $(document).ready(function () {
             $(window).scroll(function () {
                 if ($(window).scrollTop() > 50) {

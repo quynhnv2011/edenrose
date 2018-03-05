@@ -29,6 +29,7 @@ namespace Edenrose.web.Areas.Admin.Models
                 DisplayOrder = entity.DisplayOrder,
                 CreatedBy = entity.CreatedBy,
                 CreatedDate = entity.CreatedDate,
+                IsShow = entity.IsShow
                 
          
             };
@@ -53,6 +54,7 @@ namespace Edenrose.web.Areas.Admin.Models
                 Visits = entity.Visits,
                 CreatedBy = entity.CreatedBy,
                 CreatedDate = entity.CreatedDate,
+                IsShow = entity.IsShow == true ? true : false
             };
         }
         #endregion Bài viết
@@ -64,6 +66,7 @@ namespace Edenrose.web.Areas.Admin.Models
             {
                 id = entity.id,
                 Title = entity.Title,
+                TitleHome = entity.TitleHome,
                 ShortDescription = entity.ShortDescription,
                 ContentDetail = entity.ContentDetail,
                 Picture = entity.Picture,
@@ -76,6 +79,7 @@ namespace Edenrose.web.Areas.Admin.Models
                 DisplayOrder = entity.DisplayOrder,
                 CreatedBy = entity.CreatedBy,
                 CreatedDate = entity.CreatedDate,
+                IsShow = entity.IsShow
 
 
             };
@@ -87,6 +91,7 @@ namespace Edenrose.web.Areas.Admin.Models
             {
                 id = entity.id,
                 Title = entity.Title,
+                TitleHome = entity.TitleHome,
                 ShortDescription = entity.ShortDescription,
                 ContentDetail = entity.ContentDetail,
                 Picture = entity.Picture,
@@ -99,6 +104,7 @@ namespace Edenrose.web.Areas.Admin.Models
                 Visits = entity.Visits,
                 CreatedBy = entity.CreatedBy,
                 CreatedDate = entity.CreatedDate,
+                IsShow = entity.IsShow == true ? true: false
             };
         }
         #endregion 

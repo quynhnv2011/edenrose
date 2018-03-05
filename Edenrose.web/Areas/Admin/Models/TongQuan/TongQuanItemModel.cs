@@ -31,5 +31,6 @@ namespace Edenrose.web.Areas.Admin.Models
         public Nullable<int> DisplayOrder { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public Nullable<bool> Deleted { get; set; }
+        public bool IsShow { get; set; }
     }
 }

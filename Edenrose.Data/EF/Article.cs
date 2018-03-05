@@ -31,5 +31,6 @@ namespace Edenrose.Data.EF
         public Nullable<int> DisplayOrder { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public Nullable<bool> Deleted { get; set; }
+        public Nullable<bool> IsShow { get; set; }
     }
 }

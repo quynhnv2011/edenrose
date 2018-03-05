@@ -32,6 +32,7 @@ namespace Edenrose.web.Areas.Admin.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Index(Topic model)
         {
             if (ModelState.IsValid)

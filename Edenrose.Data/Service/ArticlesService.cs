@@ -87,5 +87,45 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
+
+        public List<Article> GetDataTongQuan()
+        {
+            try
+            {
+                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TongQuan && x.Deleted != true && x.IsShow == true);
+                return lstData.OrderBy(m => m.DisplayOrder).Take(2).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
+        public List<Article> GetDataSanPham()
+        {
+            try
+            {
+                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.SanPham && x.Deleted != true && x.IsShow == true);
+                return lstData.OrderBy(m => m.DisplayOrder).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
+        public List<Article> GetDataTopArticle()
+        {
+            try
+            {
+                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TinTuc && x.Deleted != true && x.IsShow == true);
+                return lstData.OrderByDescending(m => m.CreatedDate).Take(3).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
     }
 }

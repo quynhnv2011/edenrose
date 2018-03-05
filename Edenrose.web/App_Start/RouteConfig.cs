@@ -14,6 +14,13 @@ namespace Edenrose.web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "Article",
+              url: "tin-tuc/{url}-{id}",
+              defaults: new { controller = "TinTuc", action = "Details", id = UrlParameter.Optional },
+              namespaces: new[] { "Edenrose.web.Controllers" }
+              );
+
+            routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
@@ -24,6 +31,7 @@ namespace Edenrose.web
             //    url: "{controller}/{action}/{id}",
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
-        }
+          
+          }
     }
 }

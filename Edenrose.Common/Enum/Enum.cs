@@ -16,6 +16,10 @@ namespace Edenrose.Common.Enum
     public enum TypeTopic
     {
         ViTri = 1,
-        TienIch = 2
+        TienIch = 2,
+        MatBang = 6,
+        MatBangTienIch = 3,
+        MatBangTongThe = 4,
+        LienHe = 5
     }
 }

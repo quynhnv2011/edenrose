@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Articles">
       <EntityTypeMapping TypeName="EdenroseModel.Article">
         <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
           <ScalarProperty Name="Title" ColumnName="Title" />

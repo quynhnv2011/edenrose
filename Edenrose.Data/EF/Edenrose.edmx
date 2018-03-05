@@ -26,6 +26,7 @@
           <Property Name="DisplayOrder" Type="int" />
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="Deleted" Type="bit" />
+          <Property Name="IsShow" Type="bit" />
         </EntityType>
         <EntityType Name="Config">
           <Key>
@@ -92,6 +93,7 @@
           <Property Name="DisplayOrder" Type="Int32" />
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="Deleted" Type="Boolean" />
+          <Property Name="IsShow" Type="Boolean" />
         </EntityType>
         <EntityType Name="Config">
           <Key>
@@ -142,6 +144,7 @@
           <EntitySetMapping Name="Articles">
             <EntityTypeMapping TypeName="EdenroseModel.Article">
               <MappingFragment StoreEntitySet="Articles">
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

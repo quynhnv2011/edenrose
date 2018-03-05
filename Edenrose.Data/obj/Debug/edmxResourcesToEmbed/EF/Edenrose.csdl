@@ -21,6 +21,7 @@
     <Property Name="DisplayOrder" Type="Int32" />
     <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
     <Property Name="Deleted" Type="Boolean" />
+    <Property Name="IsShow" Type="Boolean" />
   </EntityType>
   <EntityType Name="Config">
     <Key>

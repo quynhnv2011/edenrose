@@ -159,7 +159,11 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChinhSachController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LienHeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MatBangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\TienIchController.cs" />
     <Compile Include="Areas\Admin\Controllers\TongQuanController.cs" />
     <Compile Include="Areas\Admin\Controllers\ViTriController.cs" />
@@ -169,10 +173,12 @@
     <Compile Include="Areas\Admin\Models\BaseListModel.cs" />
     <Compile Include="Areas\Admin\Models\BaseModel.cs" />
     <Compile Include="Areas\Admin\Models\Mapper.cs" />
+    <Compile Include="Areas\Admin\Models\MatBang\MatBangViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TienIch\TienIchViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanItemModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,6 +186,7 @@
     <Compile Include="Helper\CustomJsonResult.cs" />
     <Compile Include="Helper\EncryptedActionParameterAttribute.cs" />
     <Compile Include="Helper\RenderPartialHelper.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +272,7 @@
     <Content Include="plugins\ckeditor\build-config.js" />
     <Content Include="plugins\ckeditor\ckeditor.js" />
     <Content Include="plugins\ckeditor\config.js" />
+    <Content Include="plugins\ckeditor\config1.js" />
     <Content Include="plugins\ckeditor\contents.css" />
     <Content Include="plugins\ckeditor\lang\af.js" />
     <Content Include="plugins\ckeditor\lang\ar.js" />
@@ -1325,6 +1333,12 @@
     <Content Include="Areas\Admin\Views\ViTri\Index.cshtml" />
     <Content Include="Areas\Admin\Views\TienIch\Index.cshtml" />
     <Content Include="Areas\Admin\Views\TienIch\_GetListPicture.cshtml" />
+    <Content Include="Areas\Admin\Views\MatBang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChinhSach\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChinhSach\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LienHe\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1356,8 +1370,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Models\" />
     <Folder Include="Upload\file\" />
+    <Folder Include="Views\TinTuc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

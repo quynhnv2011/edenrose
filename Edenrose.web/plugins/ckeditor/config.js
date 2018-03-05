@@ -9,7 +9,7 @@ CKEDITOR.editorConfig = function (config) {
     // config.language = 'fr';
     // config.uiColor = '#AADC6E';
     config.enterMode = CKEDITOR.ENTER_BR;
-
+    config.height = '500px';
     config.language = 'vi';
     config.filebrowserBrowseUrl = '/plugins/ckfinder/ckfinder.html';
     config.filebrowserImageBrowseUrl = '/plugins/ckfinder/ckfinder.html?Type=Images';

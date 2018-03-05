@@ -21,6 +21,7 @@
     <Property Name="DisplayOrder" Type="int" />
     <Property Name="UpdatedDate" Type="datetime" />
     <Property Name="Deleted" Type="bit" />
+    <Property Name="IsShow" Type="bit" />
   </EntityType>
   <EntityType Name="Config">
     <Key>
