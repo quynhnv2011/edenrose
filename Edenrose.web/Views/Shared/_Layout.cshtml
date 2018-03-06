@@ -4,15 +4,14 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="shortcut icon" href="http://duanedenrose.org/wp-content/uploads/2017/03/logo-the-eden-rose.jpg" type="image/x-icon">
-    <link href="../Content/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../Content/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Content/css/style.css" data-minify="1" type="text/css">
-    <link href="../Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
-    <link href="../Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
-    <script type="text/javascript" src="http://duanedenrose.org/wp-content/themes/edenrose/lib/fancybox/jquery.fancybox.pack.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/style.css" data-minify="1" type="text/css">
+    <link href="~/Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
+    <link href="~/Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
+    <script src="~/js/jquery.fancybox.pack.js"></script>
     <title>Index</title>
-    <meta name="description" content="Mở bán chính thức dự án Biệt thự liền kề The Eden Rose - Thanh Liệt - Thanh Trì giá gốc từ chủ đầu tư Vimefulland.">
+   @* <meta name="description" content="Mở bán chính thức dự án Biệt thự liền kề The Eden Rose - Thanh Liệt - Thanh Trì giá gốc từ chủ đầu tư Vimefulland.">*@
 </head>
 <body class="home blog">
     <header class="page-header navbar navbar-inverse fixed">
@@ -20,8 +19,8 @@
             <div class="navbar-header">
                 <div class="logo-wrapper">
                     <div class="logo pull-left">
-                        <a href="http://duanedenrose.org" class="logo">
-                            <img class="img-responsive" src="./image/logo2.png" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
+                        <a href="/" class="logo">
+                            <img class="img-responsive" src="~/image/logo2.png" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
                         </a>
                     </div>
                 </div>
@@ -39,8 +38,8 @@
                             <li class="nd-scroll"><a href="/#section_utilities">Tiện ích</a></li>
                             <li class="nd-scroll"><a href="/#section_mb">Mặt bằng</a></li>
                             <li class="nd-scroll"><a href="/#section_canho">Sản phẩm</a></li>
-                            <li class=""><a href="http://duanedenrose.org/tin-tuc/chinh-sach-ban-hang-eden-rose/">Chính sách</a></li>
-                            <li class=""><a href="http://duanedenrose.org/tin-tuc/">Tin tức</a></li>
+                            <li class=""><a href="/tin-tuc/@ViewBag.urlChinhSach">Chính sách</a></li>
+                            <li class=""><a href="/tin-tuc/">Tin tức</a></li>
                             <li class="nd-scroll"><a href="/#section_register">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -56,7 +55,7 @@
                 <h5 class="title">Đăng ký NHẬN THÔNG TIN DỰ ÁN</h5>
                 <div class="col-md-5 col-md-offset-1 block-bg fadeIn   animated delay-500 go">
                     <div class="box-text">
-                        <div class="call_sale">LIÊN HỆ Phòng kinh doanh</div> <a href="tel:0911285151 " class="mobile">0911285151</a>
+                        <div class="call_sale">LIÊN HỆ Phòng kinh doanh</div> <a href="tel:0911285151 " class="mobile">@ViewBag.phone</a>
                         <p>Vui lòng để lại thông tin, đội ngũ chuyên viên tư vấn của chúng tôi sẽ liên hệ, tư vấn và gửi thông tin cho Quý vị trong thời gian nhanh nhất.</p>
                     </div>
                 </div>
@@ -94,12 +93,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-5 pull-right">
-                    <a class="email" href="mailto:Thanhvnua2302@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>Thanhvnua2302@gmail.com</a> <a href="tel:0911285151" target="_blank" class="mobile"><i class="fa fa-mobile" aria-hidden="true"></i>0911285151</a>
+                    <a class="email" href="#" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>@ViewBag.email</a> <a href="tel:0911285151" target="_blank" class="mobile"><i class="fa fa-mobile" aria-hidden="true"></i>0911285151</a>
                     <a id="gotop" data-link="section_banner" class="logo btn-scroll"> <i class="fa fa-angle-up" aria-hidden="true"></i> TOP </a>
                 </div>
                 <div class="col-xs-12 col-sm-7">
                     <div class="copy-right">
-                        © 2017 The Eden Rose. All Rights Reserved.
+                        © 2018 The Eden Rose. All Rights Reserved.
                         <div class="clearfix visible-xs visible-sm"></div>
                     </div>
                 </div>
@@ -116,15 +115,16 @@
         <a href="tel:0911285151" target="_blank" class="btn btn-hotline kanit uppercase">
             <div class="btn-text">
                 hotline
-                <br><span class="font-500">0911285151</span>
+                <br><span class="font-500">@ViewBag.phone</span>
             </div>
         </a>
     </div>
     <div id="top"></div>
-    <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/js/jquery.fancybox.pack.js"></script>
-    <script src="../Scripts/js/homepage.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Scripts/js/homepage.js"></script>
+   
     @RenderSection("scripts", required: false)
 </body>
 </html>

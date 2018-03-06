@@ -1,0 +1,150 @@
+﻿@model Edenrose.web.Areas.Admin.Models.MatBangViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- START ROW -->
+        <div class="row">
+            <!-- NEW COL START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-8" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Mặt bằng</h2>
+
+                        <div class="btn-command">
+
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("Index", "MatBang", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
+                        {
+                            @Html.HiddenFor(model => model.MatBangTienIchId)
+                            @Html.HiddenFor(model => model.MatBangTongTheId)
+                            @Html.HiddenFor(model => model.Id)
+                            <div class="widget-body no-padding  smart-form">
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-md-12">
+                                            <label class="label">Mô tả</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.MoTa, new { @class = "form-control", @id = "txtmota", @rows = "4" })
+                                            </label>
+                                        </section>
+                                       
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                       
+                                        <section class="col col-6">
+                                            <label class="label">Mặt bằng tiện ích</label>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.TextBoxFor(model => model.UrlMatBangTienIch, new { @class = "form-control", @id = "txtImageTienIch", @readonly = "readonly" })
+                                                    <span class="input-group-btn">
+                                                        <a id="btnSelectImageTienIch" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                <img src="@Model.UrlMatBangTienIch" style="max-width: 1200px; max-height: 100px;" id="imgPreviewTienIch" />
+                                            </div>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Mặt bằng tổng thể</label>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    @Html.TextBoxFor(model => model.UrlMatBangTongThe, new { @class = "form-control", @id = "txtImageTongThe", @readonly = "readonly" })
+                                                    <span class="input-group-btn">
+                                                        <a id="btnSelectImageTongThe" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                <img src="@Model.UrlMatBangTongThe" style="max-width: 1200px; max-height: 100px;" id="imgPreviewTongThe" />
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    @*<div class="clearfix"></div>
+                                        <div class="row">
+
+                                        </div>*@
+                                    <div class="clearfix"></div>
+                                    <footer class="text-center">
+                                        <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
+                                        <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">Cập nhật</a>
+                                    </footer>
+                                </fieldset>
+                            </div>
+                        }
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- END COL -->
+        </div>
+        <!-- END ROW -->
+    </section>
+
+    <!-- end widget grid -->
+</div>
+
+@section Script{
+    <script>
+        var editor = CKEDITOR.replace('txtmota', {
+            customConfig: '/plugins/ckeditor/config1.js'
+        });
+        $(document).on('click', '#btnSelectImageTienIch', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImageTienIch').val(url);
+                $('#imgPreviewTienIch').attr("src", url);
+            };
+            finder.popup();
+        });
+        $(document).on('click', '#btnSelectImageTongThe', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImageTongThe').val(url);
+                $('#imgPreviewTongThe').attr("src", url);
+            };
+            finder.popup();
+        });
+
+        function SubmitForm() {
+           
+            if ($('#txtImageTienIch').val() == undefined || $('#txtImageTienIch').val().trim() == "") {
+                 toastr["error"]("Vui lòng chọn ảnh mặt bằng tiện ích", "Thông báo");
+                return false;
+            }
+            if ($('#txtImageTongThe').val() == undefined || $('#txtImageTongThe').val().trim() == "") {
+                toastr["error"]("Vui lòng chọn ảnh mặt bằng tổng thể", "Thông báo");
+                return false;
+            }
+            $('#addForm').submit();
+        }
+
+    </script>
+}
+
+
+
+

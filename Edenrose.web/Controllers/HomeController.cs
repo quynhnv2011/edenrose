@@ -14,15 +14,29 @@ namespace Edenrose.web.Controllers
         private readonly ArticlesService _artilesService;
         private readonly TopicService _topicService;
         private readonly PictureService _pictureService;
+        private readonly ConfigService _configService;
         public HomeController()
         {
             _artilesService = new ArticlesService();
             _topicService = new TopicService();
             _pictureService = new PictureService();
+            _configService = new ConfigService();
         }
         public ActionResult Index()
         {
             var model = ToModel();
+            if(model.TopicChinhSach != null && model.TopicChinhSach.id > 0)
+            {
+                ViewBag.urlChinhSach = model.TopicChinhSach.Url;
+            }
+            if (!string.IsNullOrEmpty(model.email))
+            {
+                ViewBag.email = model.email;
+            }
+            if (!string.IsNullOrEmpty(model.phone))
+            {
+                ViewBag.phone = model.phone;
+            }
             return View(model);
         }
 
@@ -39,6 +53,9 @@ namespace Edenrose.web.Controllers
                 model.UrlMatBangTongThe = _pictureService.GetByKey((int)TypeTopic.MatBangTongThe).Url;
                 model.ListSanPham = _artilesService.GetDataSanPham();
                 model.ListArticleNew = _artilesService.GetDataTopArticle();
+                model.TopicChinhSach = _artilesService.GetByKey((int)TypeArticle.ChinhSach);
+                model.email = _configService.GetbyKey("email").Value;
+                model.phone = _configService.GetbyKey("phone").Value;
                 return model;
             }
             catch

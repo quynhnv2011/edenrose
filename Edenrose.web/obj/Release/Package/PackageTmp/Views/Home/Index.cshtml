@@ -1,0 +1,410 @@
+﻿@model Edenrose.web.Models.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="section_banner" class="animatedParent animateOnce">
+    <a href="/#section_register">
+        <img src="./image/background-top.png">
+    </a>
+</div>
+<div id="section_about" class="animatedParent animateOnce">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 left_about">
+                <div class="block-info fadeInLeftShort  animated delay-500 go">
+                    <div class="title">
+                        TỔNG QUAN<div class="font-700">@Model.ListTongQuan[0].TitleHome</div>
+                    </div>
+                    @Html.Raw(Model.ListTongQuan[0].ShortDescription)
+                    @*<p>
+
+                            <strong>The Eden Rose</strong> là tổ hợp căn liền kề, biệt thự tọa lại trên khu đất có quy mô 8 ha tại xã Thanh Liệt, huyện Thanh Trì, Hà Nội. Không chỉ tích hợp đủ mọi tiện nghi và tiện ích hiện đại trong không gian xanh bình yên, The Eden Rose còn có vị trí thuận lợi, kết nối trực tiếp với trung tâm Hà Nội thông qua hệ thống hạ tầng giao thông hoàn thiện.
+                        </p>
+                        <ul>
+                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Tổng diện tích dự án: 8ha</li>
+                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Đất cây xanh &amp; hồ điều hòa: 1 ha</li>
+                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Loại hình sản phẩm: Nhà liền kề, biệt thự</li>
+                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Diện tích căn: liền kề từ 82 - 218 m2, biệt thự từ 132 - 272m</li>
+                        </ul>*@
+                </div>
+                <div class="text-center">
+                    @*<a href="@Url.RouteUrl("Article", new { url = Model.ListTongQuan[0].Url})">
+                        <div class="btn-text">
+                            <span>XEM CHI TIẾT</span>
+                        </div>
+                    </a>*@
+                    <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                        <div class="btn-text">
+                            <span>XEM CHI TIẾT</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 video">
+                <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">
+            </div><div class="clearfix"></div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-sm-12 col-md-6">
+                <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[1].Picture">
+            </div>
+            <div class="col-sm-12 col-md-6 left_about">
+                <div class="pull-right">
+                    <div class="block-info fadeInLeftShort animated delay-500 go" style="max-width: 450px;">
+                        <div class="title">
+                            <div class="font-700">@Model.ListTongQuan[1].TitleHome</div>
+                        </div>
+                        @Html.Raw(Model.ListTongQuan[1].ShortDescription)
+                        @*<p><strong>Chủ đầu tư Vimefulland</strong> là công ty thành viên của Vimedimex – Tập đoàn dược phẩm uy tín với hơn 10 năm hoạt động. Vimefulland định hướng phát triển dòng sản phẩm bất động sản hệ sinh thái xanh và các tiêu chuẩn chăm sóc sức khỏe cho gia đình Việt.</p>
+                            <p>Vimefulland hiện là chủ đầu tư sở hữu quỹ dự án phong phú bậc nhất tại Hà Nội bao gồm: Belleville Hà Nội, The Emerald, The Grand Sevilla, Iris Garden...</p>
+                        *@
+                        <div class="text-center">
+                            <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                                <div class="btn-text"><span>TÌM HIỂU THÊM</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+        </div>
+    </div>
+</div><div id="section_chinhsach">
+    <div class="container">
+        <div class="col-left col-xs-12 col-sm-7">
+            <div class="content-col">
+                @Html.Raw(Model.TopicLienHe.ContentDetail)
+                @*<h3 class="title-col text-center">
+                        <span class="text-uppercase">CHÍNH SÁCH BÁN HÀNG THE EDEN ROSE</span><br>
+                        <span style="color: #fff; font-weight: 400;">Áp dụng từ ngày 1/1/2018</span>
+                    </h3>
+                    <ul>
+                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>72 triệu đồng</strong> cho căn dưới 100m2.</li>
+                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>92 triệu đồng</strong> cho căn 100m2 - 168m2.</li>
+                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>127 triệu đồng</strong> cho căn trên 168m2.</li>
+                    </ul>*@
+            </div>
+        </div><div class="col-right col-xs-12 col-sm-5">
+            <div class="content-col">
+                <h3 class="title-col text-center">
+                    @Html.Raw(Model.TopicLienHe.Title)
+                    @*<span class="text-uppercase">Đăng ký tư vấn</span><br>
+                        <span class="text-uppercase">&amp; Tải Bảng Giá Mới Nhất T2/2018</span>*@
+                </h3>
+                <div class="text-center" style="margin-bottom: 15px;">
+                    <p><em>Quý khách vui lòng điền đầy đủ thông tin để chúng tôi liên lạc tư vấn cụ thể</em></p>
+                </div>
+                <div role="form" class="wpcf7" id="wpcf7-f199-o1" lang="vi" dir="ltr">
+                    <div class="screen-reader-response"></div>
+                    <form action="/" method="post" class="wpcf7-form" novalidate="novalidate">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="199">
+                            <input type="hidden" name="_wpcf7_version" value="5.0">
+                            <input type="hidden" name="_wpcf7_locale" value="vi">
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f199-o1">
+                            <input type="hidden" name="_wpcf7_container_post" value="0">
+                        </div>
+                        <p>
+                            <span class="wpcf7-form-control-wrap your-name">
+                                <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên*">
+                            </span>
+                        </p>
+                        <p>
+                            <span class="wpcf7-form-control-wrap your-email">
+                                <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*">
+                            </span>
+                        </p>
+                        <p>
+                            <span class="wpcf7-form-control-wrap your-phone">
+                                <input type="text" name="your-phone" value="" size="40" maxlength="14" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại*">
+                            </span>
+                        </p>
+                        <p class="submit">
+                            <input type="submit" value="Đăng ký ngay" class="wpcf7-form-control wpcf7-submit btnform btn-primary btn-dk">
+                            <span class="ajax-loader"></span>
+                        </p>
+                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="section_location" class="">
+    <div class="block-top animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 left_location">
+                    <div class="title UTMEssendineCapsBold fadeInLeftShort  animated delay-500 go"> Vị trí đắc địa</div>
+                </div>
+                <div class="col-sm-7 right_location">
+                    <div class="block-text kanit font-300 fadeInRightShort  animated delay-500 go">
+                        @* <strong>The Eden Rose</strong> có vị trí thuận lợi, 4 mặt 4 hướng giáp nhiều tuyến đường quan trọng mang ý nghĩa phát triển chiến lược của khu vực phía Tây và Đông Nam Thủ đô như: Đường Vành đai 3, đường 70A, đường nội đô Kim Giang, đường Bằng Liệt giáp bán đảo Linh Đàm.*@
+                        @Html.Raw(Model.TopicViTri.ShortDescription)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content animatedParent animateOnce">
+        <div class="container"> <img class="img-responsive fadeInUpShort  animated delay-500 go" src="./@Model.TopicViTri.Picture"></div>
+    </div>
+</div>
+<div id="section_utilities">
+    <div class="block-top animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title fadeInLeftShort  animated delay-500 go">TIỆN ÍCH HOÀN HẢO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 left_utilities">
+                    <div class="fadeInLeftShort  animated delay-500 go">
+                        @Html.Raw(Model.TopicTienIch.ShortDescription)
+                        @*<p class="des_utility">
+
+                            Với định hướng kiến trúc sinh thái cùng nỗ lực mang đến cho cư dân một cuộc sống hoàn hảo, Vimefulland đã khai thác tối đa diện tích các ô đất quy hoạch, thiết kế chuỗi không gian sinh thái phủ xanh tới 30% diện tích với công viên trung tâm, hồ điều hòa, vườn dạo bộ và khu tập dưỡng sinh.</p>
+                            <p>Đặc biệt, chủ đầu tư Vimefulland cân nhắc kỹ lưỡng việc lựa chọn cây và hoa xen kẽ để cư dân biệt thự liền kề The Eden Rose luôn tận hưởng sắc hoa khắp 4 mùa.</p>
+                            <p>Tại The Eden Rose cũng quy tụ đầy đủ tiện ích giáo dục, thương mại, chăm sóc sức khỏe, mang đến một cuộc sống vẹn tròn hạnh phúc, bao gồm: Trường mẫu giáo (rộng 3.000 m2), nhà trẻ, khu thương mại và dịch vụ tiện ích, vườn BBQ, thư viện cộng đồng, câu lạc bộ kết nối cư dân, bãi gửi xe công nghệ hiện đại (2.710 m2),...</p>*@
+
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1 right_utilities">
+                    <div class="fadeInRightShort  animated delay-500 go">
+                        <img class="img-responsive img_uti" src="./@Model.TopicTienIch.Picture">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="album_container" style="position: relative; height: 484.156px;">
+                <div class="grid-sizer"></div>
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[0] != null)
+                {
+                    <div class="album-item grid-item--width2 _album_0" data-category="_album_0" style="position: absolute; left: 0px; top: 0px;">
+                        <div class="border-hover"></div> 
+                        <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[0].Url" style="height: 230px;">
+                        <a href="./@Model.TopicTienIch.ListPicture[0].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+               @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[1] != null)
+               {
+                <div class="album-item grid-item _album_0 album_item_s1" data-category="_album_0" style="position: absolute; left: 575px; top: 0px;">
+                    <div class="border-hover"></div> 
+                    <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[1].Url" style="height: 230px;">
+                    <a href="./@Model.TopicTienIch.ListPicture[1].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                    <div class="clearfix"></div>
+                </div>              
+               }
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[2] != null)
+                {
+                    <div class="album-item grid-item _album_0 album_item_s2" data-category="_album_0" style="position: absolute; left: 862px; top: 0px;">
+                        <div class="border-hover"></div> <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[2].Url" style="height: 230px;">
+                        <a href="./@Model.TopicTienIch.ListPicture[2].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[3] != null)
+                {
+                    <div class="album-item grid-item--width2 " data-category="_album_0" style="position: absolute; left: 0px; top: 242px;">
+                        <div class="border-hover"></div> <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[3].Url" style="height: 230px;">
+                        <a href="./@Model.TopicTienIch.ListPicture[3].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[4] != null)
+                {
+                    <div class="album-item grid-item _album_0 album_item_s3" data-category="_album_0" style="position: absolute; left: 575px; top: 242px;">
+                        <div class="border-hover"></div>
+                        <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[4].Url" style="height: 230px;"> <a href="./@Model.TopicTienIch.ListPicture[4].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[5] != null)
+                {
+                    <div class="album-item grid-item _album_0 album_item_s4" data-category="_album_0" style="position: absolute; left: 862px; top: 242px;">
+                        <div class="border-hover"></div>
+                        <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[5].Url" style="height: 230px;"> <a href="./@Model.TopicTienIch.ListPicture[5].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                <div class="preloader" style="opacity: 0; display: none;"><i class="fa fa-cog fa-spin" style="display: none;"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section_mb" class="">
+    <div class="block-top animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 left_location">
+                    <div class="title UTMEssendineCapsBold fadeInLeftShort  animated delay-500 go"> Mặt bằng dự án</div>
+                </div>
+                <div class="col-sm-7 right_location">
+                    <div class="block-text kanit font-300 fadeInRightShort  animated delay-500 go">
+                        @*@Html.Raw(Model.UrlMatBangTienIch.ShortDescription)*@
+                        Dự án The Eden Rose bao gồm 181 căn nhà liền kề và 52 biệt thự được thiết kế theo phong cách hiện đại, các căn biệt thự, liền kề đều được thiết kế thông minh, tối ưu diện tích và công năng sử dụng.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content animatedParent animateOnce">
+        <div class="container">
+            <div class="tab-mat-bang">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="navTabs text-center">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#nd-tab-1" data-toggle="tab">Mặt bằng tiện ích</a></li>
+                                <li><a href="#nd-tab-2" data-toggle="tab">Mặt bằng tổng thể</a></li>
+                                <li><a href="#nd-tab-3" data-toggle="tab">Mặt bằng chi tiết</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="contentTabs tab-content">
+                            <div class="tab-item call-gallery tab-pane fade in active" id="nd-tab-1">
+                                <div class="row">
+                                    <div class="col-xs-12 item-ef">
+                                        <div class="gallery-2 img aligncenter">
+                                            <a href="./@Model.UrlMatBangTienIch" class="fancybox"> <img class="img-responsive" src="./@Model.UrlMatBangTienIch"> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-item call-gallery tab-pane fade" id="nd-tab-2">
+                                <div class="row">
+                                    <div class="col-xs-12 item-ef">
+                                        <div class="gallery-2 img aligncenter">
+                                            <a href="./@Model.UrlMatBangTongThe" title="" class="fancybox"> <img src="./@Model.UrlMatBangTongThe" class="img-responsive"> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-item call-gallery tab-pane fade" id="nd-tab-3">
+                                <div class="row">
+                                    <div class="col-xs-12 item-ef">
+                                        <div style="border: 1px solid #ddd; font-size: 110%; text-align: center; padding: 30px; color: #d33;">
+                                            <p>Xem mặt bằng chi tiết các căn biệt thự và liền kề The Eden Rose tại đây: <a href="http://duanedenrose.org/tin-tuc/mat-bang-biet-thu-va-nha-vuon-eden-rose/"><strong>CLICK HERE</strong></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section_canho">
+    <div class="block-top animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title fadeInLeftShort  animated delay-500 go">CÁC LOẠI HÌNH SẢN PHẨM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content animatedParent animateOnce">
+        <div class="container">
+            <div style="height: 25px;"></div>
+           
+            <div class="row">
+                @if (Model.ListSanPham != null && Model.ListSanPham[0] != null)
+                {
+                    <div class="col-xs-12">
+                        <div class="item">
+                            <div class="row">
+                                <div class="thumb col-xs-12 col-sm-6"><img src="./@Model.ListSanPham[0].Picture"></div>
+                                <div class="content col-xs-12 col-sm-6">
+                                    <h3 class="title">@Model.ListSanPham[0].TitleHome</h3>
+                                    @Html.Raw(Model.ListSanPham[0].ShortDescription)
+                               
+                                    <div class="clear"> 
+                                    <a href="/tin-tuc/@Model.ListSanPham[0].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (Model.ListSanPham != null && Model.ListSanPham[1] != null)
+                {
+                    <div class="col-xs-12">
+                        <div class="item">
+                            <div class="row">
+                                <div class="content col-xs-12 col-sm-6">
+                                    <h3 class="title">@Model.ListSanPham[1].TitleHome</h3>
+                                    @Html.Raw(Model.ListSanPham[1].ShortDescription)
+                                    @*<h3 class="title">Liền kề The Eden Rose</h3>
+                                    <ul>
+                                        <li>Số lượng: 181 căn</li>
+                                        <li>Diện tích: 82m2 - 218m2</li>
+                                        <li>Phòng ngủ: 4 phòng</li>
+                                        <li>Phòng vệ sinh: 5 phòng</li>
+                                        <li>Giá bán: Từ 58 đến 65 triệu/m2</li>
+                                        <li>Mức độ hoàn thiện : Hoàn thiện mặt ngoài và bàn giao thô bên trong</li>
+                                    </ul>*@
+                                    <div class="clear"> <a href="./tin-tuc/@Model.ListSanPham[1].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                                </div>
+                                <div class="thumb ccol-xs-12 col-sm-6"><img src="./@Model.ListSanPham[1].Picture"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+               
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section_news">
+    <div class="block-top animatedParent animateOnce">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title fadeInLeftShort  animated delay-500 go"><a href="./tin-tuc/" style="color: inherit;">TIN TỨC &amp; SỰ KIỆN</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content animatedParent animateOnce text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-5">
+                    <div class="block-logo"> <img class="img-responsive" src="http://duanedenrose.org/wp-content/themes/edenrose/images/logo-2.png"></div>
+                </div>
+                <div class="col-sm-8 col-md-7">
+                    <div class="block-news">
+                        <div class="media-list post-list">
+                            @if (Model.ListArticleNew != null && Model.ListArticleNew.Count > 0)
+                            {
+                                foreach (var item in Model.ListArticleNew)
+                                {
+                                    <a class="media fancybox" href="./tin-tuc/@item.Url/">
+                                        <div class="media-left"><img class="media-object" src="./@item.Picture" alt="@item.Title" style="width: 130px; height: 110px"></div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">@item.Title</h4>
+                                            <p>@item.ShortDescription</p>
+                                            <div class="media-bottom"> <span class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</span> <span class="btn btn-detail">Chi tiết</span></div>
+                                        </div>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

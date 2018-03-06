@@ -160,6 +160,8 @@
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChinhSachController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhSachDangKyController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LienHeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MatBangController.cs" />
@@ -172,6 +174,8 @@
     <Compile Include="Areas\Admin\Models\Articles\ArticlesViewModel.cs" />
     <Compile Include="Areas\Admin\Models\BaseListModel.cs" />
     <Compile Include="Areas\Admin\Models\BaseModel.cs" />
+    <Compile Include="Areas\Admin\Models\Config\ConfigViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\DanhSachDangKy\DanhSachDangKyViewModel.cs" />
     <Compile Include="Areas\Admin\Models\Mapper.cs" />
     <Compile Include="Areas\Admin\Models\MatBang\MatBangViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TienIch\TienIchViewModel.cs" />
@@ -186,6 +190,9 @@
     <Compile Include="Helper\CustomJsonResult.cs" />
     <Compile Include="Helper\EncryptedActionParameterAttribute.cs" />
     <Compile Include="Helper\RenderPartialHelper.cs" />
+    <Compile Include="Models\ArticleViewModel.cs" />
+    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Models\DetailViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -226,12 +233,14 @@
     <Content Include="css\smartadmin-rtl.min.css" />
     <Content Include="css\smartadmin-skins.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\styles-tintuc.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont78ce-2.html" />
     <Content Include="fonts\fontawesome-webfont78ce-3.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\ajax-loader.gif" />
     <Content Include="image\background-top.png" />
     <Content Include="image\bg-dk.png" />
     <Content Include="image\bg-register.jpg" />
@@ -241,10 +250,12 @@
     <Content Include="image\fancybox_overlay.png" />
     <Content Include="image\fancybox_sprite.png" />
     <Content Include="image\ico-close.svg" />
+    <Content Include="image\ico-hotline.png" />
     <Content Include="image\icon-next.png" />
     <Content Include="image\icon-zoom.svg" />
     <Content Include="image\khu-vui-choi-the-eden-rose.jpg" />
     <Content Include="image\logo2.png" />
+    <Content Include="image\overlay-01.png" />
     <Content Include="image\TheEdenRose-BT-13.jpg" />
     <Content Include="image\tien-ich2.jpg" />
     <Content Include="image\tien-ich2_1.jpg" />
@@ -256,6 +267,7 @@
     <Content Include="js\bootstrap\bootstrap.min.js" />
     <Content Include="js\Global.js" />
     <Content Include="js\jquery.blockUI.min.js" />
+    <Content Include="js\jquery.fancybox.pack.js" />
     <Content Include="js\jquery.unobtrusive-ajax.min.js" />
     <Content Include="js\jquery.validate.globalize.min.js" />
     <Content Include="js\jquery.validate.min.js" />
@@ -1301,6 +1313,7 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Account\DoLogin.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="video\video-tien-ich.mp4" />
     <Content Include="Views\Partial\_ConfirmForm.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1339,6 +1352,10 @@
     <Content Include="Areas\Admin\Views\ChinhSach\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ChinhSach\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LienHe\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhSachDangKy\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Create.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1366,12 +1383,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\TinTuc\Details.cshtml" />
+    <Content Include="Views\TinTuc\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Upload\file\" />
-    <Folder Include="Views\TinTuc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

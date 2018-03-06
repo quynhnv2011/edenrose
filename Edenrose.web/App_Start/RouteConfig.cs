@@ -12,17 +12,24 @@ namespace Edenrose.web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+              name: "Index",
+              url: "tin-tuc/{pageindex}",
+              defaults: new { controller = "TinTuc", action = "Index", id = UrlParameter.Optional },
+              namespaces: new[] { "Edenrose.web.Controllers" }
+              );
+
 
             routes.MapRoute(
               name: "Article",
-              url: "tin-tuc/{url}-{id}",
+              url: "tin-tuc/{url}",
               defaults: new { controller = "TinTuc", action = "Details", id = UrlParameter.Optional },
               namespaces: new[] { "Edenrose.web.Controllers" }
               );
 
             routes.MapRoute(
                 "Default",
-                "{controller}/{action}/{id}",
+                "{controller}/{action}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 new[] { "Edenrose.web.Controllers" }
             );

@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<!-- Mirrored from 192.241.236.31/themes/preview/smartadmin/1.8.x/ajax/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Mar 2017 03:58:30 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Dự án Edenrose</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/font-awesome.min.css">
+
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-rtl.min.css">
+
+    @*<link href="/plugins/ckeditor/contents.css" rel="stylesheet" />*@
+
+    <!-- #FAVICONS -->
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- #GOOGLE FONT -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+    <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Startup image for web apps -->
+    <link rel="apple-touch-startup-image" href="/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+    <link href="/js/plugin/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="/js/plugin/multidropdown/chosen.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/Css-layout.css" rel="stylesheet" />
+    @if (IsSectionDefined("Css"))
+    {
+        @RenderSection("Css")
+    }
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <ul>
+                <li style="background: none !important">
+                    <a href="/" title="Trang chủ">
+                        <span style="margin: 15px; margin-left: 20px">
+                            <i class="glyphicon glyphicon-home" aria-hidden="true" style="padding-right: 5px;">
+                            </i>Trang chủ
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Quản lý trang chủ"><span style="margin: 15px"><i class="glyphicon glyphicon-indent-right" aria-hidden="true" style="padding-right: 5px;"></i>Quản lý trang chủ</span></a><ul class="sub">
+                        <li>
+                            <a href="/Admin/TongQuan"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Tổng quan</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/ViTri" ><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Vị trí</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Tienich"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Tiện ích</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/MatBang"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Mặt bằng</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/SanPham"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Sản phẩm</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/ChinhSach"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Chính sách</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/LienHe"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Liên hệ</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" title=""><span style="margin: 15px"><i class="glyphicon glyphicon-stats" aria-hidden="true" style="padding-right: 5px;"></i>Quản lý tin tức</span></a><ul class="sub">
+                        <li>
+                            <a href="/Admin/Article" title="Báo cáo biểu 01"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Tin tức</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" title=""><span style="margin: 15px"><i class="glyphicon glyphicon-stats" aria-hidden="true" style="padding-right: 5px;"></i>Đăng ký nhận thông tin</span></a><ul class="sub">
+                        <li>
+                            <a href="/Admin/DanhSachDangKy" title="Báo cáo biểu 01"><span style="margin: 0px"><i class="" aria-hidden="true" style="padding-right: 5px;"></i>Danh sách đăng ký</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li style="float: right;background: none !important">
+                    <a href="#" style="padding: 0px 10px">Admin <i class="glyphicon glyphicon-chevron-down" style="margin-left:10px;"></i></a>
+                    <ul class="sub" style="right: 0;">
+                        <li style="width: 250px;background: none !important">
+                            <a href="/Admin/Account/DoLogout" title="Đổi mật khẩu"><strong style="margin: 0px 15px; display: block"><u>Đ</u>ăng xuất</strong></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <input type="hidden" id="hfTmpSuccessMsg" value="@TempData["SuccessMsg"]" />
+    <input type="hidden" id="hfTmpErrorMsg" value="@TempData["ErrorMsg"]" />
+    <div id="main" role="main">
+        <!-- #MAIN CONTENT -->
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div class="page-footer">
+            <!-- end row -->
+        </div>
+
+        <div id="dialog_delete" title="Thông báo">
+
+            <p>
+
+                <span id="mess_delete"></span>
+
+                <input type="hidden" value="0" id="hfDeleteId" />
+
+            </p>
+
+        </div>
+
+    </div>
+
+    @Html.Partial("/Views/Partial/_ConfirmForm.cshtml")
+
+    <script src="/js/libs/jquery-2.1.1.min.js"></script>
+    <script src="/js/libs/jquery-ui-1.10.3.min.js"></script>
+
+    <script src="/plugins/ckfinder/ckfinder.js"></script>
+    <script src="/plugins/ckeditor/ckeditor.js"></script>
+    <!-- IMPORTANT: APP CONFIG -->
+    <script src="/js/app.config.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JQUERY VALIDATE -->
+    <script src="~/js/jquery.validate.min.js"></script>
+
+
+    <!-- JQUERY SELECT2 INPUT -->
+    <script src="/js/plugin/select2/select2.min.js"></script>
+
+
+    <!-- MAIN APP JS FILE -->
+    <script src="/js/app.min.js"></script>
+
+    <script src="/js/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/js/jquery.blockUI.min.js"></script>
+    <script src="/js/plugin/multidropdown/chosen.jquery.min.js"></script>
+    <script src="/js/plugin/toastr/toastr.min.js"></script>
+    <script src="/js/Global.js"></script>
+    <script src="/js/reset.js"></script>
+    @if (IsSectionDefined("Script"))
+    {
+        @RenderSection("Script")
+
+    }
+    <!-- Modal -->
+    <style>
+        .btn-forgot {
+            height: 31px;
+            margin: 0px 15px 0 0;
+            background-image: url('../../img/background-btn-forgotpass.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+        }
+
+        .modal-header {
+            padding: 7px 7px 7px 15px !important;
+        }
+
+        .modal-sm-logout {
+            width: 400px !important;
+        }
+    </style>
+</body>
+</html>

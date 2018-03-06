@@ -1,0 +1,201 @@
+﻿.clear-box 
+{
+   clear: both;
+}
+
+ /*****************************************/
+
+/****************************************/
+.hide-border
+{
+	box-shadow: none !important;
+	padding: 0px !important;
+}
+.yellow
+{
+    color: yellow !important;
+}
+.blue
+{
+	color: blue !important;
+}
+.green
+{
+	color: green !important;
+}
+.red
+{
+	color: red !important;
+}
+.gray {
+    color: gray !important;
+}
+.background-solid
+{
+    background-color: #EDE8E8 !important;
+}
+/***********************************************/
+.margin-top
+{
+margin-top: 5px;
+}
+.margin-bottom
+{
+margin-bottom: 5px;
+}
+.margin-right
+{
+margin-right: 5px;
+}
+.margin-left
+{
+margin-left: 5px;
+}
+.padding-right
+{
+padding-right: 5px;
+}
+.padding-left
+{
+padding-left: 5px;
+}
+.padding-left-25
+{
+padding-left: 25px !important;
+}
+.padding-left-40
+{
+padding-left: 40px !important;
+}
+.padding-right-25
+{
+padding-right: 25px !important;
+}
+.padding-bottom-25
+{
+padding-bottom: 25px !important;
+}
+.right-5 {
+    right: 5px !important;
+}
+/*******************************/
+
+.ui-datepicker-next,.ui-datepicker-prev{display:none;}
+
+/***********/
+.display-none {
+    display:none;
+}
+.display-block {
+    display:block;
+}
+.display-inline-block {
+    display:inline-block !important;
+}
+/****Grid*****/
+.grid-1{width:8.33%}
+.grid-2{width:16.66%}
+.grid-3{width:25%}
+.grid-4{width:33.33%}
+.grid-5{width:41.66%}
+.grid-6{width:50%}
+.grid-8{width:66.67%}
+.grid-9{width:75%}
+.grid-10{width:83.33%}
+.grid-command{ width: 120px;}
+.grid-date{ width: 100px;}
+.grid-name{ width: 120px;}
+.grid-index{ width: 30px;}
+
+.btn-command {
+    display: inline-block; 
+    float: right; 
+    padding-right: 5px;
+    margin-top: -3px;
+    position: fixed;
+    right: 25px;
+}
+.jarviswidget > header {
+    height: 32px;
+    line-height: 32px;
+    background: #0099cc;
+    color: #efefef;
+}
+
+/* styles for validation helpers */
+.up-arrow {
+  width: 100%;
+  float: left;
+  line-height: 25px;
+}
+.field-validation-error {
+  color: red;
+  float: left;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.field-validation-error {
+  background-image: url('/img/up-arrow-red-no.gif');
+  background-repeat: no-repeat;
+  background-position-y: -5px;
+  background-position-x: 5px;
+  float: left;
+  padding-left: 20px;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid red!important;
+    background-color: #fee;
+}
+
+textarea.input-validation-error {
+    border: 1px solid red!important;
+    background-color: #fee;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: red;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.error {
+    color: #e80c4d;
+}
+
+.area-error {
+    float: left;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.loading-icon {
+    background: url("/img/loading.gif") center center no-repeat;
+    background-size:180px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+/*width dialog*/
+.dialog-width-600 {
+    width: 600px !important;
+}
+.dialog-width-800 {
+    width: 800px !important;
+}

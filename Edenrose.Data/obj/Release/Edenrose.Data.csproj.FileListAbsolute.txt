@@ -1,0 +1,14 @@
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\Edenrose.Data.dll.config
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\Edenrose.Data.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\Edenrose.Data.pdb
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\Edenrose.Common.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\EntityFramework.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\System.Web.Mvc.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\Edenrose.Common.pdb
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\EntityFramework.xml
+D:\Edenrose\codegit\edenrose\Edenrose.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Edenrose\codegit\edenrose\Edenrose.Data\obj\Release\Edenrose.Data.csprojResolveAssemblyReference.cache
+D:\Edenrose\codegit\edenrose\Edenrose.Data\obj\Release\Edenrose.Data.csproj.CoreCompileInputs.cache
+D:\Edenrose\codegit\edenrose\Edenrose.Data\obj\Release\Edenrose.Data.dll
+D:\Edenrose\codegit\edenrose\Edenrose.Data\obj\Release\Edenrose.Data.pdb

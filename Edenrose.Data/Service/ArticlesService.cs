@@ -53,6 +53,20 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
+
+        public Article GetByUrl(string url)
+        {
+            try
+            {
+                return _context.Articles.Where(x=>x.Url.Trim().ToLower() == url.Trim().ToLower()).First();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                return new Article();
+                throw ex;
+            }
+        }
         public bool Add(Article entity)
         {
             try
@@ -84,6 +98,20 @@ namespace Edenrose.Data.Service
             catch (Exception ex)
             {
                 OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
+
+        public Article GetByKey(int type)
+        {
+            try
+            {
+                return _context.Articles.Where(x => x.TypeArticle == type).First();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                return new Article();
                 throw ex;
             }
         }
@@ -120,6 +148,33 @@ namespace Edenrose.Data.Service
             {
                 var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TinTuc && x.Deleted != true && x.IsShow == true);
                 return lstData.OrderByDescending(m => m.CreatedDate).Take(3).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
+
+        public List<Article> GetDataNew()
+        {
+            try
+            {
+                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TinTuc && x.Deleted != true && x.IsShow == true);
+                return lstData.OrderByDescending(m => m.CreatedDate).Take(10).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
+        public List<Article> GetDataCungChuDe()
+        {
+            try
+            {
+                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TinTuc && x.Deleted != true && x.IsShow == true);
+                return lstData.OrderByDescending(m => m.Visits).Take(6).ToList();
             }
             catch (Exception ex)
             {

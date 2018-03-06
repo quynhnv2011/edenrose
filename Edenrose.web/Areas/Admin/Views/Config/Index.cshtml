@@ -1,0 +1,66 @@
+﻿@using Edenrose.Common
+@model Edenrose.web.Areas.Admin.Models.ConfigViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="row">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="jarviswidget jarviswidget-color-darken" data-widget-editbutton="false">
+                <header>
+                    <div class="jarviswidget-ctrls" role="menu">
+
+                    </div>
+                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                    <h2>Danh sách cấu hình</h2>
+                </header>
+                <div>
+                    <div class="jarviswidget-editbox"></div>
+                    <div class="widget-body no-padding">
+                        <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
+                            <thead>
+                                <tr>
+                                    <th style="width:40px">STT</th>
+                                    <th>Key</th>
+                                    <th>Value</th>
+                                    <th>Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.ListData.Count > 0)
+                                {
+                                    var index = 0;
+                                    foreach (var o in Model.ListData)
+                                    {
+                                        index++;
+                                        <tr>
+                                            <td>@index</td>
+                                            <td>@o.Name</td>
+                                            <td>@o.Value</td>
+                                            <td class="col-md-2" style="text-align:center">
+
+                                                @Html.EncodedActionLink("<i class=\"fa fa-edit fa-lg\"></i>", "ViewEdit", "Admin/Config", new { id = o.id }, new
+                                           {
+                                               @class = "btn btn-primary btn-xs",
+                                               title = "Cập nhật cấu hình"
+                                           })
+                                                @*  <a href="javascript: void(0);" class="btn btn-danger btn-xs" onclick="ShowMessager('@o.id')" title=" xóa tin"><i class="fa fa-trash-o fa-lg"></i></a>*@
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan="9">Không có bản ghi nào</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                        @Html.Raw(Model.GetHtmlPaging)
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+

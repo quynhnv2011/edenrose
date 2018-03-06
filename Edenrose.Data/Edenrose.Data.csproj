@@ -73,6 +73,9 @@
     <Compile Include="EF\Picture.cs">
       <DependentUpon>Edenrose.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\Resignation.cs">
+      <DependentUpon>Edenrose.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\Topic.cs">
       <DependentUpon>Edenrose.tt</DependentUpon>
     </Compile>
@@ -83,7 +86,9 @@
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\BaseService.cs" />
     <Compile Include="Service\ArticlesService.cs" />
+    <Compile Include="Service\ConfigService.cs" />
     <Compile Include="Service\PictureService.cs" />
+    <Compile Include="Service\ResignService.cs" />
     <Compile Include="Service\TopicService.cs" />
   </ItemGroup>
   <ItemGroup>

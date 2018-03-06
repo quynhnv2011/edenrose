@@ -4,7 +4,7 @@
 }
 
 <div id="section_banner" class="animatedParent animateOnce">
-    <a href="http://duanedenrose.org/#section_register">
+    <a href="/#section_register">
         <img src="./image/background-top.png">
     </a>
 </div>
@@ -17,23 +17,8 @@
                         TỔNG QUAN<div class="font-700">@Model.ListTongQuan[0].TitleHome</div>
                     </div>
                     @Html.Raw(Model.ListTongQuan[0].ShortDescription)
-                    @*<p>
-
-                            <strong>The Eden Rose</strong> là tổ hợp căn liền kề, biệt thự tọa lại trên khu đất có quy mô 8 ha tại xã Thanh Liệt, huyện Thanh Trì, Hà Nội. Không chỉ tích hợp đủ mọi tiện nghi và tiện ích hiện đại trong không gian xanh bình yên, The Eden Rose còn có vị trí thuận lợi, kết nối trực tiếp với trung tâm Hà Nội thông qua hệ thống hạ tầng giao thông hoàn thiện.
-                        </p>
-                        <ul>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Tổng diện tích dự án: 8ha</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Đất cây xanh &amp; hồ điều hòa: 1 ha</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Loại hình sản phẩm: Nhà liền kề, biệt thự</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Diện tích căn: liền kề từ 82 - 218 m2, biệt thự từ 132 - 272m</li>
-                        </ul>*@
                 </div>
                 <div class="text-center">
-                    @*<a href="@Url.RouteUrl("Article", new { url = Model.ListTongQuan[0].Url})">
-                        <div class="btn-text">
-                            <span>XEM CHI TIẾT</span>
-                        </div>
-                    </a>*@
                     <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                         <div class="btn-text">
                             <span>XEM CHI TIẾT</span>
@@ -42,7 +27,12 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 video">
-                <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">
+                <video controls="controls" class=" fadeInRightShort  animated delay-500 go" width='555' height='377' autoplay="autoplay">
+                    <source src="~/video/video-tien-ich.mp4" type="video/mp4" />
+                </video>
+               @* <video id='videoobj' class=" fadeInRightShort  animated delay-500 go" width='555' height='377' type='video/mp4' src='~/video/video-tien-ich.mp4' />*@
+            
+               @*  <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">*@
             </div><div class="clearfix"></div>
         </div>
         <div class="row" style="padding-top: 20px;">
@@ -56,9 +46,6 @@
                             <div class="font-700">@Model.ListTongQuan[1].TitleHome</div>
                         </div>
                         @Html.Raw(Model.ListTongQuan[1].ShortDescription)
-                        @*<p><strong>Chủ đầu tư Vimefulland</strong> là công ty thành viên của Vimedimex – Tập đoàn dược phẩm uy tín với hơn 10 năm hoạt động. Vimefulland định hướng phát triển dòng sản phẩm bất động sản hệ sinh thái xanh và các tiêu chuẩn chăm sóc sức khỏe cho gia đình Việt.</p>
-                            <p>Vimefulland hiện là chủ đầu tư sở hữu quỹ dự án phong phú bậc nhất tại Hà Nội bao gồm: Belleville Hà Nội, The Emerald, The Grand Sevilla, Iris Garden...</p>
-                        *@
                         <div class="text-center">
                             <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                                 <div class="btn-text"><span>TÌM HIỂU THÊM</span></div>
@@ -74,22 +61,11 @@
         <div class="col-left col-xs-12 col-sm-7">
             <div class="content-col">
                 @Html.Raw(Model.TopicLienHe.ContentDetail)
-                @*<h3 class="title-col text-center">
-                        <span class="text-uppercase">CHÍNH SÁCH BÁN HÀNG THE EDEN ROSE</span><br>
-                        <span style="color: #fff; font-weight: 400;">Áp dụng từ ngày 1/1/2018</span>
-                    </h3>
-                    <ul>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>72 triệu đồng</strong> cho căn dưới 100m2.</li>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>92 triệu đồng</strong> cho căn 100m2 - 168m2.</li>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>127 triệu đồng</strong> cho căn trên 168m2.</li>
-                    </ul>*@
             </div>
         </div><div class="col-right col-xs-12 col-sm-5">
             <div class="content-col">
                 <h3 class="title-col text-center">
                     @Html.Raw(Model.TopicLienHe.Title)
-                    @*<span class="text-uppercase">Đăng ký tư vấn</span><br>
-                        <span class="text-uppercase">&amp; Tải Bảng Giá Mới Nhất T2/2018</span>*@
                 </h3>
                 <div class="text-center" style="margin-bottom: 15px;">
                     <p><em>Quý khách vui lòng điền đầy đủ thông tin để chúng tôi liên lạc tư vấn cụ thể</em></p>

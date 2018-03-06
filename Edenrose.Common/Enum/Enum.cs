@@ -22,4 +22,6 @@ namespace Edenrose.Common.Enum
         MatBangTongThe = 4,
         LienHe = 5
     }
+
+    
 }

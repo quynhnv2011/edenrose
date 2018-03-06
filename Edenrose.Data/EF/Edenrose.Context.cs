@@ -29,5 +29,6 @@ namespace Edenrose.Data.EF
         public virtual DbSet<Config> Configs { get; set; }
         public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Resignation> Resignations { get; set; }
     }
 }
