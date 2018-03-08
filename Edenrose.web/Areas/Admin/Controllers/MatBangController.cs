@@ -21,10 +21,10 @@ namespace Edenrose.web.Areas.Admin.Controllers
         }
         public ActionResult Index()
         {
-            
+
             var modelView = new MatBangViewModel();
             var matBangTienIch = _pictureService.GetByKey((int)TypeTopic.MatBangTienIch);
-            if(matBangTienIch != null)
+            if (matBangTienIch != null)
             {
                 modelView.MatBangTienIchId = matBangTienIch.id;
                 modelView.UrlMatBangTienIch = matBangTienIch.Url;
@@ -36,10 +36,11 @@ namespace Edenrose.web.Areas.Admin.Controllers
                 modelView.UrlMatBangTongThe = matBangTongThe.Url;
             }
             var model = _topicService.GetByKey((int)TypeTopic.MatBang);
-            if(model != null && model.id > 0)
+            if (model != null && model.id > 0)
             {
                 modelView.MoTa = model.ShortDescription;
                 modelView.Id = model.id;
+                modelView.MatBangChiTiet = model.ContentDetail;
             }
             return View(modelView);
         }
@@ -55,10 +56,11 @@ namespace Edenrose.web.Areas.Admin.Controllers
                     if (model != null)
                     {
                         var result = false;
-                        if(model.Id > 0)
+                        if (model.Id > 0)
                         {
                             var obj = _topicService.GetById(model.Id);
                             obj.ShortDescription = model.MoTa;
+                            obj.ContentDetail = model.MatBangChiTiet;
                             _topicService.Update(obj);
 
                         }
@@ -67,6 +69,7 @@ namespace Edenrose.web.Areas.Admin.Controllers
                             var obj = new Topic
                             {
                                 ShortDescription = model.MoTa,
+                                ContentDetail = model.MatBangChiTiet,
                                 key = (int)TypeTopic.MatBang
                             };
                             _topicService.Add(obj);

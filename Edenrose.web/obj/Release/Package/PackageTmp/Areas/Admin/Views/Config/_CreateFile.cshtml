@@ -1,0 +1,106 @@
+﻿@model Edenrose.Data.EF.Config
+@{
+    ViewBag.Title = "Logo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- START ROW -->
+        <div class="row">
+            <!-- NEW COL START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-8" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Cấu hình</h2>
+
+                        <div class="btn-command">
+
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("Create", "Config", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
+                        {
+                            @Html.HiddenFor(model => model.id)
+                            @Html.HiddenFor(model => model.Name)
+                            <div class="widget-body no-padding  smart-form">
+                                <fieldset>
+
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label class="label">Key</label>
+                                            <label class="input">
+                                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @disabled = "disabled" })
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Ảnh đại diện</label>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+
+                                                    @Html.TextBoxFor(model => model.Value, new { @class = "form-control", @id = "txtImage", @readonly = "readonly" })
+                                                    <span class="input-group-btn">
+                                                        <a id="btnSelectImage" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                <img src="@Model.Value" style="max-width: 1200px; max-height: 100px;" id="imgPreview" />
+                                            </div>
+                                        </section>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <footer class="text-center">
+                                        <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
+                                        <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">Cập nhật</a>
+                                    </footer>
+                                </fieldset>
+                            </div>
+                        }
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- END COL -->
+        </div>
+        <!-- END ROW -->
+    </section>
+
+    <!-- end widget grid -->
+</div>
+@section Script{
+    <script>
+        $(document).on('click', '#btnSelectImage', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').val(url);
+                $('#imgPreview').attr("src", url);
+            };
+            finder.popup();
+        });
+        function SubmitForm() {
+                $('#addForm').submit();
+        }
+
+    </script>
+}
+
+
+
+

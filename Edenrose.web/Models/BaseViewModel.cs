@@ -16,19 +16,13 @@ namespace Edenrose.web.Models
         public bool IsNotPaging { get; set; }
         public int PageIndex
         {
-            get
-            {
-                var p = System.Web.HttpContext.Current.Request["pageIndex"];
-                return p != null ? int.Parse(p) : 1;
-            }
+            get;set;
         }
         public int PageSize
         {
             get
             {
-                if (IsNotPaging) return 99999999;
-                var p = System.Web.HttpContext.Current.Request["pagesize"];
-                return p != null ? int.Parse(p) : 2;
+                return 10;
             }
             set { }
         }
@@ -39,31 +33,8 @@ namespace Edenrose.web.Models
             get
             {
                 var str = new StringBuilder();
-
-                str.Append("<div class=\"text-align-right\">");
-                str.Append("<ul class=\"pagination\">");
-
-                var strUrl = System.Web.HttpContext.Current.Request.RawUrl;
-                if (System.Web.HttpContext.Current.Request.QueryString.Count == 0)
-                {
-                    strUrl += "?pageIndex={0}";
-                }
-                else
-                {
-                    if (strUrl.IndexOf(string.Format("&pageIndex={0}", PageIndex), System.StringComparison.Ordinal) > 0)
-                    {
-                        strUrl = strUrl.Replace(string.Format("&pageIndex={0}", PageIndex), "&pageIndex={0}");
-                    }
-                    else if (strUrl.IndexOf(string.Format("?pageIndex={0}", PageIndex), System.StringComparison.Ordinal) > 0)
-                    {
-                        strUrl = strUrl.Replace(string.Format("?pageIndex={0}", PageIndex), "?pageIndex={0}");
-                    }
-                    else if (System.Web.HttpContext.Current.Request["pageIndex"] == null)
-                    {
-                        strUrl += "&pageIndex={0}";
-                    }
-                }
-
+               
+                str.AppendFormat("<span class=\"pages\">Trang {0} trên {1}</span>", PageIndex, TotalItem / PageSize);
                 if (TotalItem <= PageSize)
                 {
                     return string.Empty;
@@ -85,33 +56,25 @@ namespace Edenrose.web.Models
                     return string.Empty;
                 }
 
-                if (PageIndex != 1)
-                {
-                    str.AppendFormat("<li><a href='{0}' onclick=\"_global.unBlockUI('#content')\"><i class=\"fa fa-angle-left\"></i></a></li>", string.Format(strUrl, PageIndex - 1));
-                }
-
                 for (int i = 1; i <= totalPage; i++)
                 {
                     if (i == PageIndex)
                     {
-                        str.AppendFormat("<li class='active'><a href='javascript:void(0)' onclick=\"_global.unBlockUI('#content')\">{0}</a></li>", i);
+                        str.AppendFormat("<span class=\"current\">{0}</span>", i);
                     }
                     else
                     {
-                        if (i >= PageIndex - 5 && i <= PageIndex + 5)
+                        if (i >= PageIndex - 3 && i <= PageIndex + 3)
                         {
-                            str.AppendFormat("<li><a href='{0}' onclick=\"_global.unBlockUI('#content')\">{1}</a></li>", string.Format(strUrl, i), i);
+                            str.AppendFormat("<a href='{0}' class=\"page larger\" onclick=\"_global.unBlockUI('#content')\">{1}</a>", string.Format("/tin-tuc/page/{0}", i), i);
                         }
                     }
                 }
 
                 if (PageIndex != totalPage)
                 {
-                    str.AppendFormat("<li><a href='{0}' onclick=\"_global.unBlockUI('#content')\"><i class=\"fa fa-angle-right\"></i></a></li>", string.Format(strUrl, PageIndex + 1));
+                    str.AppendFormat("<a class=\"nextpostslink\" rel=\"next\" href=\"{0}\">»</a>", string.Format("/tin-tuc/page/{0}", PageIndex + 1));
                 }
-
-                str.Append("</div>");
-                str.Append("</ul>");
                 return str.ToString();
             }
         }

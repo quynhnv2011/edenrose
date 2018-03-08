@@ -685,7 +685,7 @@ ul.bxslider {
     #section_about .video {
         margin-top: 45px;
         position: relative;
-        left: -25px
+        /*left: -25px*/
     }
 
         #section_about .video p {
@@ -2201,7 +2201,7 @@ h3.cont_utility {
     }
 
         #section_about .video {
-            left: -60px
+            /*left: -60px*/
         }
 }
 

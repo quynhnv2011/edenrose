@@ -41,6 +41,25 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
+        public List<Article> GetData(int pageIndex, int pageSize, out int totalItem)
+        {
+            try
+            {
+              
+                var lstData = _context.Articles.Where(p => p.TypeArticle == (int)TypeArticle.TinTuc && p.Deleted != true);
+                totalItem = lstData.Count();
+                lstData = lstData.OrderBy(t => t.CreatedDate);
+                if (totalItem > ((pageIndex - 1) * pageSize))
+                    lstData = lstData.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+
+                return lstData.OrderBy(m => m.DisplayOrder).ToList();
+            }
+            catch (Exception ex)
+            {
+                OutputLog.WriteOutputLog(ex);
+                throw ex;
+            }
+        }
         public Article GetById( int id)
         {
             try

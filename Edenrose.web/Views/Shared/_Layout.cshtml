@@ -10,17 +10,17 @@
     <link href="~/Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <link href="~/Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <script src="~/js/jquery.fancybox.pack.js"></script>
-    <title>Index</title>
-   @* <meta name="description" content="Mở bán chính thức dự án Biệt thự liền kề The Eden Rose - Thanh Liệt - Thanh Trì giá gốc từ chủ đầu tư Vimefulland.">*@
+    <title>Edenrose Hà Nội</title>
+    @* <meta name="description" content="Mở bán chính thức dự án Biệt thự liền kề The Eden Rose - Thanh Liệt - Thanh Trì giá gốc từ chủ đầu tư Vimefulland.">*@
 </head>
 <body class="home blog">
-    <header class="page-header navbar navbar-inverse fixed">
+    <header class="page-header navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <div class="logo-wrapper">
                     <div class="logo pull-left">
                         <a href="/" class="logo">
-                            <img class="img-responsive" src="~/image/logo2.png" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
+                            <img class="img-responsive" src="@Edenrose.web.Global.SessionInfo.Logo" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
                         </a>
                     </div>
                 </div>
@@ -52,10 +52,10 @@
     <div id="section_register">
         <div class="container">
             <div class="inner animatedParent animateOnce">
-                <h5 class="title">Đăng ký NHẬN THÔNG TIN DỰ ÁN</h5>
+                <h5 class="title">NHẬN THÔNG TIN DỰ ÁN</h5>
                 <div class="col-md-5 col-md-offset-1 block-bg fadeIn   animated delay-500 go">
                     <div class="box-text">
-                        <div class="call_sale">LIÊN HỆ Phòng kinh doanh</div> <a href="tel:0911285151 " class="mobile">@ViewBag.phone</a>
+                        <div class="call_sale">Hotline dịch vụ khách hàng</div> <a href="tel:@ViewBag.phone" class="mobile">@ViewBag.phone</a>
                         <p>Vui lòng để lại thông tin, đội ngũ chuyên viên tư vấn của chúng tôi sẽ liên hệ, tư vấn và gửi thông tin cho Quý vị trong thời gian nhanh nhất.</p>
                     </div>
                 </div>
@@ -65,20 +65,29 @@
                             <div role="form" class="wpcf7" id="wpcf7-f945-o2" lang="vi" dir="ltr">
                                 <div class="screen-reader-response"></div>
                                 <form action="/?utm_source=GSN&amp;utm_medium=CPC&amp;utm_campaign=EdenRose&amp;utm_term=duan_edenrose&amp;utm_content=duan_edenrose#wpcf7-f945-o2" method="post" class="wpcf7-form" novalidate="novalidate">
-                                    <div style="display: none;">
-                                        <input type="hidden" name="_wpcf7" value="945">
-                                        <input type="hidden" name="_wpcf7_version" value="5.0">
-                                        <input type="hidden" name="_wpcf7_locale" value="vi">
-                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f945-o2">
-                                        <input type="hidden" name="_wpcf7_container_post" value="0">
-                                    </div>
-                                    <p class="form-group"><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên*"></span></p>
-                                    <p class="form-group"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*"></span></p>
-                                    <p class="form-group"><span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" maxlength="14" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại*"></span></p>
-                                    <p class="submit">
-                                        <input type="submit" value="Đăng ký" class="wpcf7-form-control wpcf7-submit btnform btn btn-submit btn-block"><span class="ajax-loader"></span>
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-name">
+                                            <input type="text" name="your-name" id="txtNameLayout" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên*">
+                                            <span role="alert" id="txtNameLayoutNoti" style="display: none; color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
+                                        </span>
                                     </p>
-                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-email">
+                                            <input type="email" name="your-email" id="txtEmailLayout" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*">
+                                            <span role="alert" id="txtEmailLayoutNoti" style="display: none;color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập email.</span>
+                                        </span>
+                                    </p>
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-phone">
+                                            <input type="text" id="txtPhoneLayout" name="your-phone" value="" size="40" maxlength="14" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại*">
+                                            <span role="alert" id="txtPhoneLayoutNoti" style="display: none;color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
+                                        </span>
+                                    </p>
+                                    <p class="submit">
+                                        <a value="" class="btnformlayout wpcf7-form-control wpcf7-submit btn btn-submit btn-block">Tải file</a>
+                                       @* <input type="submit" value="Tải về" class="wpcf7-form-control wpcf7-submit btnform btn btn-submit btn-block"><span class="ajax-loader"></span>*@
+                                    </p>
+                                    <div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" id="notifiLayout" style="display: none;color: white;" role="alert"></div>
                                 </form>
                             </div>
                         </div>
@@ -92,11 +101,13 @@
     <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-5 pull-right">
-                    <a class="email" href="#" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>@ViewBag.email</a> <a href="tel:0911285151" target="_blank" class="mobile"><i class="fa fa-mobile" aria-hidden="true"></i>0911285151</a>
+                <div class="col-xs-12 col-sm-7 pull-right">
+                    <a class="email" href="#" target="_blank" style="margin-right: 15px;"><i class="fa fa-envelope-o" aria-hidden="true"></i>@ViewBag.email</a> 
+                    <a class="email" href="https://www.facebook.com/EDEN-ROSE-Bi%E1%BB%87t-th%E1%BB%B1-song-l%E1%BA%ADp-Nh%C3%A0-v%C6%B0%E1%BB%9Dn-li%E1%BB%81n-k%E1%BB%81-214545902440902" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i>Kết nối qua Facebook</a>
+                    <a href="tel:@ViewBag.phone" target="_blank" class="mobile"><i class="fa fa-mobile" aria-hidden="true"></i>@ViewBag.phone</a>
                     <a id="gotop" data-link="section_banner" class="logo btn-scroll"> <i class="fa fa-angle-up" aria-hidden="true"></i> TOP </a>
                 </div>
-                <div class="col-xs-12 col-sm-7">
+                <div class="col-xs-12 col-sm-5">
                     <div class="copy-right">
                         © 2018 The Eden Rose. All Rights Reserved.
                         <div class="clearfix visible-xs visible-sm"></div>
@@ -112,7 +123,7 @@
                 <br>Thông tin dự án
             </div>
         </a>
-        <a href="tel:0911285151" target="_blank" class="btn btn-hotline kanit uppercase">
+        <a href="tel:@ViewBag.phone" target="_blank" class="btn btn-hotline kanit uppercase">
             <div class="btn-text">
                 hotline
                 <br><span class="font-500">@ViewBag.phone</span>
@@ -124,7 +135,88 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
     <script src="~/Scripts/js/homepage.js"></script>
-   
+
     @RenderSection("scripts", required: false)
+    <script>
+        function validatePhone(txtPhone) {
+            var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+            if (filter.test(txtPhone)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        $(document).ready(function () {
+            var isSubmit = false;
+            $('.btnformlayout').click(function () {
+                debugger
+                $('.btnformlayout').prop('disabled', true);
+                var name = $('#txtNameLayout').val();
+                if (name == null || name.trim() == "") {
+                    $('#txtNameLayoutNoti').show();
+                    return false;
+                } else {
+                    $('#txtNameLayoutNoti').hide();
+                }
+                var email = $('#txtEmailLayout').val();
+                if (email == null || email.trim() == "") {
+                    $('#txtEmailLayoutNoti').show();
+                    return false;
+                } else {
+                    $('#txtEmailLayoutNoti').hide();
+                }
+
+                var phone = $('#txtPhoneLayout').val();
+                if (phone == null || phone.trim() == "") {
+                    $('#txtPhoneLayoutNoti').show();
+                    return false;
+                } else {
+                    $('#txtPhoneLayoutNoti').hide();
+                }
+                if (!validatePhone(phone)) {
+                    $('#notifiLayout').text('Vui lòng nhập đúng định dạng số điện thoại');
+                    $('#notifiLayout').show();
+                    return false;
+                } else {
+                    $('#notifiLayout').text('');
+                }
+                if (!isSubmit) {
+                    isSubmit = true;
+                    window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
+                    $('#notifiLayout').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
+                    $('#notifiLayout').show();
+                    $('.btnformlayout').removeAttr('disabled');
+                    $('#txtNameLayout').val('');
+                    $('#txtEmailLayout').val('');
+                    $('#txtPhoneLayout').val('');
+                    isSubmit = false;
+                    //$.ajax({
+                    //    url: '../TinTuc/Resign',
+                    //    type: 'post',
+                    //    dataType: 'text',
+                    //    data: {
+                    //        email: email,
+                    //        phone: phone,
+                    //        name: name
+                    //    },
+                    //    success: function (response) {
+                    //        $('#notifi').text('Đăng ký nhận thông tin bảng giá thành công!')
+                    //        $('#notifi').show();
+                    //        $('.btnformlayout').removeAttr('disabled');
+                    //        isSubmit = false;
+                    //    },
+                    //    error: function () {
+                    //        $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
+                    //        $('#notifi').show();
+                    //        $('.btnformlayout').removeAttr('disabled');
+                    //        isSubmit = false;
+                    //    }
+                    //});
+                }
+              
+            });
+        });
+    </script>
 </body>
 </html>

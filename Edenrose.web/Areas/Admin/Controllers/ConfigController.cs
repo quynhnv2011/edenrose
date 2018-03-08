@@ -54,7 +54,7 @@ namespace Edenrose.web.Areas.Admin.Controllers
                             else
                                 TempData["ErrorMsg"] = "Cập nhật cấu hình thất bại";
                         }
-                        return RedirectToAction("Index", "Config", new { Area = "Admin" });
+                        return Redirect(model.Name.Trim().ToLower());
                     }
                     return Json(GetBaseObjectResult(false, "Thực hiện thất bại"));
                 }
@@ -71,6 +71,80 @@ namespace Edenrose.web.Areas.Admin.Controllers
         {
             var model = _configService.GetbyId(id);
             return View("Create", model);
+        }
+        public ActionResult Phone()
+        {
+            var model = _configService.GetbyKey("phone");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "phone";
+            };
+            return View("Create", model);
+        }
+
+        public ActionResult Email()
+        {
+            var model = _configService.GetbyKey("email");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "email";
+            };
+            return View("Create", model);
+        }
+
+
+        public ActionResult Logo()
+        {
+            var model = _configService.GetbyKey("logo");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "logo";
+            };
+            return View("_CreateFile",model);
+        }
+
+        public ActionResult Banner()
+        {
+            var model = _configService.GetbyKey("banner");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "banner";
+            };
+            return View("_CreateFile", model);
+        }
+        public ActionResult LogoArticle()
+        {
+            var model = _configService.GetbyKey("logoarticle");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "logoarticle";
+            };
+            return View("_CreateFile", model);
+        }
+        
+        private RedirectToRouteResult Redirect(string name)
+        {
+            switch (name)
+            {
+                case "logo":
+                    return RedirectToAction("logo", "Config", new { Area = "Admin" });
+                case "phone":
+                    return RedirectToAction("phone", "Config", new { Area = "Admin" });
+                case "email":
+                    return RedirectToAction("email", "Config", new { Area = "Admin" });
+                case "banner":
+                    return RedirectToAction("banner", "Config", new { Area = "Admin" });
+                case "logoarticle":
+                    return RedirectToAction("logoarticle", "Config", new { Area = "Admin" });
+                default:
+                    return RedirectToAction("Index", "Config", new { Area = "Admin" });
+
+            }
         }
     }
 }

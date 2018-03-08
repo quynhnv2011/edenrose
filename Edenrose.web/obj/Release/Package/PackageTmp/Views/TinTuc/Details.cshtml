@@ -9,7 +9,7 @@
         <div class="row">
             <div id="content" class="col-xs-12 col-sm-8 col-md-9 pull-right">
                 <div id="breadcrumbs" class="hidden-xs">
-                    <span xmlns:v="http://rdf.data-vocabulary.org/#">
+                    <span xmlns:v="#">
                         <span typeof="v:Breadcrumb">
                             <a href="/" rel="v:url" property="v:title">Trang chủ</a> » 
                             <span rel="v:child" typeof="v:Breadcrumb"><a href="/tin-tuc/" rel="v:url" property="v:title">Tin tức</a> » 
@@ -46,26 +46,13 @@
                             {
                                 <div class="post-thumb col-xs-12 col-sm-6 col-md-6">
                                     <a href="/tin-tuc/@item.Url"> 
-                                    <img src="../@item.Picture" width="100" height="75" alt="@item.Title" class="img-thumb img-responsive"> </a>
+                                    <img src="@item.Picture" width="100" height="75" alt="@item.Title" class="img-thumb img-responsive"> </a>
                                     <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
                                     <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
                                 </div>
-                                @*<li>
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb"> 
-                                    <img src="../@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive"> </a>
-                                    <h3 class="title-thumb">
-                                    <a href="/tin-tuc/@item.Url">@item.Title</a></h3>
-                                    <div class="date-time"> @String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
-                                </li>*@
                             }
 
                         }
-                        <div class="post-thumb col-xs-12 col-sm-6 col-md-6">
-                            <a href="http://duanedenrose.org/tin-tuc/ai-se-la-nguoi-trung-xe-mercedes-tiep-theo-tu-du-eden-rose/"> <img src="http://duanedenrose.org/wp-content/uploads/bfi_thumb/24232843_1319748978136881_1404160000581442492_n-nj84kl2ljc5uh0ufzkypkk5mopgomlz5u4zugw6vam.jpg" width="100" height="75" alt="Ai sẽ là người trúng xe Mercedes tiếp theo từ dự án The Eden Rose?" class="img-thumb img-responsive"> </a>
-                            <h3 class="title-thumb"><a href="http://duanedenrose.org/tin-tuc/ai-se-la-nguoi-trung-xe-mercedes-tiep-theo-tu-du-eden-rose/">Ai sẽ là người trúng xe Mercedes tiếp theo từ dự án The Eden Rose?</a></h3>
-                            <div class="date-time"> 2017-12-22 | 08:42</div>
-                        </div>
-                      
                     </div>
                 </div>
                 <div class="clear">
@@ -115,7 +102,7 @@
                             {
                                 <li>
                                     <a href="/tin-tuc/@item.Url" class="img-thumb">
-                                    <img src="../@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive"> </a>
+                                    <img src="@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive"> </a>
                                     <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
                                     <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
                                 </li>
@@ -129,7 +116,7 @@
     </div>
 </div>
 @*@section Script{*@
-<script src="../Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script>
         function validatePhone(txtPhone) {
             var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;

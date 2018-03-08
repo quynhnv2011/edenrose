@@ -1,4 +1,5 @@
 ﻿using Edenrose.Data.Object;
+using Edenrose.Data.Service;
 using System.Web;
 
 
@@ -19,5 +20,15 @@ namespace Edenrose.web.Global
                 return accInfo;
             }
         }
+        public static string Logo
+        {
+            get
+            {
+                return (new ConfigService()).GetbyKey("logo").Value;
+            }
+        }
+
     }
+
+   
 }

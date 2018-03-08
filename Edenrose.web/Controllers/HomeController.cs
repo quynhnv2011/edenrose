@@ -51,11 +51,15 @@ namespace Edenrose.web.Controllers
                 model.TopicViTri = _topicService.GetByKey((int)TypeTopic.ViTri);
                 model.UrlMatBangTienIch = _pictureService.GetByKey((int)TypeTopic.MatBangTienIch).Url;
                 model.UrlMatBangTongThe = _pictureService.GetByKey((int)TypeTopic.MatBangTongThe).Url;
+                model.MatBang = _topicService.GetByKey((int)TypeTopic.MatBang);
                 model.ListSanPham = _artilesService.GetDataSanPham();
                 model.ListArticleNew = _artilesService.GetDataTopArticle();
                 model.TopicChinhSach = _artilesService.GetByKey((int)TypeArticle.ChinhSach);
                 model.email = _configService.GetbyKey("email").Value;
                 model.phone = _configService.GetbyKey("phone").Value;
+                model.logo = _configService.GetbyKey("logo").Value;
+                model.banner = _configService.GetbyKey("banner").Value;
+                model.logoarticle = _configService.GetbyKey("logoarticle").Value;
                 return model;
             }
             catch

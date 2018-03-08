@@ -1,11 +1,11 @@
 ﻿@model Edenrose.web.Models.HomeViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Edenrose Hà Nội";
 }
 
 <div id="section_banner" class="animatedParent animateOnce">
     <a href="/#section_register">
-        <img src="./image/background-top.png">
+        <img src="@Model.banner">
     </a>
 </div>
 <div id="section_about" class="animatedParent animateOnce">
@@ -17,23 +17,8 @@
                         TỔNG QUAN<div class="font-700">@Model.ListTongQuan[0].TitleHome</div>
                     </div>
                     @Html.Raw(Model.ListTongQuan[0].ShortDescription)
-                    @*<p>
-
-                            <strong>The Eden Rose</strong> là tổ hợp căn liền kề, biệt thự tọa lại trên khu đất có quy mô 8 ha tại xã Thanh Liệt, huyện Thanh Trì, Hà Nội. Không chỉ tích hợp đủ mọi tiện nghi và tiện ích hiện đại trong không gian xanh bình yên, The Eden Rose còn có vị trí thuận lợi, kết nối trực tiếp với trung tâm Hà Nội thông qua hệ thống hạ tầng giao thông hoàn thiện.
-                        </p>
-                        <ul>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Tổng diện tích dự án: 8ha</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Đất cây xanh &amp; hồ điều hòa: 1 ha</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Loại hình sản phẩm: Nhà liền kề, biệt thự</li>
-                            <li><i class="fa fa-caret-right" aria-hidden="true"></i>Diện tích căn: liền kề từ 82 - 218 m2, biệt thự từ 132 - 272m</li>
-                        </ul>*@
                 </div>
                 <div class="text-center">
-                    @*<a href="@Url.RouteUrl("Article", new { url = Model.ListTongQuan[0].Url})">
-                        <div class="btn-text">
-                            <span>XEM CHI TIẾT</span>
-                        </div>
-                    </a>*@
                     <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                         <div class="btn-text">
                             <span>XEM CHI TIẾT</span>
@@ -41,8 +26,13 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 video">
-                <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">
+            <div class="col-sm-12 col-md-6 video" >
+                <video controls="controls" class=" fadeInRightShort  animated delay-500 go" width='555' style="width:100%; height: auto;" autoplay="autoplay">
+                    <source src="~/video/video-tien-ich.mp4" type="video/mp4" />
+                </video>
+               @* <video id='videoobj' class=" fadeInRightShort  animated delay-500 go" width='555' height='377' type='video/mp4' src='~/video/video-tien-ich.mp4' />*@
+            
+               @*  <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">*@
             </div><div class="clearfix"></div>
         </div>
         <div class="row" style="padding-top: 20px;">
@@ -56,9 +46,6 @@
                             <div class="font-700">@Model.ListTongQuan[1].TitleHome</div>
                         </div>
                         @Html.Raw(Model.ListTongQuan[1].ShortDescription)
-                        @*<p><strong>Chủ đầu tư Vimefulland</strong> là công ty thành viên của Vimedimex – Tập đoàn dược phẩm uy tín với hơn 10 năm hoạt động. Vimefulland định hướng phát triển dòng sản phẩm bất động sản hệ sinh thái xanh và các tiêu chuẩn chăm sóc sức khỏe cho gia đình Việt.</p>
-                            <p>Vimefulland hiện là chủ đầu tư sở hữu quỹ dự án phong phú bậc nhất tại Hà Nội bao gồm: Belleville Hà Nội, The Emerald, The Grand Sevilla, Iris Garden...</p>
-                        *@
                         <div class="text-center">
                             <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                                 <div class="btn-text"><span>TÌM HIỂU THÊM</span></div>
@@ -74,22 +61,11 @@
         <div class="col-left col-xs-12 col-sm-7">
             <div class="content-col">
                 @Html.Raw(Model.TopicLienHe.ContentDetail)
-                @*<h3 class="title-col text-center">
-                        <span class="text-uppercase">CHÍNH SÁCH BÁN HÀNG THE EDEN ROSE</span><br>
-                        <span style="color: #fff; font-weight: 400;">Áp dụng từ ngày 1/1/2018</span>
-                    </h3>
-                    <ul>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>72 triệu đồng</strong> cho căn dưới 100m2.</li>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>92 triệu đồng</strong> cho căn 100m2 - 168m2.</li>
-                        <li>Tặng 01 gói nội thất thông minh cùng quà tặng tổng trị giá <strong>127 triệu đồng</strong> cho căn trên 168m2.</li>
-                    </ul>*@
             </div>
         </div><div class="col-right col-xs-12 col-sm-5">
             <div class="content-col">
                 <h3 class="title-col text-center">
                     @Html.Raw(Model.TopicLienHe.Title)
-                    @*<span class="text-uppercase">Đăng ký tư vấn</span><br>
-                        <span class="text-uppercase">&amp; Tải Bảng Giá Mới Nhất T2/2018</span>*@
                 </h3>
                 <div class="text-center" style="margin-bottom: 15px;">
                     <p><em>Quý khách vui lòng điền đầy đủ thông tin để chúng tôi liên lạc tư vấn cụ thể</em></p>
@@ -97,33 +73,29 @@
                 <div role="form" class="wpcf7" id="wpcf7-f199-o1" lang="vi" dir="ltr">
                     <div class="screen-reader-response"></div>
                     <form action="/" method="post" class="wpcf7-form" novalidate="novalidate">
-                        <div style="display: none;">
-                            <input type="hidden" name="_wpcf7" value="199">
-                            <input type="hidden" name="_wpcf7_version" value="5.0">
-                            <input type="hidden" name="_wpcf7_locale" value="vi">
-                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f199-o1">
-                            <input type="hidden" name="_wpcf7_container_post" value="0">
-                        </div>
                         <p>
                             <span class="wpcf7-form-control-wrap your-name">
-                                <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên*">
+                                <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên*">
+                                <span role="alert" id="txtNameNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
                             </span>
                         </p>
                         <p>
                             <span class="wpcf7-form-control-wrap your-email">
-                                <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*">
+                                <input type="email" name="your-email" value="" id="txtEmail" size="40" class="form-control" aria-required="true" aria-invalid="true" placeholder="Email*">
+                                <span role="alert" id="txtEmailNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập email.</span>
                             </span>
                         </p>
                         <p>
                             <span class="wpcf7-form-control-wrap your-phone">
-                                <input type="text" name="your-phone" value="" size="40" maxlength="14" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại*">
+                                <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại*">
+                                <span role="alert" id="txtPhoneNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
                             </span>
                         </p>
-                        <p class="submit">
-                            <input type="submit" value="Đăng ký ngay" class="wpcf7-form-control wpcf7-submit btnform btn-primary btn-dk">
+                        <p class="submit" style="padding-top: 10px">
+                            <a href="javascript:void(0)" class="btn-submit btnform btn-primary btn-dk">Đăng ký ngay</a>
                             <span class="ajax-loader"></span>
                         </p>
-                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                        <div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" id="notifi" style="display: none;color: white;" role="alert"></div>
                     </form>
                 </div>
             </div>
@@ -162,7 +134,7 @@
     <div class="block-content animatedParent animateOnce">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 left_utilities">
+                <div class="col-md-4 left_utilities" style="text-align:justify;">
                     <div class="fadeInLeftShort  animated delay-500 go">
                         @Html.Raw(Model.TopicTienIch.ShortDescription)
                         @*<p class="des_utility">
@@ -249,8 +221,8 @@
                 </div>
                 <div class="col-sm-7 right_location">
                     <div class="block-text kanit font-300 fadeInRightShort  animated delay-500 go">
-                        @*@Html.Raw(Model.UrlMatBangTienIch.ShortDescription)*@
-                        Dự án The Eden Rose bao gồm 181 căn nhà liền kề và 52 biệt thự được thiết kế theo phong cách hiện đại, các căn biệt thự, liền kề đều được thiết kế thông minh, tối ưu diện tích và công năng sử dụng.
+                        @Html.Raw(Model.MatBang.ShortDescription)
+                       @* Dự án The Eden Rose bao gồm 181 căn nhà liền kề và 52 biệt thự được thiết kế theo phong cách hiện đại, các căn biệt thự, liền kề đều được thiết kế thông minh, tối ưu diện tích và công năng sử dụng.*@
                     </div>
                 </div>
             </div>
@@ -293,7 +265,8 @@
                                 <div class="row">
                                     <div class="col-xs-12 item-ef">
                                         <div style="border: 1px solid #ddd; font-size: 110%; text-align: center; padding: 30px; color: #d33;">
-                                            <p>Xem mặt bằng chi tiết các căn biệt thự và liền kề The Eden Rose tại đây: <a href="http://duanedenrose.org/tin-tuc/mat-bang-biet-thu-va-nha-vuon-eden-rose/"><strong>CLICK HERE</strong></a></p>
+                                            @Html.Raw(Model.MatBang.ContentDetail)
+                                            @*<p>Xem mặt bằng chi tiết các căn biệt thự và liền kề The Eden Rose tại đây: <a href="#"><strong>CLICK HERE</strong></a></p>*@
                                         </div>
                                     </div>
                                 </div>
@@ -382,7 +355,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-5">
-                    <div class="block-logo"> <img class="img-responsive" src="http://duanedenrose.org/wp-content/themes/edenrose/images/logo-2.png"></div>
+                    <div class="block-logo"> <img class="img-responsive" src="@Model.logoarticle"></div>
                 </div>
                 <div class="col-sm-8 col-md-7">
                     <div class="block-news">
@@ -408,3 +381,63 @@
         </div>
     </div>
 </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+        function validatePhone(txtPhone) {
+            var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+            if (filter.test(txtPhone)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    $(document).ready(function () {
+        var isSubmit = false;
+            $('.btnform').click(function () {
+                debugger
+                $('.btnform').prop('disabled', true);
+                var name = $('#txtName').val();
+                if (name == null || name.trim() == "") {
+                    $('#txtNameNoti').show();
+                    return false;
+                } else {
+                    $('#txtNameNoti').hide();
+                }
+                var email = $('#txtEmail').val();
+                if (email == null || email.trim() == "") {
+                    $('#txtEmailNoti').show();
+                    return false;
+                } else {
+                    $('#txtEmailNoti').hide();
+                }
+
+                var phone = $('#txtPhone').val();
+                if (phone == null || phone.trim() == "") {
+                    $('#txtPhoneNoti').show();
+                    return false;
+                } else {
+                    $('#txtPhoneNoti').hide();
+                }
+                if (!validatePhone(phone)) {
+                    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+                    $('#notifi').show();
+                    return false;
+                } else {
+                    $('#notifi').text('');
+                }
+                if (!isSubmit) {
+                    isSubmit = true;
+                    window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
+                    $('#notifi').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
+                    $('#notifi').show();
+                    $('.btnform').removeAttr('disabled');
+                    $('#txtName').val('');
+                    $('#txtEmail').val('');
+                    $('#txtPhone').val('');
+                    isSubmit = false;
+                }
+            });
+        });
+</script>

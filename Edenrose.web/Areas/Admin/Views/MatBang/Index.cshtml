@@ -46,6 +46,7 @@
                                         </section>
                                        
                                     </div>
+                                   
                                     <div class="clearfix"></div>
                                     <div class="row">
                                        
@@ -78,11 +79,16 @@
                                             </div>
                                         </section>
                                     </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <section class="col col-md-12">
+                                            <label class="label">Mặt bằng chi tiết</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.MatBangChiTiet, new { @class = "form-control", @id = "txtChiTiet", @rows = "4" })
+                                            </label>
+                                        </section>
 
-                                    @*<div class="clearfix"></div>
-                                        <div class="row">
-
-                                        </div>*@
+                                    </div>
                                     <div class="clearfix"></div>
                                     <footer class="text-center">
                                         <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
@@ -110,6 +116,10 @@
         var editor = CKEDITOR.replace('txtmota', {
             customConfig: '/plugins/ckeditor/config1.js'
         });
+        var editor1 = CKEDITOR.replace('txtChiTiet', {
+            customConfig: '/plugins/ckeditor/config.js'
+        });
+        
         $(document).on('click', '#btnSelectImageTienIch', function (e) {
             e.preventDefault();
             var finder = new CKFinder();
