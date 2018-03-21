@@ -126,7 +126,77 @@ namespace Edenrose.web.Areas.Admin.Controllers
             };
             return View("_CreateFile", model);
         }
-        
+
+        public ActionResult CauHinhSeo()
+        {
+            var model = new SeoConfigItem();
+            model.Title = _configService.GetbyKey("title") != null ? _configService.GetbyKey("title").Value : string.Empty;
+            model.Description = _configService.GetbyKey("description") != null ? _configService.GetbyKey("description").Value: string.Empty;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult CauHinhSeo(SeoConfigItem model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (model != null)
+                    {
+                        if (model.IdTitle == 0 && model.IdDescription == 0)
+                        {
+                            var objTitle = new Config()
+                            {
+                                Name = "title",
+                                Value = model.Title
+                            };
+
+                            var result = _configService.Add(objTitle);
+                            var objDesciption= new Config()
+                            {
+                                Name = "description",
+                                Value = model.Description
+                            };
+                            result = _configService.Add(objDesciption);
+                            if (result)
+                                TempData["SuccessMsg"] = "Thêm mới cấu hình thành công";
+                            else
+                                TempData["ErrorMsg"] = "Thêm mới cấu hình thất bại";
+                        }
+                        else
+                        {
+                            var objTitle = new Config()
+                            {
+                                Name = "title",
+                                id = model.IdTitle,
+                                Value = model.Title
+                            };
+
+                            var result = _configService.Update(objTitle);
+                            var objDesciption = new Config()
+                            {
+                                Name = "description",
+                                id = model.IdDescription,
+                                Value = model.Description
+                            };
+                            result = _configService.Update(objDesciption);
+                            if (result)
+                                TempData["SuccessMsg"] = "Cập nhật cấu hình thành công";
+                            else
+                                TempData["ErrorMsg"] = "Cập nhật cấu hình thất bại";
+                        }
+                        return RedirectToAction("CauHinhSeo");
+                    }
+                    return Json(GetBaseObjectResult(false, "Thực hiện thất bại"));
+                }
+                catch (Exception ex)
+                {
+                    return Json(GetBaseObjectResult(false, "Xảy ra lỗi. Bạn vui lòng thử lại sau !"));
+                }
+            }
+            return View(model);
+        }
+
         private RedirectToRouteResult Redirect(string name)
         {
             switch (name)

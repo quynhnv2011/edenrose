@@ -1,7 +1,6 @@
 D:\Edenrose\codegit\edenrose\Edenrose.Common\bin\Release\Edenrose.Common.dll
 D:\Edenrose\codegit\edenrose\Edenrose.Common\bin\Release\Edenrose.Common.pdb
 D:\Edenrose\codegit\edenrose\Edenrose.Common\bin\Release\System.Web.Mvc.dll
-D:\Edenrose\codegit\edenrose\Edenrose.Common\obj\Release\Edenrose.Common.csprojResolveAssemblyReference.cache
 D:\Edenrose\codegit\edenrose\Edenrose.Common\obj\Release\Edenrose.Common.csproj.CoreCompileInputs.cache
 D:\Edenrose\codegit\edenrose\Edenrose.Common\obj\Release\Edenrose.Common.dll
 D:\Edenrose\codegit\edenrose\Edenrose.Common\obj\Release\Edenrose.Common.pdb

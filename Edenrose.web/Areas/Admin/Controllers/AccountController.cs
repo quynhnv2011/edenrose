@@ -8,7 +8,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using Vks.Common.Utils;
 
 namespace Edenrose.web.Areas.Admin.Controllers
 {
@@ -35,7 +34,7 @@ namespace Edenrose.web.Areas.Admin.Controllers
                     if (string.IsNullOrEmpty(m.Email) || string.IsNullOrEmpty(m.Password))
                     {
                         m.Password = string.Empty;
-                        m.ErrMess = MessageUtils.Err("Anh/chị chưa nhập đầy đủ thông tin đăng nhập");
+                        m.ErrMess = Vks.Common.Utils.MessageUtils.Err("Anh/chị chưa nhập đầy đủ thông tin đăng nhập");
                     }
                     else
                     {
@@ -61,7 +60,7 @@ namespace Edenrose.web.Areas.Admin.Controllers
                         else
                         {
                             m.Password = string.Empty;
-                            m.ErrMess = MessageUtils.Err("Tên đăng nhập hoặc mật khẩu không chính xác");
+                            m.ErrMess = Vks.Common.Utils.MessageUtils.Err("Tên đăng nhập hoặc mật khẩu không chính xác");
                         }
                     }
                 }

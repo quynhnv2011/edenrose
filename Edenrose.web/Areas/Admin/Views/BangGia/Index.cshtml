@@ -1,0 +1,113 @@
+﻿@model List<Edenrose.web.Areas.Admin.Models.FileInfoModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" id="hfDeleteUrl" value="@Url.Action("Delete","BangGia")" />
+<section>
+    <div class="row">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="jarviswidget jarviswidget-color-darken" data-widget-editbutton="false">
+                <header>
+                    <div class="jarviswidget-ctrls" role="menu">
+
+                    </div>
+                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                    <h2>Danh sách file bảng giá</h2>
+                </header>
+                <div>
+                    <div class="jarviswidget-editbox"></div>
+                    <div class="widget-body no-padding">
+                        <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
+                            <thead>
+                                <tr>
+                                    <th style="width:40px">STT</th>
+                                    <th>Tên file</th>
+                                    <th class="col-md-1" style="text-align:center">Xem</th>
+                                    <th class="col-md-1" style="text-align:center">Xóa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    var index = 0;
+                                    foreach (var o in Model)
+                                    {
+                                        index++;
+                                        <tr>
+                                            <td>@index</td>
+                                          
+                                            <td>@o.Name</td>
+                                            <td style="text-align:center">
+                                                <a class="btn hide-border" title="Xem" href="/BangGia/@o.Name"><i class="fa fa-lg fa-eye"></i></a>
+                                            </td>  
+                                            <td style="text-align:center">
+                                                <a href="javascript: void(0);" class="btn btn-danger btn-xs" onclick="ShowMessager('@o.Name')" title=" xóa tin"><i class="fa fa-trash-o fa-lg"></i></a>
+                                            </td>    
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan="9">Không có bản ghi nào</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+                <div class=" smart-form">
+                    <div class="col col-md-6">
+                        <section>
+                            <label class="label">Chọn file</label>
+                            <label for="file" class="input input-file">
+                                <div class="button"><input type="file" id="fileUpload" name="file" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" placeholder="Include some files" readonly="">
+                            </label>
+                        </section>
+                    </div>
+                    <footer>
+                        <a style="float: left;margin-top: 17px;" href="javascripts:void(0)" class="btn btn-primary" onclick="UploadFile()">
+                            Upload file
+                        </a>
+                    </footer>
+                </div>
+                
+            </div>
+        </article>
+    </div>
+</section>
+
+<script>
+    function UploadFile() {
+        if (window.FormData !== undefined) {
+            var files = $("#fileUpload").get(0).files[0];
+            var filename = $("#fileUpload").get(0).files[0].name;
+            // Create FormData object  
+            var fileData = new FormData();
+            fileData.append(filename, files);
+
+            $.ajax({
+                url: '/Admin/BangGia/Upload',
+                beforeSend: function () {
+                    _global.blockUI('#content');
+                },
+                type: 'POST',
+                dataType: 'text',
+                contentType: false, // Not to set any content header  
+                processData: false, // Not to process data  
+                data: fileData,
+                success: function (result) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, text) {
+                    _global.unBlockUI('#content');
+                    _global.errMsg('Tải trang không thành công, mã lỗi: ' + xhr.status);
+                }
+            });
+        } else {
+            toastr["error"]("Mời anh/chị chọn file upload", "Thông báo");
+        }
+    }
+   
+</script>
+

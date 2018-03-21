@@ -1,0 +1,126 @@
+--------- 20:42:04 ---------
+Ref URL: http://edenrose.local:86/admin/Home
+Host: edenrose.local:86
+URL: /Admin/Config/CauHinhSeo
+IP: 127.0.0.1
+Error: Object reference not set to an instance of an object.
+Source: Edenrose.web
+Trace:    at Edenrose.web.Areas.Admin.Controllers.ConfigController.CauHinhSeo() in D:\Edenrose\codegit\edenrose\Edenrose.web\Areas\Admin\Controllers\ConfigController.cs:line 133
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException : 
+GetBaseException : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Edenrose.web.Areas.Admin.Controllers.ConfigController.CauHinhSeo() in D:\Edenrose\codegit\edenrose\Edenrose.web\Areas\Admin\Controllers\ConfigController.cs:line 133
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+TargetSite : System.Web.Mvc.ActionResult CauHinhSeo()
+--------- 20:43:00 ---------
+Ref URL: http://edenrose.local:86/admin/Home
+Host: edenrose.local:86
+URL: /Admin/Config/CauHinhSeo
+IP: 127.0.0.1
+Error: Object reference not set to an instance of an object.
+Source: Edenrose.web
+Trace:    at Edenrose.web.Areas.Admin.Controllers.ConfigController.CauHinhSeo() in D:\Edenrose\codegit\edenrose\Edenrose.web\Areas\Admin\Controllers\ConfigController.cs:line 133
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException : 
+GetBaseException : System.NullReferenceException: Object reference not set to an instance of an object.
+   at Edenrose.web.Areas.Admin.Controllers.ConfigController.CauHinhSeo() in D:\Edenrose\codegit\edenrose\Edenrose.web\Areas\Admin\Controllers\ConfigController.cs:line 133
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+TargetSite : System.Web.Mvc.ActionResult CauHinhSeo()
+--------- 21:07:29 ---------
+Ref URL: http://localhost:49924/Admin/BangGia
+Host: localhost:49924
+URL: /Admin/BangGia
+IP: ::1
+Error: The view 'D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+Source: System.Web.Mvc
+Trace:    at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException : 
+GetBaseException : System.InvalidOperationException: The view 'D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.aspx
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.ascx
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Areas/Admin/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Areas/Admin/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Views/BangGia/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.cshtml
+~/Views/Shared/D:\Edenrose\codegit\edenrose\Edenrose.web\BangGia.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+TargetSite : System.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext)

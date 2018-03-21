@@ -181,6 +181,13 @@
         type.AllowedExtensions = new string[] { "bmp", "gif", "jpeg", "jpg", "png" };
         type.DeniedExtensions = new string[] { };
 
+          type = ResourceType.Add("Video");
+        type.Url = BaseUrl + "videos/";
+        type.Dir = BaseDir == "" ? "" : BaseDir + "videos/";
+        type.MaxSize = 0;
+        type.AllowedExtensions = new string[] { "mp4", "avi", "mov"};
+        type.DeniedExtensions = new string[] { };
+
         type = ResourceType.Add("Flash");
         type.Url = BaseUrl + "flash/";
         type.Dir = BaseDir == "" ? "" : BaseDir + "flash/";

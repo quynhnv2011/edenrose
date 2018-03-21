@@ -1,0 +1,86 @@
+﻿@model Edenrose.web.Areas.Admin.Models.SeoConfigItem
+@{
+    ViewBag.Title = "CauHinhSeo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- START ROW -->
+        <div class="row">
+            <!-- NEW COL START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-8" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Cấu hình</h2>
+
+                        <div class="btn-command">
+
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("CauHinhSeo", "Config", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
+                        {
+                            <div class="widget-body no-padding  smart-form">
+                                <fieldset>
+                                    @Html.HiddenFor(model=> model.IdDescription)
+                                    @Html.HiddenFor(model => model.IdTitle)
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label class="label">Tiêu đề website</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.Title, new { @class = "form-control", @rows = "4" })
+                                                @Html.ValidationMessageFor(model => model.Title)
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Mô tả website</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = "4" })
+                                                @Html.ValidationMessageFor(model => model.Description)
+                                            </label>
+                                        </section>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <footer class="text-center">
+                                        <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
+                                        <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">Cập nhật</a>
+                                    </footer>
+                                </fieldset>
+                            </div>
+                        }
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- END COL -->
+        </div>
+        <!-- END ROW -->
+    </section>
+
+    <!-- end widget grid -->
+</div>
+@section Script{
+    <script>
+        function SubmitForm() {
+                $('#addForm').submit();
+        }
+
+    </script>
+}
+

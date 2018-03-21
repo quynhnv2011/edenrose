@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,6 +80,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -129,12 +131,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -173,6 +172,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -215,6 +215,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BangGiaController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChinhSachController.cs" />
     <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
@@ -229,6 +230,8 @@
     <Compile Include="Areas\Admin\Models\Account\LoginModel.cs" />
     <Compile Include="Areas\Admin\Models\Articles\ArticleItemModel.cs" />
     <Compile Include="Areas\Admin\Models\Articles\ArticlesViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Articles\SeoConfigItem.cs" />
+    <Compile Include="Areas\Admin\Models\BangGia\FileInfo.cs" />
     <Compile Include="Areas\Admin\Models\BaseListModel.cs" />
     <Compile Include="Areas\Admin\Models\BaseModel.cs" />
     <Compile Include="Areas\Admin\Models\Config\ConfigViewModel.cs" />
@@ -254,7 +257,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BangGia\icon-facebook.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\animations.css" />
@@ -305,11 +307,13 @@
     <Content Include="image\bg-register.jpg" />
     <Content Include="image\bg_contact.png" />
     <Content Include="image\blank.gif" />
+    <Content Include="image\edenrose_logo.jpg" />
     <Content Include="image\fancybox_loading.gif" />
     <Content Include="image\fancybox_overlay.png" />
     <Content Include="image\fancybox_sprite.png" />
     <Content Include="image\ico-close.svg" />
     <Content Include="image\ico-hotline.png" />
+    <Content Include="image\icon-close.png" />
     <Content Include="image\icon-next.png" />
     <Content Include="image\icon-zoom.svg" />
     <Content Include="image\khu-vui-choi-the-eden-rose.jpg" />
@@ -1416,6 +1420,8 @@
     <Content Include="Areas\Admin\Views\Config\Create.cshtml" />
     <Content Include="BangGia\Diffusers-brochure-6582.pdf" />
     <Content Include="Areas\Admin\Views\Config\_CreateFile.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\CauHinhSeo.cshtml" />
+    <Content Include="Areas\Admin\Views\BangGia\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1468,7 +1474,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Edenrose.Common\Edenrose.Common.csproj">
-      <Project>{AC6E34F3-7364-4F9C-BD3B-E4670CDF3C65}</Project>
+      <Project>{ac6e34f3-7364-4f9c-bd3b-e4670cdf3c65}</Project>
       <Name>Edenrose.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Edenrose.Data\Edenrose.Data.csproj">

@@ -60,6 +60,8 @@ namespace Edenrose.web.Controllers
                 model.logo = _configService.GetbyKey("logo").Value;
                 model.banner = _configService.GetbyKey("banner").Value;
                 model.logoarticle = _configService.GetbyKey("logoarticle").Value;
+                //model.title = _configService.GetbyKey("title").Value;
+                //model.Description = _configService.GetbyKey("description").Value;
                 return model;
             }
             catch

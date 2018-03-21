@@ -28,6 +28,20 @@ namespace Edenrose.web.Global
             }
         }
 
+        public static string Title
+        {
+            get
+            {
+                return (new ConfigService()).GetbyKey("title").Value;
+            }
+        }
+        public static string Description
+        {
+            get
+            {
+                return (new ConfigService()).GetbyKey("description").Value;
+            }
+        }
     }
 
    

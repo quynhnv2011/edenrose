@@ -3,15 +3,35 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="~/image/edenrose_logo.jpg" rel="shortcut icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="title" content="@Edenrose.web.Global.SessionInfo.Title">
+    <meta name="description" content="@Edenrose.web.Global.SessionInfo.Description">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@Edenrose.web.Global.SessionInfo.Title">
+    <meta property="og:description" content="@Edenrose.web.Global.SessionInfo.Description">
+    <meta property="og:url" content="http://edenrosehanoi.vn/">
+    <meta property="og:site_name" content="@Edenrose.web.Global.SessionInfo.Title">
+    <meta name="google-site-verification" content="_tHHnTxMCDjUhl9-2W5sAM1_Kee8S0yXj9t87tLUIhg" />
+    <link rel="alternate" href="http://edenrosehanoi.vn/" hreflang="vi-vn" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/css/style.css" data-minify="1" type="text/css">
     <link href="~/Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <link href="~/Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <script src="~/js/jquery.fancybox.pack.js"></script>
-    <title>Edenrose Hà Nội</title>
-    @* <meta name="description" content="Mở bán chính thức dự án Biệt thự liền kề The Eden Rose - Thanh Liệt - Thanh Trì giá gốc từ chủ đầu tư Vimefulland.">*@
+    <title>Dự án Biệt thự THE EDEN ROSE Hà Nội</title>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115986985-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115986985-1');
+    </script>
 </head>
 <body class="home blog">
     <header class="page-header navbar navbar-inverse">
@@ -30,7 +50,7 @@
                 </button>
             </div>
             <div class="row">
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div id="collapseClose" class="collapse navbar-collapse navbar-ex1-collapse" aria-expanded="false">
                     <div class="menu-main-menu-container pull-right">
                         <ul class="nav-menu nav nav-pills pull-left">
                             <li class="nd-scroll"><a href="/#section_about">Tổng quan</a></li>

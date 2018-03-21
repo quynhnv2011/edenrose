@@ -12,7 +12,7 @@ namespace Edenrose.web.Models
         public Topic TopicLienHe { get; set; }
         public Topic TopicViTri { get; set; }
         public Topic TopicTienIch { get; set; }
-        public Topic MatBang { get; set; }        
+        public Topic MatBang { get; set; }
         public Article TopicChinhSach { get; set; }
         public string UrlMatBangTongThe { get; set; }
         public string UrlMatBangTienIch { get; set; }
@@ -23,5 +23,7 @@ namespace Edenrose.web.Models
         public string logo { get; set; }
         public string banner { get; set; }
         public string logoarticle { get; set; }
+        public string title { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -9,7 +9,9 @@
     font-weight: 400;
     font-style: normal
 }
-
+/*.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #333 !important;
+}*/
 .gutter-10 {
     margin-left: -10px;
     margin-right: -10px
@@ -287,7 +289,7 @@ ul.bxslider {
         }
 
         .page-header.fixed .logo img {
-            height: 70px
+            height: 60px
         }
 
 #section_banner .banner_cont {
@@ -1689,7 +1691,7 @@ h3.cont_utility {
 
     .page-header .navbar-toggle.active {
         border: 0;
-        background: url(/wp-content/themes/edenrose/images/icon-close.png) no-repeat center center
+        background: url(../../image/icon-close.png) no-repeat center;
     }
 
         .page-header .navbar-toggle.active .icon-bar {
@@ -2393,7 +2395,8 @@ h3.cont_utility {
     }
 
         .page-header .navbar-toggle {
-            display: block !important
+            display: block !important;
+            background-color: black;
         }
 
         .page-header .navbar-header {
@@ -2671,7 +2674,7 @@ h3.cont_utility {
 
 @media screen and (max-width:767px) {
     .page-header .logo {
-        max-width: 140px
+        max-width: 210px
     }
 
     #section_banner .inner .img-banner {
