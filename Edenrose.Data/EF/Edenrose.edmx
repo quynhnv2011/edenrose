@@ -43,9 +43,19 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="500" />
           <Property Name="Url" Type="varchar" MaxLength="500" />
-          <Property Name="TopicId" Type="int" />
+          <Property Name="ReferenceId" Type="int" />
           <Property Name="Key" Type="int" />
           <Property Name="DisplayOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Resignation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" MaxLength="13" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Topics">
           <Key>
@@ -62,27 +72,24 @@
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="Picture" Type="varchar" MaxLength="200" />
         </EntityType>
-        <EntityType Name="Resignation">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="500" />
-          <Property Name="Phone" Type="varchar" MaxLength="13" />
-          <Property Name="Name" Type="nvarchar" MaxLength="500" />
-          <Property Name="CreatedDate" Type="datetime" />
-        </EntityType>
         <EntityContainer Name="EdenroseModelStoreContainer">
           <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resignation" EntityType="Self.Resignation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Resignation" EntityType="Self.Resignation" Schema="edenrose" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EdenroseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EdenroseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Articles" EntityType="EdenroseModel.Article" />
+          <EntitySet Name="Configs" EntityType="EdenroseModel.Config" />
+          <EntitySet Name="Resignations" EntityType="EdenroseModel.Resignation" />
+          <EntitySet Name="Topics" EntityType="EdenroseModel.Topic" />
+          <EntitySet Name="Pictures" EntityType="EdenroseModel.Picture" />
+        </EntityContainer>
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="id" />
@@ -114,16 +121,15 @@
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Value" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Picture">
+        <EntityType Name="Resignation">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="TopicId" Type="Int32" />
-          <Property Name="Key" Type="Int32" />
-          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Topic">
           <Key>
@@ -140,22 +146,16 @@
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="Picture" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="EdenroseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Articles" EntityType="Self.Article" />
-          <EntitySet Name="Configs" EntityType="Self.Config" />
-          <EntitySet Name="Pictures" EntityType="Self.Picture" />
-          <EntitySet Name="Topics" EntityType="Self.Topic" />
-          <EntitySet Name="Resignations" EntityType="EdenroseModel.Resignation" />
-        </EntityContainer>
-        <EntityType Name="Resignation">
+        <EntityType Name="Picture">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenceId" Type="Int32" />
+          <Property Name="Key" Type="Int32" />
+          <Property Name="DisplayOrder" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -167,44 +167,43 @@
             <EntityTypeMapping TypeName="EdenroseModel.Article">
               <MappingFragment StoreEntitySet="Articles">
                 <ScalarProperty Name="IsShow" ColumnName="IsShow" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
-                <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
-                <ScalarProperty Name="Picture" ColumnName="Picture" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="TypeArticle" ColumnName="TypeArticle" />
-                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-                <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
-                <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Visits" ColumnName="Visits" />
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Visits" ColumnName="Visits" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+                <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="TypeArticle" ColumnName="TypeArticle" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Configs">
             <EntityTypeMapping TypeName="EdenroseModel.Config">
               <MappingFragment StoreEntitySet="Config">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pictures">
-            <EntityTypeMapping TypeName="EdenroseModel.Picture">
-              <MappingFragment StoreEntitySet="Picture">
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <EntitySetMapping Name="Resignations">
+            <EntityTypeMapping TypeName="EdenroseModel.Resignation">
+              <MappingFragment StoreEntitySet="Resignation">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -213,25 +212,26 @@
               <MappingFragment StoreEntitySet="Topics">
                 <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="key" ColumnName="key" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
-                <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
-                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-                <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
                 <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+                <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="key" ColumnName="key" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Resignations">
-            <EntityTypeMapping TypeName="EdenroseModel.Resignation">
-              <MappingFragment StoreEntitySet="Resignation">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="EdenroseModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

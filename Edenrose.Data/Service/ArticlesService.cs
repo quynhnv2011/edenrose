@@ -60,11 +60,17 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
-        public Article GetById( int id)
+        public Article GetById(int id, int key = 0)
         {
             try
             {
-                return _context.Articles.Find(id);
+                var model = _context.Articles.Find(id);
+                if(key > 0)
+                {
+                    if (model == null) model = new Article();
+                    model.ListPicture = _context.Pictures.Where(x => x.Key == key && x.ReferenceId == model.id).ToList();
+                }             
+                return model;
             }
             catch (Exception ex)
             {
@@ -92,6 +98,12 @@ namespace Edenrose.Data.Service
             {
                 _context.Articles.Add(entity);
                 _context.SaveChanges();
+                if (entity.ListPicture != null && entity.ListPicture.Count > 0)
+                {
+                    entity.ListPicture.ForEach(x => x.ReferenceId = entity.id);
+                    _context.Pictures.AddRange(entity.ListPicture);
+                }
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -100,7 +112,7 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
-        public bool Update(Article entity)
+        public bool Update(Article entity, int key = 0)
         {
             try
             {
@@ -109,6 +121,12 @@ namespace Edenrose.Data.Service
                 {
                     ObjectUtils.CopyObject(entity, ref objOld, true);
                     //_context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    if (entity.ListPicture != null && entity.ListPicture.Count > 0 && key > 0)
+                    {
+                        var ListOldPicture = _context.Pictures.Where(x => x.Key == key && x.ReferenceId == entity.id).ToList();
+                        _context.Pictures.RemoveRange(ListOldPicture);
+                        _context.Pictures.AddRange(entity.ListPicture);
+                    }
                     _context.SaveChanges();
                     return true;
                 }
@@ -153,7 +171,12 @@ namespace Edenrose.Data.Service
             try
             {
                 var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.SanPham && x.Deleted != true && x.IsShow == true);
-                return lstData.OrderBy(m => m.DisplayOrder).ToList();
+                var result = lstData.OrderBy(m => m.DisplayOrder).ToList();
+                foreach(var item in result)
+                {
+                    item.ListPicture = _context.Pictures.Where(x => x.Key == (int)TypeTopic.Product && x.ReferenceId == item.id).ToList();
+                }
+                return result;
             }
             catch (Exception ex)
             {

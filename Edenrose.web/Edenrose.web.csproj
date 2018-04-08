@@ -216,6 +216,7 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\BangGiaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChinhSachController.cs" />
     <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
@@ -283,11 +284,13 @@
     <Content Include="Content\image\tien-ich2_1.jpg" />
     <Content Include="Content\image\vi-tri.jpg" />
     <Content Include="Content\image\vimefulland.jpg" />
+    <Content Include="css\ArticleCss.css" />
     <Content Include="css\bootstrap-multiselect.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\common.css" />
     <Content Include="css\Css-layout.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery.spzoom.css" />
     <Content Include="css\ListTinTuc.css" />
     <Content Include="css\smartadmin-production-plugins.min.css" />
     <Content Include="css\smartadmin-production.min.css" />
@@ -295,6 +298,7 @@
     <Content Include="css\smartadmin-skins.min.css" />
     <Content Include="css\style.css" />
     <Content Include="css\styles-tintuc.css" />
+    <Content Include="css\zoom\xzoom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont78ce-2.html" />
     <Content Include="fonts\fontawesome-webfont78ce-3.html" />
@@ -302,6 +306,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="image\ajax-loader.gif" />
+    <Content Include="image\athena-fulland-logo.png" />
     <Content Include="image\background-top.png" />
     <Content Include="image\bg-dk.png" />
     <Content Include="image\bg-register.jpg" />
@@ -324,6 +329,7 @@
     <Content Include="image\tien-ich2_1.jpg" />
     <Content Include="image\vi-tri.jpg" />
     <Content Include="image\vimefulland.jpg" />
+    <Content Include="image\xloading.gif" />
     <Content Include="js\app.config.js" />
     <Content Include="js\app.min.js" />
     <Content Include="js\bootstrap-multiselect.js" />
@@ -343,6 +349,13 @@
     <Content Include="js\plugin\toastr\toastr.min.css" />
     <Content Include="js\plugin\toastr\toastr.min.js" />
     <Content Include="js\reset.js" />
+    <Content Include="js\slider\revolution.extension.actions.min.js" />
+    <Content Include="js\slider\revolution.extension.layeranimation.min.js" />
+    <Content Include="js\slider\revolution.extension.navigation.min.js" />
+    <Content Include="js\slider\revolution.extension.slideanims.min.js" />
+    <Content Include="js\zoom\jquery.js" />
+    <Content Include="js\zoom\setup.js" />
+    <Content Include="js\zoom\xzoom.min.js" />
     <Content Include="plugins\ckeditor\adapters\jquery.js" />
     <Content Include="plugins\ckeditor\build-config.js" />
     <Content Include="plugins\ckeditor\ckeditor.js" />
@@ -1359,8 +1372,11 @@
     <Content Include="plugins\dropzone\dropzone.min.js" />
     <Content Include="plugins\dropzone\images\spritemap%402x.png" />
     <Content Include="plugins\dropzone\images\spritemap.png" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="plugins\slider\css\next.gif" />
+    <Content Include="plugins\slider\css\prev.gif" />
+    <Content Include="plugins\slider\css\slider.css" />
+    <Content Include="plugins\slider\vmc.slide.effects.js" />
+    <Content Include="plugins\slider\vmc.slide.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1376,6 +1392,22 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Account\DoLogin.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\homepage.js" />
+    <Content Include="Scripts\js\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="video\video-tien-ich.mp4" />
     <Content Include="Views\Partial\_ConfirmForm.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -1422,20 +1454,10 @@
     <Content Include="Areas\Admin\Views\Config\_CreateFile.cshtml" />
     <Content Include="Areas\Admin\Views\Config\CauHinhSeo.cshtml" />
     <Content Include="Areas\Admin\Views\BangGia\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\_GetListPicture.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\_GetListPicture.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\js\homepage.js" />
-    <Content Include="Scripts\js\jquery.fancybox.pack.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1452,6 +1474,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\TinTuc\Details.cshtml" />
     <Content Include="Views\TinTuc\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1470,7 +1493,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Edenrose.Common\Edenrose.Common.csproj">

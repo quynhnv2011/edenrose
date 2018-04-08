@@ -20,7 +20,9 @@ namespace Edenrose.Common.Enum
         MatBang = 6,
         MatBangTienIch = 3,
         MatBangTongThe = 4,
-        LienHe = 5
+        LienHe = 5,
+        Banner = 6,
+        Product = 7
     }
 
     

@@ -7,6 +7,16 @@
     }
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .footer-add-image .btn {
+        float: right;
+        height: 31px;
+        margin: 0 5px;
+        padding: 0 22px;
+        font: 300 15px/29px 'Open Sans',Helvetica,Arial,sans-serif;
+        cursor: pointer;
+    }
+</style>
 <div>
     @if (!string.IsNullOrEmpty(Model.ErrMess))
     {
@@ -37,131 +47,195 @@
                         <div class="jarviswidget-editbox">
                             <!-- This area used as dropdown edit box -->
                         </div>
-                        <!-- end widget edit box -->
-                        <!-- widget content -->
-                        @using (Html.BeginForm("Create", "SanPham", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
-                        {
-                            @Html.HiddenFor(model => model.id)
-                            @Html.HiddenFor(model => model.Visits)
-                            @Html.HiddenFor(model => model.CreatedBy)
-                            @Html.HiddenFor(model => model.CreatedDate)
-                            @Html.HiddenFor(model => model.TypeArticle)
-                            <div class="widget-body no-padding  smart-form">
-                                <fieldset>
+                        <ul id="myTab1" class="nav nav-tabs bordered">
+                            <li class="active">
+                                <a href="#s1" data-toggle="tab"><i class="fa fa-edit"></i> Nội dung chính</a>
+                            </li>
+                            <li class="">
+                                <a href="#s2" data-toggle="tab"><i class="fa fa-fw fa-file-image-o"></i> Hình ảnh</a>
+                            </li>
+                        </ul>
+                        <div id="myTabContent1" class="tab-content padding-10">
+                            <div class="tab-pane fade active in" id="s1">
+                                <div class="jarviswidget jarviswidget-sortable">
+                                    <div>
+                                        @using (Html.BeginForm("Create", "SanPham", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
+                                        {
+                                            @Html.HiddenFor(model => model.id)
+                                            @Html.HiddenFor(model => model.Visits)
+                                            @Html.HiddenFor(model => model.CreatedBy)
+                                            @Html.HiddenFor(model => model.CreatedDate)
+                                            @Html.HiddenFor(model => model.TypeArticle)
+                                            <div class="widget-body no-padding  smart-form">
+                                                <fieldset>
 
-                                    <div class="row">
+                                                    <div class="row">
 
-                                        <section class="col col-6">
-                                            <label class="label">Tiêu đề trang chủ</label>
-                                            <label class="input">
-                                                @Html.TextBoxFor(model => model.TitleHome, new { @class = "form-control", @id = "txtNameHome"})
-                                                @Html.ValidationMessageFor(model => model.TitleHome)
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label class="label">Tiêu đề bài viết</label>
-                                            <label class="input">
-                                                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @id = "txtName", @onchange = "LoadUrl()" })
-                                                @Html.ValidationMessageFor(model => model.Title)
-                                            </label>
-                                        </section>
-                                       
+                                                        <section class="col col-6">
+                                                            <label class="label">Tiêu đề trang chủ</label>
+                                                            <label class="input">
+                                                                @Html.TextBoxFor(model => model.TitleHome, new { @class = "form-control", @id = "txtNameHome" })
+                                                                @Html.ValidationMessageFor(model => model.TitleHome)
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Tiêu đề bài viết</label>
+                                                            <label class="input">
+                                                                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @id = "txtName", @onchange = "LoadUrl()" })
+                                                                @Html.ValidationMessageFor(model => model.Title)
+                                                            </label>
+                                                        </section>
+
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Nội dung tóm tắt</label>
+                                                            <label class="textarea">
+                                                                @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control", @id = "txtmota", @rows = "4" })
+                                                                @Html.ValidationMessageFor(model => model.ShortDescription)
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Ảnh đại diện</label>
+                                                            <div class="col-md-12">
+                                                                <div class="input-group">
+
+                                                                    @Html.TextBoxFor(model => model.Picture, new { @class = "form-control", @id = "txtImage", @readonly = "readonly" })
+                                                                    <span class="input-group-btn">
+                                                                        <a id="btnSelectImage" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                                <img src="@Model.Picture" style="max-width: 1200px; max-height: 100px;" id="imgPreview" />
+                                                            </div>
+                                                        </section>
+                                                    </div>
+
+                                                    <div class="clearfix"></div>
+                                                    <div class="row">
+
+                                                        <section class="col col-6">
+                                                            <label class="label">Tiêu đề Seo</label>
+                                                            <label class="input category-parent">
+                                                                @Html.TextBoxFor(model => model.SeoTitle, new { @class = "form-control", @id = "txtSeoTitle" })
+                                                                @Html.ValidationMessageFor(model => model.SeoTitle)
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Mô tả Seo</label>
+                                                            <label class="input">
+                                                                @Html.TextBoxFor(model => model.SeoDescription, new { @class = "form-control", @id = "txtSeoDescription" })
+                                                                @Html.ValidationMessageFor(model => model.SeoDescription)
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="row">
+                                                        <section class="col col-6">
+                                                            <label class="label">Từ khóa Seo</label>
+                                                            <label class="input category-parent">
+                                                                @Html.TextBoxFor(model => model.SeoKeywords, new { @class = "form-control", @id = "txtSeoKeywords" })
+                                                                @Html.ValidationMessageFor(model => model.SeoKeywords)
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label">Url</label>
+                                                            <label class="input">
+                                                                @Html.TextBoxFor(model => model.Url, new { @class = "form-control", @id = "txtUlr" })
+                                                                @Html.ValidationMessageFor(model => model.Url)
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="row">
+                                                        <section class="col col-3">
+                                                            <label class="label">Thứ tự</label>
+                                                            <label class="input">
+                                                                @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", @style = "width:80px", @id = "OrderIndex" })
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-3">
+                                                            <label class="label">Hiển thị</label>
+                                                            <label>
+                                                                @Html.CheckBoxFor(x => x.IsShow)
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="row">
+                                                        <section class="col col-12" style="width:100%;">
+                                                            <label class="label">Nội dung chi tiết</label>
+                                                            <label class="input category-parent">
+                                                                @Html.TextAreaFor(model => model.ContentDetail, new { @id = "txtContent" })
+                                                                @Html.ValidationMessageFor(model => model.ContentDetail)
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                   
+                                                </fieldset>
+                                            </div>
+                                        }
                                     </div>
-                                    <div class="clearfix"></div>
-                                    <div class="row">
-                                        <section class="col col-6">
-                                            <label class="label">Nội dung tóm tắt</label>
-                                            <label class="textarea">
-                                                @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control", @id = "txtmota", @rows = "4" })
-                                                @Html.ValidationMessageFor(model => model.ShortDescription)
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label class="label">Ảnh đại diện</label>
-                                            <div class="col-md-12">
-                                                <div class="input-group">
+                                    <!-- end widget div -->
+                                </div>
+                            </div>
 
-                                                    @Html.TextBoxFor(model => model.Picture, new { @class = "form-control", @id = "txtImage", @readonly = "readonly" })
-                                                    <span class="input-group-btn">
-                                                        <a id="btnSelectImage" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
-                                                    </span>
+                            <div class="tab-pane fade" id="s2">
+                                <div id="content">
+                                    <div class="widget-body no-padding  smart-form">
+                                        <div id="tablePicture">
+                                            @Html.Action("GetListPicture", "SanPham")
+                                        </div>
+                                        <div style="padding-top: 15px;">
+                                            <div class="col col-6">
+                                                <div class="row">
+                                                    <label class="label">Ảnh</label>
+                                                    <div class="col-md-12">
+                                                        <div class="input-group">
+                                                            <input class="form-control" id="imageUrl" readonly="readonly" type="text" value="">
+                                                            <span class="input-group-btn">
+                                                                <a id="btnSelectPicture" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                            </span>
+                                                            <span class="field-validation-error" style="display:none;" id="valiImageUrl">Vui lòng chọn ảnh</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                        <img style="max-width: 1200px; max-height: 100px;" id="picturePreview">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col col-2">
+                                                <label class="label">Thứ tự hiển thị</label>
+                                                <label class="input">
+                                                    <input class="form-control" id="ImageDisplayOrder" style="width:80px" type="number" min="0">
+                                                </label>
+                                            </div>
+                                            <div class="col col-3">
+                                                <label class="label"></label>
+                                                <div class="footer-add-image" style="float: left;padding-top: 18px;">
+                                                    <a href="javascript: void(0);" class="btn btn-primary" onclick="SaveImage()">Add</a>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
-                                                <img src="@Model.Picture" style="max-width: 1200px; max-height: 100px;" id="imgPreview" />
-                                            </div>
-                                        </section>
                                     </div>
 
-                                    <div class="clearfix"></div>
-                                    <div class="row">
-
-                                        <section class="col col-6">
-                                            <label class="label">Tiêu đề Seo</label>
-                                            <label class="input category-parent">
-                                                @Html.TextBoxFor(model => model.SeoTitle, new { @class = "form-control", @id = "txtSeoTitle" })
-                                                @Html.ValidationMessageFor(model => model.SeoTitle)
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label class="label">Mô tả Seo</label>
-                                            <label class="input">
-                                                @Html.TextBoxFor(model => model.SeoDescription, new { @class = "form-control", @id = "txtSeoDescription" })
-                                                @Html.ValidationMessageFor(model => model.SeoDescription)
-                                            </label>
-                                        </section>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="row">
-                                        <section class="col col-6">
-                                            <label class="label">Từ khóa Seo</label>
-                                            <label class="input category-parent">
-                                                @Html.TextBoxFor(model => model.SeoKeywords, new { @class = "form-control", @id = "txtSeoKeywords" })
-                                                @Html.ValidationMessageFor(model => model.SeoKeywords)
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label class="label">Url</label>
-                                            <label class="input">
-                                                @Html.TextBoxFor(model => model.Url, new { @class = "form-control", @id = "txtUlr" })
-                                                @Html.ValidationMessageFor(model => model.Url)
-                                            </label>
-                                        </section>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="row">
-                                        <section class="col col-3">
-                                            <label class="label">Thứ tự</label>
-                                            <label class="input">
-                                                @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", @style = "width:80px", @id = "OrderIndex" })
-                                            </label>
-                                        </section>
-                                        <section class="col col-3">
-                                            <label class="label">Hiển thị</label>
-                                            <label>
-                                                @Html.CheckBoxFor(x=>x.IsShow)
-                                            </label>
-                                        </section>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="row">
-                                        <section class="col col-12" style="width:100%;">
-                                            <label class="label">Nội dung chi tiết</label>
-                                            <label class="input category-parent">
-                                                @Html.TextAreaFor(model => model.ContentDetail, new { @id = "txtContent" })
-                                                @Html.ValidationMessageFor(model => model.ContentDetail)
-                                            </label>
-                                        </section>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <footer class="text-center">
-                                        <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
-                                        <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">@ViewBag.Title</a>
-                                    </footer>
-                                </fieldset>
+                                </div>
                             </div>
-                        }
+                            <div class="clearfix"></div>
+                            <footer class="text-center">
+                                <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
+                                <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">@ViewBag.Title</a>
+                            </footer>
+
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                       
                         <!-- end widget content -->
                     </div>
                     <!-- end widget div -->
@@ -183,6 +257,16 @@
             finder.selectActionFunction = function (url) {
                 $('#txtImage').val(url);
                 $('#imgPreview').attr("src", url);
+            };
+            finder.popup();
+        });
+
+        $(document).on('click', '#btnSelectPicture', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#imageUrl').val(url);
+                $('#picturePreview').attr("src", url);
             };
             finder.popup();
         });
@@ -222,7 +306,48 @@
         function SubmitForm() {
                 $('#addForm').submit();
         }
+        function SaveImage() {
+            var imageUrl = $('#imageUrl').val();
+            var displayOrder = $('#ImageDisplayOrder').val();
+            var picture = {
+                Url: imageUrl,
+                DisplayOrder: displayOrder
+            }
+            var isValid = true;
 
+            if (isValid) {
+                $.ajax({
+                    url: '/Admin/SanPham/AddPicture',
+                    type: 'POST',
+                    dataType: 'text',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(picture),
+                    success: function (data) {
+                        $("#tablePicture").html(data);
+                        toastr["success"]("Thêm hình ảnh thành công!", "Thông báo");
+                        $('#imageUrl').val('');
+                        $('#ImageDisplayOrder').val('');
+                        $('#picturePreview').removeAttr('src');
+                    },
+                    error: function (xhr, status, text) {
+                        toastr["error"]("Xảy ra lỗi khi thêm hình ảnh. Vui lòng thử lại.", "Thông báo");
+                    }
+                })
+            }
+        }
+        function DeleteImage(id) {
+            $.ajax({
+                url: '/Admin/SanPham/DeletePicture',
+                type: 'POST',
+                data: { "tmpId": id },
+                success: function (data) {
+                    $("#tablePicture").html(data);
+                },
+                error: function (result, text, error) {
+                    toastr["error"]("Xảy ra lỗi khi xóa. Anh/chị vui lòng thử lại sau!", "Thông báo");
+                }
+            });
+        }
     </script>
 }
 

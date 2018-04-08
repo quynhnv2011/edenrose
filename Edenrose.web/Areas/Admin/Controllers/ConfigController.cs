@@ -1,4 +1,5 @@
-﻿using Edenrose.Data.EF;
+﻿using Edenrose.Common.Enum;
+using Edenrose.Data.EF;
 using Edenrose.Data.Service;
 using Edenrose.web.Areas.Admin.Models;
 using Edenrose.web.Helper;
@@ -13,9 +14,11 @@ namespace Edenrose.web.Areas.Admin.Controllers
     public class ConfigController : BaseController
     {
         private readonly ConfigService _configService;
+        private readonly TopicService _topicService;
         public ConfigController()
         {
             _configService = new ConfigService();
+            _topicService = new TopicService();
         }
         public ActionResult Index()
         {
@@ -108,13 +111,24 @@ namespace Edenrose.web.Areas.Admin.Controllers
 
         public ActionResult Banner()
         {
-            var model = _configService.GetbyKey("banner");
-            if (model == null)
+            var model = _topicService.GetByKey((int)TypeTopic.TienIch);
+            if (model == null || model.id == 0)
             {
-                model = new Config();
-                model.Name = "banner";
-            };
-            return View("_CreateFile", model);
+                model = new Topic();
+                model.key = (int)TypeTopic.TienIch;
+                model.ListPicture = new List<Picture>();
+            }
+            model.ListPicture.ForEach(x => x.TmpId = Guid.NewGuid().ToString());
+            Session["ListPicture"] = model.ListPicture;
+            return View(model);
+
+            //var model = _configService.GetbyKey("banner");
+            //if (model == null)
+            //{
+            //    model = new Config();
+            //    model.Name = "banner";
+            //};
+            //return View("_CreateFile", model);
         }
         public ActionResult LogoArticle()
         {

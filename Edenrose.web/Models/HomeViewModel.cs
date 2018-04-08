@@ -25,5 +25,6 @@ namespace Edenrose.web.Models
         public string logoarticle { get; set; }
         public string title { get; set; }
         public string Description { get; set; }
+        public List<Picture> ListBanner { get; set; }
     }
 }

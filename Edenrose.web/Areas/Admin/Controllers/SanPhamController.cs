@@ -1,4 +1,5 @@
 ﻿using Edenrose.Common.Enum;
+using Edenrose.Data.EF;
 using Edenrose.Data.Service;
 using Edenrose.web.Areas.Admin.Models;
 using Edenrose.web.Helper;
@@ -39,10 +40,13 @@ namespace Edenrose.web.Areas.Admin.Controllers
             {
                 try
                 {
+                    var ListPicture = Session["ListPictureProduct"] as List<Picture>;
                     if (model != null)
                     {
                         var modelItem = model.ToModel();
 
+                        modelItem.ListPicture = ListPicture;
+                        modelItem.ListPicture.ForEach(x => x.Key = (int)TypeTopic.Product);
                         //  var modelItem = Mapper.Map<Article>(model);
                         if (model.id == 0)
                         {
@@ -62,7 +66,8 @@ namespace Edenrose.web.Areas.Admin.Controllers
                         {
                             modelItem.Deleted = false;
                             modelItem.UpdatedDate = DateTime.Now;
-                            var result = _artilesService.Update(modelItem);
+                            modelItem.ListPicture.ForEach(x => x.ReferenceId = modelItem.id);
+                            var result = _artilesService.Update(modelItem, (int)TypeTopic.Product);
                             if (result)
                                 TempData["SuccessMsg"] = "Cập nhật sản phẩm thành công";
                             else
@@ -84,7 +89,8 @@ namespace Edenrose.web.Areas.Admin.Controllers
         public ActionResult ViewEdit(int id)
         {
             ArticleItemModel model = new ArticleItemModel();
-            var categoryItem = _artilesService.GetById(id);
+            var categoryItem = _artilesService.GetById(id, (int)TypeTopic.Product);
+            Session["ListPictureProduct"] = categoryItem.ListPicture;
             model = categoryItem.ToModelArticle();
             return View("Create", model);
         }
@@ -108,6 +114,58 @@ namespace Edenrose.web.Areas.Admin.Controllers
             {
                 return Json(GetBaseObjectResult(false, "Xảy ra lỗi khi xóa thuộc tính"));
             }
+        }
+
+        public ActionResult GetListPicture()
+        {
+            var model = new List<Picture>();
+            if (Session["ListPictureProduct"] != null)
+                model = Session["ListPictureProduct"] as List<Picture>;
+            return PartialView("_GetListPicture", model);
+        }
+        public ActionResult AddPicture(Picture picture)
+        {
+            var model = new List<Picture>();
+            if (Session["ListPictureProduct"] != null)
+                model = Session["ListPictureProduct"] as List<Picture>;
+            picture.TmpId = Guid.NewGuid().ToString();
+            model.Add(picture);
+            Session["ListPictureProduct"] = model;
+            return GetListPicture();
+        }
+
+        private bool DeletePictureItem(string tmpId, List<Picture> listPicture)
+        {
+            try
+            {
+                var obj = listPicture.Find(x => x.TmpId == tmpId);
+                listPicture.Remove(obj);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public ActionResult DeletePicture(string tmpId)
+        {
+            var model = new List<Picture>();
+            if (Session["ListPictureProduct"] != null)
+                model = Session["ListPictureProduct"] as List<Picture>;
+            DeletePictureItem(tmpId, model);
+            Session["ListPictureProduct"] = model;
+            return GetListPicture();
+        }
+
+        public ActionResult UpdateDisplay(string tmpId, int Value)
+        {
+            var model = new List<Picture>();
+            if (Session["ListPictureProduct"] != null)
+                model = Session["ListPictureProduct"] as List<Picture>;
+            var obj = model.SingleOrDefault(x => x.TmpId == tmpId);
+            if (obj != null) obj.DisplayOrder = Value;
+            Session["ListPictureProduct"] = model;
+            return GetListPicture();
         }
     }
 }

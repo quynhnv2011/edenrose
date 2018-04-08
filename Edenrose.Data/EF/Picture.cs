@@ -17,7 +17,7 @@ namespace Edenrose.Data.EF
         public int id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
-        public Nullable<int> TopicId { get; set; }
+        public Nullable<int> ReferenceId { get; set; }
         public Nullable<int> Key { get; set; }
         public Nullable<int> DisplayOrder { get; set; }
     }

@@ -80,6 +80,7 @@
       <DependentUpon>Edenrose.tt</DependentUpon>
     </Compile>
     <Compile Include="Object\Account.cs" />
+    <Compile Include="Object\Article.cs" />
     <Compile Include="Object\Picture.cs" />
     <Compile Include="Object\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,44 +5,43 @@
       <EntityTypeMapping TypeName="EdenroseModel.Article">
         <MappingFragment StoreEntitySet="Articles">
           <ScalarProperty Name="IsShow" ColumnName="IsShow" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
-          <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
-          <ScalarProperty Name="Picture" ColumnName="Picture" />
-          <ScalarProperty Name="Url" ColumnName="Url" />
-          <ScalarProperty Name="TypeArticle" ColumnName="TypeArticle" />
-          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
-          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Visits" ColumnName="Visits" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
           <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Visits" ColumnName="Visits" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="TypeArticle" ColumnName="TypeArticle" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Configs">
       <EntityTypeMapping TypeName="EdenroseModel.Config">
         <MappingFragment StoreEntitySet="Config">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Pictures">
-      <EntityTypeMapping TypeName="EdenroseModel.Picture">
-        <MappingFragment StoreEntitySet="Picture">
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Key" ColumnName="Key" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Url" ColumnName="Url" />
-          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+    <EntitySetMapping Name="Resignations">
+      <EntityTypeMapping TypeName="EdenroseModel.Resignation">
+        <MappingFragment StoreEntitySet="Resignation">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -51,25 +50,26 @@
         <MappingFragment StoreEntitySet="Topics">
           <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="key" ColumnName="key" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
-          <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
-          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
-          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
           <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="ContentDetail" ColumnName="ContentDetail" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Resignations">
-      <EntityTypeMapping TypeName="EdenroseModel.Resignation">
-        <MappingFragment StoreEntitySet="Resignation">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="EdenroseModel.Picture">
+        <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
