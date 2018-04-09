@@ -8,9 +8,15 @@
         font-family: 'Quicksand', sans-serif;
         /*font-weight: 700;*/
     }
-</style>
-<link href="~/plugins/slider/css/slider.css" rel="stylesheet" />
+    .thumb-image > img {
+        width: 100%;
+    }
 
+   
+</style>
+
+
+<link href="~/plugins/slider/css/slider.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div id="section_banner" class="animatedParent animateOnce">
@@ -138,7 +144,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <img class="img-responsive fadeInUpShort  animated delay-500 go" src="./@Model.TopicViTri.Picture">
+                    <img class="img-responsive fadeInUpShort  animated delay-500 go" data-imagezoom="true" src="./@Model.TopicViTri.Picture">
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.361766432168!2d105.81180261443507!3d20.978130794881803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aceed5b0c0f9%3A0x9360201c0a4b6aea!2sAthena+Fulland!5e0!3m2!1svi!2s!4v1523168870392" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -475,6 +481,8 @@
 <script src="~/plugins/slider/vmc.slide.js"></script>
 <script src="~/plugins/slider/vmc.slide.effects.js"></script>
 
+@*<script src="~/js/zoom/jzoom.js"></script>*@
+<script src="~/js/zoom/imagezoom.js"></script>
 <script>
     $('#slider').vmcSlide({
         duration: 1000,
@@ -501,8 +509,9 @@
             return false;
         }
     }
+    //$('.jzoom').jzoom({ bgColor: "#222" });
     $(document).ready(function () {
-
+       
         var isSubmit = false;
         $('.btnform').click(function () {
             debugger

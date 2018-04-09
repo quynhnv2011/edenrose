@@ -353,7 +353,9 @@
     <Content Include="js\slider\revolution.extension.layeranimation.min.js" />
     <Content Include="js\slider\revolution.extension.navigation.min.js" />
     <Content Include="js\slider\revolution.extension.slideanims.min.js" />
+    <Content Include="js\zoom\imagezoom.js" />
     <Content Include="js\zoom\jquery.js" />
+    <Content Include="js\zoom\jzoom.js" />
     <Content Include="js\zoom\setup.js" />
     <Content Include="js\zoom\xzoom.min.js" />
     <Content Include="plugins\ckeditor\adapters\jquery.js" />
