@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="~/image/edenrose_logo.jpg" rel="shortcut icon">
+    <link href="~/image/athena-fulland-logo.png" rel="shortcut icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="title" content="@Edenrose.web.Global.SessionInfo.Title">
     <meta name="description" content="@Edenrose.web.Global.SessionInfo.Description">
@@ -13,15 +13,25 @@
     <meta property="og:description" content="@Edenrose.web.Global.SessionInfo.Description">
     <meta property="og:url" content="http://edenrosehanoi.vn/">
     <meta property="og:site_name" content="@Edenrose.web.Global.SessionInfo.Title">
+    <meta name="google-site-verification" content="_tHHnTxMCDjUhl9-2W5sAM1_Kee8S0yXj9t87tLUIhg" />
+    <link rel="alternate" href="http://edenrosehanoi.vn/" hreflang="vi-vn" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/css/style.css" data-minify="1" type="text/css">
     <link href="~/Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <link href="~/Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
-    <script src="~/js/jquery.fancybox.pack.js"></script>
-    <title>Dự án Biệt thự THE EDEN ROSE Hà Nội</title>
+  
+    <title>Dự án chung cư Athana Fulland</title>
     
-   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115986985-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115986985-1');
+    </script>
 </head>
 <body class="home blog">
     <header class="page-header navbar navbar-inverse">
@@ -119,7 +129,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-5">
                     <div class="copy-right">
-                        © 2018 The Eden Rose. All Rights Reserved.
+                        © 2018 Athena Fulland. All Rights Reserved.
                         <div class="clearfix visible-xs visible-sm"></div>
                     </div>
                 </div>
@@ -141,11 +151,10 @@
         </a>
     </div>
     <div id="top"></div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
     <script src="~/Scripts/js/homepage.js"></script>
-
     @RenderSection("scripts", required: false)
     <script>
         function validatePhone(txtPhone) {
@@ -160,7 +169,6 @@
         $(document).ready(function () {
             var isSubmit = false;
             $('.btnformlayout').click(function () {
-                debugger
                 $('.btnformlayout').prop('disabled', true);
                 var name = $('#txtNameLayout').val();
                 if (name == null || name.trim() == "") {

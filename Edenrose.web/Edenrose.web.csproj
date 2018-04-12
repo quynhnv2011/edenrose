@@ -355,6 +355,7 @@
     <Content Include="js\slider\revolution.extension.slideanims.min.js" />
     <Content Include="js\zoom\imagezoom.js" />
     <Content Include="js\zoom\jquery.js" />
+    <Content Include="js\zoom\jquery.wm-zoom-1.0.js" />
     <Content Include="js\zoom\jzoom.js" />
     <Content Include="js\zoom\setup.js" />
     <Content Include="js\zoom\xzoom.min.js" />

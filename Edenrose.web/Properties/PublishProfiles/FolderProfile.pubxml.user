@@ -24,6 +24,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/Admin/Views/BangGia/Index.cshtml">
       <publishTime>03/15/2018 21:44:14</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/Banner/Index.cshtml">
+      <publishTime>04/03/2018 19:22:08</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Banner/_GetListPicture.cshtml">
+      <publishTime>04/03/2018 19:25:22</publishTime>
+    </File>
     <File Include="Areas/Admin/Views/ChinhSach/Create.cshtml">
       <publishTime>03/05/2018 20:52:06</publishTime>
     </File>
@@ -31,7 +37,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2018 20:53:36</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Config/CauHinhSeo.cshtml">
-      <publishTime>03/15/2018 20:45:31</publishTime>
+      <publishTime>03/15/2018 22:24:57</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Config/Create.cshtml">
       <publishTime>03/08/2018 14:31:46</publishTime>
@@ -55,19 +61,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2018 14:52:02</publishTime>
     </File>
     <File Include="Areas/Admin/Views/SanPham/Create.cshtml">
-      <publishTime>03/06/2018 09:38:37</publishTime>
+      <publishTime>04/03/2018 20:10:51</publishTime>
     </File>
     <File Include="Areas/Admin/Views/SanPham/Index.cshtml">
       <publishTime>03/05/2018 23:39:56</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/SanPham/_GetListPicture.cshtml">
+      <publishTime>04/03/2018 19:56:19</publishTime>
+    </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>03/15/2018 20:57:18</publishTime>
+      <publishTime>04/03/2018 19:21:35</publishTime>
     </File>
     <File Include="Areas/Admin/Views/TienIch/Index.cshtml">
       <publishTime>03/05/2018 22:05:23</publishTime>
     </File>
     <File Include="Areas/Admin/Views/TienIch/_GetListPicture.cshtml">
-      <publishTime>03/01/2018 11:51:47</publishTime>
+      <publishTime>01/03/2018 11:51:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/TongQuan/Create.cshtml">
       <publishTime>03/05/2018 21:51:12</publishTime>
@@ -79,7 +88,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2018 22:03:22</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
-      <publishTime>02/25/2018 10:42:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="BangGia/Diffusers-brochure-6582.pdf">
       <publishTime>03/07/2018 11:34:24</publishTime>
@@ -97,31 +106,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 10:16:51</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
-      <publishTime>12/06/2017 15:08:08</publishTime>
+      <publishTime>06/12/2017 15:08:08</publishTime>
     </File>
     <File Include="bin/CKFinder.dll">
       <publishTime>10/27/2017 13:40:32</publishTime>
     </File>
     <File Include="bin/Edenrose.Common.dll">
-      <publishTime>03/15/2018 21:55:17</publishTime>
+      <publishTime>04/10/2018 09:48:15</publishTime>
     </File>
     <File Include="bin/Edenrose.Common.pdb">
-      <publishTime>03/15/2018 21:55:17</publishTime>
+      <publishTime>04/10/2018 09:48:15</publishTime>
     </File>
     <File Include="bin/Edenrose.Data.dll">
-      <publishTime>03/15/2018 21:55:18</publishTime>
+      <publishTime>04/10/2018 09:48:17</publishTime>
     </File>
     <File Include="bin/Edenrose.Data.dll.config">
-      <publishTime>03/06/2018 15:44:25</publishTime>
+      <publishTime>03/28/2018 20:52:51</publishTime>
     </File>
     <File Include="bin/Edenrose.Data.pdb">
-      <publishTime>03/15/2018 21:55:18</publishTime>
+      <publishTime>04/10/2018 09:48:17</publishTime>
     </File>
     <File Include="bin/Edenrose.web.dll">
-      <publishTime>03/15/2018 22:03:18</publishTime>
+      <publishTime>04/10/2018 09:48:29</publishTime>
     </File>
     <File Include="bin/Edenrose.web.pdb">
-      <publishTime>03/15/2018 22:03:18</publishTime>
+      <publishTime>04/10/2018 09:48:29</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -130,40 +139,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2017 13:15:20</publishTime>
     </File>
     <File Include="bin/Ionic.Zip.dll">
-      <publishTime>11/22/2017 14:06:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>12/01/2016 06:07:42</publishTime>
+      <publishTime>01/12/2016 06:07:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>12/08/2016 01:45:42</publishTime>
+      <publishTime>08/12/2016 01:45:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>12/08/2016 01:50:34</publishTime>
+      <publishTime>08/12/2016 01:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>12/07/2016 05:15:48</publishTime>
+      <publishTime>07/12/2016 05:15:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>12/08/2016 01:49:10</publishTime>
+      <publishTime>08/12/2016 01:49:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>12/08/2016 01:50:34</publishTime>
+      <publishTime>08/12/2016 01:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>12/07/2016 05:09:52</publishTime>
+      <publishTime>07/12/2016 05:09:52</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/05/2017 23:59:26</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>01/06/2012 01:08:46</publishTime>
+      <publishTime>06/01/2012 01:08:46</publishTime>
     </File>
     <File Include="bin/Microsoft.Win32.Primitives.dll">
-      <publishTime>06/12/2016 13:13:34</publishTime>
+      <publishTime>12/06/2016 13:13:34</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/04/2014 10:33:56</publishTime>
+      <publishTime>04/08/2014 10:33:56</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/13/2017 15:47:48</publishTime>
@@ -310,49 +319,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2017 15:47:48</publishTime>
     </File>
     <File Include="bin/System.AppContext.dll">
-      <publishTime>06/12/2016 13:13:20</publishTime>
+      <publishTime>12/06/2016 13:13:20</publishTime>
     </File>
     <File Include="bin/System.Console.dll">
-      <publishTime>06/12/2016 13:13:26</publishTime>
+      <publishTime>12/06/2016 13:13:26</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
-      <publishTime>06/12/2016 13:13:28</publishTime>
+      <publishTime>12/06/2016 13:13:28</publishTime>
     </File>
     <File Include="bin/System.Globalization.Calendars.dll">
-      <publishTime>06/12/2016 13:13:44</publishTime>
+      <publishTime>12/06/2016 13:13:44</publishTime>
     </File>
     <File Include="bin/System.IO.Compression.dll">
-      <publishTime>06/12/2016 13:13:46</publishTime>
+      <publishTime>12/06/2016 13:13:46</publishTime>
     </File>
     <File Include="bin/System.IO.Compression.ZipFile.dll">
-      <publishTime>06/12/2016 13:13:42</publishTime>
+      <publishTime>12/06/2016 13:13:42</publishTime>
     </File>
     <File Include="bin/System.IO.FileSystem.dll">
-      <publishTime>06/12/2016 13:13:50</publishTime>
+      <publishTime>12/06/2016 13:13:50</publishTime>
     </File>
     <File Include="bin/System.IO.FileSystem.Primitives.dll">
-      <publishTime>06/12/2016 13:13:46</publishTime>
+      <publishTime>12/06/2016 13:13:46</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
-      <publishTime>06/12/2016 13:13:58</publishTime>
+      <publishTime>12/06/2016 13:13:58</publishTime>
     </File>
     <File Include="bin/System.Net.Sockets.dll">
-      <publishTime>06/12/2016 13:14:14</publishTime>
+      <publishTime>12/06/2016 13:14:14</publishTime>
     </File>
     <File Include="bin/System.Runtime.InteropServices.RuntimeInformation.dll">
-      <publishTime>06/12/2016 13:14:28</publishTime>
+      <publishTime>12/06/2016 13:14:28</publishTime>
     </File>
     <File Include="bin/System.Security.Cryptography.Algorithms.dll">
-      <publishTime>06/12/2016 13:14:42</publishTime>
+      <publishTime>12/06/2016 13:14:42</publishTime>
     </File>
     <File Include="bin/System.Security.Cryptography.Encoding.dll">
-      <publishTime>06/12/2016 13:14:38</publishTime>
+      <publishTime>12/06/2016 13:14:38</publishTime>
     </File>
     <File Include="bin/System.Security.Cryptography.Primitives.dll">
-      <publishTime>06/12/2016 13:14:42</publishTime>
+      <publishTime>12/06/2016 13:14:42</publishTime>
     </File>
     <File Include="bin/System.Security.Cryptography.X509Certificates.dll">
-      <publishTime>06/12/2016 13:14:46</publishTime>
+      <publishTime>12/06/2016 13:14:46</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 18:04:30</publishTime>
@@ -361,7 +370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 18:02:18</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>02/12/2014 05:26:04</publishTime>
+      <publishTime>12/02/2014 05:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>01/28/2015 18:02:32</publishTime>
@@ -376,7 +385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 18:04:30</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>09/11/2013 07:28:38</publishTime>
+      <publishTime>11/09/2013 07:28:38</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
       <publishTime>02/25/2018 10:16:45</publishTime>
@@ -397,7 +406,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 10:21:03</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>03/15/2018 19:22:36</publishTime>
+      <publishTime>04/09/2018 20:26:46</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.ttf">
       <publishTime>02/25/2018 10:30:46</publishTime>
@@ -477,6 +486,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/Site.css">
       <publishTime>02/25/2018 10:16:42</publishTime>
     </File>
+    <File Include="css/ArticleCss.css">
+      <publishTime>04/09/2018 21:01:20</publishTime>
+    </File>
     <File Include="css/bootstrap-multiselect.css">
       <publishTime>02/25/2018 10:47:53</publishTime>
     </File>
@@ -491,6 +503,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="css/font-awesome.min.css">
       <publishTime>02/25/2018 11:40:04</publishTime>
+    </File>
+    <File Include="css/jquery.spzoom.css">
+      <publishTime>03/28/2018 23:19:08</publishTime>
     </File>
     <File Include="css/ListTinTuc.css">
       <publishTime>03/07/2018 09:56:00</publishTime>
@@ -512,6 +527,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="css/styles-tintuc.css">
       <publishTime>03/06/2018 08:48:52</publishTime>
+    </File>
+    <File Include="css/zoom/xzoom.css">
+      <publishTime>03/28/2018 23:44:00</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>02/25/2018 10:16:42</publishTime>
@@ -552,35 +570,38 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="image/ajax-loader.gif">
       <publishTime>03/06/2018 08:48:36</publishTime>
     </File>
+    <File Include="image/athena-fulland-logo.png">
+      <publishTime>04/03/2018 20:21:43</publishTime>
+    </File>
     <File Include="image/background-top.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/bg-dk.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/bg-register.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/bg_contact.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/blank.gif">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/edenrose_logo.jpg">
       <publishTime>03/12/2018 10:27:32</publishTime>
     </File>
     <File Include="image/fancybox_loading.gif">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/fancybox_overlay.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/fancybox_sprite.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/ico-close.svg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/ico-hotline.png">
       <publishTime>03/06/2018 08:49:51</publishTime>
@@ -589,34 +610,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/15/2018 19:21:37</publishTime>
     </File>
     <File Include="image/icon-next.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/icon-zoom.svg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/khu-vui-choi-the-eden-rose.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/logo2.png">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/overlay-01.png">
       <publishTime>03/06/2018 08:50:43</publishTime>
     </File>
     <File Include="image/TheEdenRose-BT-13.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/tien-ich2.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/tien-ich2_1.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/vi-tri.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="image/vimefulland.jpg">
-      <publishTime>02/25/2018 10:33:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="image/xloading.gif">
+      <publishTime>03/28/2018 23:43:42</publishTime>
     </File>
     <File Include="js/app.config.js">
       <publishTime>02/25/2018 11:26:25</publishTime>
@@ -674,6 +698,36 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="js/reset.js">
       <publishTime>02/25/2018 11:26:25</publishTime>
+    </File>
+    <File Include="js/slider/revolution.extension.actions.min.js">
+      <publishTime>03/28/2018 20:55:05</publishTime>
+    </File>
+    <File Include="js/slider/revolution.extension.layeranimation.min.js">
+      <publishTime>03/28/2018 20:55:37</publishTime>
+    </File>
+    <File Include="js/slider/revolution.extension.navigation.min.js">
+      <publishTime>03/28/2018 20:56:14</publishTime>
+    </File>
+    <File Include="js/slider/revolution.extension.slideanims.min.js">
+      <publishTime>03/28/2018 20:54:39</publishTime>
+    </File>
+    <File Include="js/zoom/imagezoom.js">
+      <publishTime>04/09/2018 20:53:20</publishTime>
+    </File>
+    <File Include="js/zoom/jquery.js">
+      <publishTime>03/28/2018 23:48:48</publishTime>
+    </File>
+    <File Include="js/zoom/jquery.wm-zoom-1.0.js">
+      <publishTime>04/09/2018 18:59:28</publishTime>
+    </File>
+    <File Include="js/zoom/jzoom.js">
+      <publishTime>04/09/2018 09:42:17</publishTime>
+    </File>
+    <File Include="js/zoom/setup.js">
+      <publishTime>03/28/2018 23:38:46</publishTime>
+    </File>
+    <File Include="js/zoom/xzoom.min.js">
+      <publishTime>03/28/2018 23:38:20</publishTime>
     </File>
     <File Include="plugins/ckeditor/adapters/jquery.js">
       <publishTime>02/25/2018 13:28:58</publishTime>
@@ -1690,283 +1744,283 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 13:28:59</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/dialog/dialog.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/divreplace.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/enterkey/enterkey.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/htmlwriter/assets/outputforflash/swfobject.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/htmlwriter/outputforflash.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/htmlwriter/outputhtml.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/index.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/inlineall.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/inlinebycode.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/inlinetextarea.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/jquery.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/magicline/magicline.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/readonly.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/replacebyclass.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/replacebycode.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/sample.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/sample.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/sample_posteddata.php">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/tabindex.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/toolbar/toolbar.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/uicolor.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/uilanguages.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/wysiwygarea/fullpage.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/old/xhtmlstyle.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/css/fontello.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/config.json">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/fontello.eot">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/fontello.svg">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/fontello.ttf">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/fontello.woff">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/font/LICENSE.txt">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/index.html">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/dialog.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/dialog_ie.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/dialog_ie8.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/dialog_iequirks.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/editor.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/editor_gecko.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/editor_ie.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/editor_ie8.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/editor_iequirks.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/icons.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/icons_hidpi.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/arrow.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/close.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/hidpi/close.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/hidpi/lock-open.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/hidpi/lock.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/hidpi/refresh.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/lock-open.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/lock.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/refresh.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/images/spinner.gif">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono-lisa/readme.md">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/dialog.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/dialog_ie.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/dialog_ie7.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/dialog_ie8.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/dialog_iequirks.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor_gecko.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor_ie.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor_ie7.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor_ie8.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/editor_iequirks.css">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/icons.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/icons_hidpi.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/arrow.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/close.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/hidpi/close.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/hidpi/lock-open.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/hidpi/lock.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/hidpi/refresh.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/lock-open.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/lock.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/refresh.png">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/spinner.gif">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/images/Thumbs.db">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/skins/moono/readme.md">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckeditor/styles.js">
-      <publishTime>02/25/2018 13:29:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="plugins/ckfinder/changelog.txt">
       <publishTime>02/25/2018 13:38:38</publishTime>
@@ -3789,6 +3843,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="plugins/dropzone/images/spritemap.png">
       <publishTime>02/25/2018 13:29:04</publishTime>
     </File>
+    <File Include="plugins/slider/css/next.gif">
+      <publishTime>04/03/2018 20:36:10</publishTime>
+    </File>
+    <File Include="plugins/slider/css/prev.gif">
+      <publishTime>04/03/2018 20:36:10</publishTime>
+    </File>
+    <File Include="plugins/slider/css/slider.css">
+      <publishTime>04/03/2018 20:57:15</publishTime>
+    </File>
+    <File Include="plugins/slider/vmc.slide.effects.js">
+      <publishTime>04/03/2018 20:36:10</publishTime>
+    </File>
+    <File Include="plugins/slider/vmc.slide.js">
+      <publishTime>04/03/2018 20:36:08</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>02/25/2018 10:16:45</publishTime>
     </File>
@@ -3803,6 +3872,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
       <publishTime>02/25/2018 10:16:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.3.min.js">
+      <publishTime>04/03/2018 21:35:05</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
       <publishTime>02/25/2018 10:16:49</publishTime>
@@ -3841,7 +3913,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 10:16:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/12/2018 10:34:37</publishTime>
+      <publishTime>04/09/2018 21:04:28</publishTime>
     </File>
     <File Include="Views/Partial/_ConfirmForm.cshtml">
       <publishTime>02/25/2018 11:16:50</publishTime>
@@ -3850,10 +3922,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 10:16:42</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/15/2018 20:52:15</publishTime>
+      <publishTime>04/09/2018 21:05:37</publishTime>
     </File>
     <File Include="Views/TinTuc/Details.cshtml">
-      <publishTime>03/06/2018 15:12:03</publishTime>
+      <publishTime>04/08/2018 17:47:59</publishTime>
     </File>
     <File Include="Views/TinTuc/Index.cshtml">
       <publishTime>03/07/2018 14:57:38</publishTime>
@@ -3865,7 +3937,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2018 10:16:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/15/2018 22:02:56</publishTime>
+      <publishTime>04/10/2018 09:48:39</publishTime>
     </File>
   </ItemGroup>
 </Project>
