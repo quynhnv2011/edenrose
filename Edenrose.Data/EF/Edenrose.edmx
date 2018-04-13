@@ -34,7 +34,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="200" />
-          <Property Name="Value" Type="nvarchar" MaxLength="500" />
+          <Property Name="Value" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Picture">
           <Key>
@@ -85,10 +85,10 @@
       <Schema Namespace="EdenroseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EdenroseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Articles" EntityType="EdenroseModel.Article" />
-          <EntitySet Name="Configs" EntityType="EdenroseModel.Config" />
           <EntitySet Name="Resignations" EntityType="EdenroseModel.Resignation" />
           <EntitySet Name="Topics" EntityType="EdenroseModel.Topic" />
           <EntitySet Name="Pictures" EntityType="EdenroseModel.Picture" />
+          <EntitySet Name="Configs" EntityType="EdenroseModel.Config" />
         </EntityContainer>
         <EntityType Name="Article">
           <Key>
@@ -112,14 +112,6 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="Deleted" Type="Boolean" />
           <Property Name="IsShow" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Config">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Value" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Resignation">
           <Key>
@@ -157,6 +149,14 @@
           <Property Name="Key" Type="Int32" />
           <Property Name="DisplayOrder" Type="Int32" />
         </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -183,15 +183,6 @@
                 <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="TitleHome" ColumnName="TitleHome" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Configs">
-            <EntityTypeMapping TypeName="EdenroseModel.Config">
-              <MappingFragment StoreEntitySet="Config">
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -231,6 +222,15 @@
                 <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configs">
+            <EntityTypeMapping TypeName="EdenroseModel.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

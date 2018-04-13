@@ -2,10 +2,10 @@
 <Schema Namespace="EdenroseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="EdenroseEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Articles" EntityType="EdenroseModel.Article" />
-    <EntitySet Name="Configs" EntityType="EdenroseModel.Config" />
     <EntitySet Name="Resignations" EntityType="EdenroseModel.Resignation" />
     <EntitySet Name="Topics" EntityType="EdenroseModel.Topic" />
     <EntitySet Name="Pictures" EntityType="EdenroseModel.Picture" />
+    <EntitySet Name="Configs" EntityType="EdenroseModel.Config" />
   </EntityContainer>
   <EntityType Name="Article">
     <Key>
@@ -29,14 +29,6 @@
     <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
     <Property Name="Deleted" Type="Boolean" />
     <Property Name="IsShow" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="Config">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Value" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Resignation">
     <Key>
@@ -73,5 +65,13 @@
     <Property Name="ReferenceId" Type="Int32" />
     <Property Name="Key" Type="Int32" />
     <Property Name="DisplayOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

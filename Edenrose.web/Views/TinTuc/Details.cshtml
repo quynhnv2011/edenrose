@@ -87,7 +87,7 @@
                             <form action="#" method="post" class="wpcf7-form invalid" novalidate="novalidate">
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-name">
-                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên*">
+                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên">
                                         <span role="alert" id="txtNameNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
                                     </span>
                                 </p>
@@ -99,7 +99,7 @@
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-phone">
-                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại*">
+                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại">
                                         <span role="alert" id="txtPhoneNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
                                     </span>
                                 </p>
@@ -152,12 +152,12 @@
             debugger
             $('.btnform').prop('disabled', true);
             var name = $('#txtName').val();
-            if (name == null || name.trim() == "") {
-                $('#txtNameNoti').show();
-                return false;
-            } else {
-                $('#txtNameNoti').hide();
-            }
+            //if (name == null || name.trim() == "") {
+            //    $('#txtNameNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtNameNoti').hide();
+            //}
             var email = $('#txtEmail').val();
             if (email == null || email.trim() == "") {
                 $('#txtEmailNoti').show();
@@ -167,19 +167,19 @@
             }
 
             var phone = $('#txtPhone').val();
-            if (phone == null || phone.trim() == "") {
-                $('#txtPhoneNoti').show();
-                return false;
-            } else {
-                $('#txtPhoneNoti').hide();
-            }
-            if (!validatePhone(phone)) {
-                $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
-                $('#notifi').show();
-                return false;
-            } else {
-                $('#notifi').text('');
-            }
+            //if (phone == null || phone.trim() == "") {
+            //    $('#txtPhoneNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtPhoneNoti').hide();
+            //}
+            //if (!validatePhone(phone)) {
+            //    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+            //    $('#notifi').show();
+            //    return false;
+            //} else {
+            //    $('#notifi').text('');
+            //}
 
             $.ajax({
                 url: '../TinTuc/Resign',
@@ -191,7 +191,6 @@
                     name: name
                 },
                 success: function (response) {
-
                     $('#notifi').text('Đăng ký nhận thông tin thành công!')
                     $('#notifi').show();
                     $('.btnform').removeAttr('disabled');

@@ -111,24 +111,84 @@ namespace Edenrose.web.Areas.Admin.Controllers
 
         public ActionResult Banner()
         {
-            var model = _topicService.GetByKey((int)TypeTopic.TienIch);
-            if (model == null || model.id == 0)
-            {
-                model = new Topic();
-                model.key = (int)TypeTopic.TienIch;
-                model.ListPicture = new List<Picture>();
-            }
-            model.ListPicture.ForEach(x => x.TmpId = Guid.NewGuid().ToString());
-            Session["ListPicture"] = model.ListPicture;
-            return View(model);
-
-            //var model = _configService.GetbyKey("banner");
-            //if (model == null)
+            //var model = _topicService.GetByKey((int)TypeTopic.TienIch);
+            //if (model == null || model.id == 0)
             //{
-            //    model = new Config();
-            //    model.Name = "banner";
-            //};
-            //return View("_CreateFile", model);
+            //    model = new Topic();
+            //    model.key = (int)TypeTopic.TienIch;
+            //    model.ListPicture = new List<Picture>();
+            //}
+            //model.ListPicture.ForEach(x => x.TmpId = Guid.NewGuid().ToString());
+            //Session["ListPicture"] = model.ListPicture;
+            //return View(model);
+
+            var model = _configService.GetbyKey("banner");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "banner";
+            };
+            return View("_CreateFile", model);
+        }
+
+        public ActionResult NoiDungEmai()
+        {
+            //var model = _topicService.GetByKey((int)TypeTopic.TienIch);
+            //if (model == null || model.id == 0)
+            //{
+            //    model = new Topic();
+            //    model.key = (int)TypeTopic.TienIch;
+            //    model.ListPicture = new List<Picture>();
+            //}
+            //model.ListPicture.ForEach(x => x.TmpId = Guid.NewGuid().ToString());
+            //Session["ListPicture"] = model.ListPicture;
+            //return View(model);
+
+            var model = _configService.GetbyKey("EmailContain");
+            if (model == null)
+            {
+                model = new Config();
+                model.Name = "EmailContain";
+            };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult NoiDungEmai(Config model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (model != null)
+                    {
+                        if (model.id == 0)
+                        {
+
+                            var result = _configService.Add(model);
+                            if (result)
+                                TempData["SuccessMsg"] = "Thêm mới cấu hình thành công";
+                            else
+                                TempData["ErrorMsg"] = "Thêm mới cấu hình thất bại";
+                        }
+                        else
+                        {
+                            var result = _configService.Update(model);
+                            if (result)
+                                TempData["SuccessMsg"] = "Cập nhật cấu hình thành công";
+                            else
+                                TempData["ErrorMsg"] = "Cập nhật cấu hình thất bại";
+                        }
+                        return Redirect(model.Name.Trim().ToLower());
+                    }
+                    return Json(GetBaseObjectResult(false, "Thực hiện thất bại"));
+                }
+                catch (Exception ex)
+                {
+                    return Json(GetBaseObjectResult(false, "Xảy ra lỗi. Bạn vui lòng thử lại sau !"));
+                }
+            }
+            return Json(GetBaseObjectResult(false, "Dữ liệu không hợp lệ"));
         }
         public ActionResult LogoArticle()
         {
@@ -225,6 +285,8 @@ namespace Edenrose.web.Areas.Admin.Controllers
                     return RedirectToAction("banner", "Config", new { Area = "Admin" });
                 case "logoarticle":
                     return RedirectToAction("logoarticle", "Config", new { Area = "Admin" });
+                case "EmailContain":
+                    return RedirectToAction("NoiDungEmai", "Config", new { Area = "Admin" });
                 default:
                     return RedirectToAction("Index", "Config", new { Area = "Admin" });
 

@@ -6,10 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f40f56cbacc741c58f78da3bd5e3ca8f" Name="Diagram1">
         <EntityTypeShape EntityType="EdenroseModel.Article" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EdenroseModel.Config" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="EdenroseModel.Resignation" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="EdenroseModel.Topic" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="EdenroseModel.Picture" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EdenroseModel.Config" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

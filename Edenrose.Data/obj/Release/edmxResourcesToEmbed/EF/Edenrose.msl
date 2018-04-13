@@ -25,15 +25,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Configs">
-      <EntityTypeMapping TypeName="EdenroseModel.Config">
-        <MappingFragment StoreEntitySet="Config">
-          <ScalarProperty Name="Value" ColumnName="Value" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Resignations">
       <EntityTypeMapping TypeName="EdenroseModel.Resignation">
         <MappingFragment StoreEntitySet="Resignation">
@@ -69,6 +60,15 @@
           <ScalarProperty Name="ReferenceId" ColumnName="ReferenceId" />
           <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="EdenroseModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

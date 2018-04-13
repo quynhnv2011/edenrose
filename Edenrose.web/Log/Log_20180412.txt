@@ -1,0 +1,154 @@
+--------- 14:10:42 ---------
+Ref URL: http://edenrose.local:86/Admin/DanhSachDangKy
+Host: edenrose.local:86
+URL: /Admin/Config/Banner
+IP: 127.0.0.1
+Error: The view 'Banner' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/Config/Banner.aspx
+~/Areas/Admin/Views/Config/Banner.ascx
+~/Areas/Admin/Views/Shared/Banner.aspx
+~/Areas/Admin/Views/Shared/Banner.ascx
+~/Views/Config/Banner.aspx
+~/Views/Config/Banner.ascx
+~/Views/Shared/Banner.aspx
+~/Views/Shared/Banner.ascx
+~/Areas/Admin/Views/Config/Banner.cshtml
+~/Areas/Admin/Views/Config/Banner.vbhtml
+~/Areas/Admin/Views/Shared/Banner.cshtml
+~/Areas/Admin/Views/Shared/Banner.vbhtml
+~/Views/Config/Banner.cshtml
+~/Views/Config/Banner.vbhtml
+~/Views/Shared/Banner.cshtml
+~/Views/Shared/Banner.vbhtml
+Source: System.Web.Mvc
+Trace:    at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException : 
+GetBaseException : System.InvalidOperationException: The view 'Banner' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/Config/Banner.aspx
+~/Areas/Admin/Views/Config/Banner.ascx
+~/Areas/Admin/Views/Shared/Banner.aspx
+~/Areas/Admin/Views/Shared/Banner.ascx
+~/Views/Config/Banner.aspx
+~/Views/Config/Banner.ascx
+~/Views/Shared/Banner.aspx
+~/Views/Shared/Banner.ascx
+~/Areas/Admin/Views/Config/Banner.cshtml
+~/Areas/Admin/Views/Config/Banner.vbhtml
+~/Areas/Admin/Views/Shared/Banner.cshtml
+~/Areas/Admin/Views/Shared/Banner.vbhtml
+~/Views/Config/Banner.cshtml
+~/Views/Config/Banner.vbhtml
+~/Views/Shared/Banner.cshtml
+~/Views/Shared/Banner.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+TargetSite : System.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext)
+--------- 14:11:14 ---------
+Ref URL: 
+Host: edenrose.local:86
+URL: /Admin/Config/Banner
+IP: 127.0.0.1
+Error: The view 'Banner' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/Config/Banner.aspx
+~/Areas/Admin/Views/Config/Banner.ascx
+~/Areas/Admin/Views/Shared/Banner.aspx
+~/Areas/Admin/Views/Shared/Banner.ascx
+~/Views/Config/Banner.aspx
+~/Views/Config/Banner.ascx
+~/Views/Shared/Banner.aspx
+~/Views/Shared/Banner.ascx
+~/Areas/Admin/Views/Config/Banner.cshtml
+~/Areas/Admin/Views/Config/Banner.vbhtml
+~/Areas/Admin/Views/Shared/Banner.cshtml
+~/Areas/Admin/Views/Shared/Banner.vbhtml
+~/Views/Config/Banner.cshtml
+~/Views/Config/Banner.vbhtml
+~/Views/Shared/Banner.cshtml
+~/Views/Shared/Banner.vbhtml
+Source: System.Web.Mvc
+Trace:    at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException : 
+GetBaseException : System.InvalidOperationException: The view 'Banner' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Areas/Admin/Views/Config/Banner.aspx
+~/Areas/Admin/Views/Config/Banner.ascx
+~/Areas/Admin/Views/Shared/Banner.aspx
+~/Areas/Admin/Views/Shared/Banner.ascx
+~/Views/Config/Banner.aspx
+~/Views/Config/Banner.ascx
+~/Views/Shared/Banner.aspx
+~/Views/Shared/Banner.ascx
+~/Areas/Admin/Views/Config/Banner.cshtml
+~/Areas/Admin/Views/Config/Banner.vbhtml
+~/Areas/Admin/Views/Shared/Banner.cshtml
+~/Areas/Admin/Views/Shared/Banner.vbhtml
+~/Views/Config/Banner.cshtml
+~/Views/Config/Banner.vbhtml
+~/Views/Shared/Banner.cshtml
+~/Views/Shared/Banner.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+TargetSite : System.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext)
+--------- 14:54:03 ---------
+Ref URL: http://edenrose.local:86/Admin/Config/NoiDungEmai
+Host: edenrose.local:86
+URL: /Admin/Config/Create
+IP: 127.0.0.1
+Error: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: EntityFramework
+Trace:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 66
+InnerException : 
+GetBaseException : System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 66
+TargetSite : Int32 SaveChanges()
+--------- 15:02:01 ---------
+Ref URL: http://edenrose.local:86/Admin/Config/NoiDungEmai
+Host: edenrose.local:86
+URL: /Admin/Config/NoiDungEmai
+IP: 127.0.0.1
+Error: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: EntityFramework
+Trace:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 66
+InnerException : 
+GetBaseException : System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 66
+TargetSite : Int32 SaveChanges()
+--------- 15:03:56 ---------
+Ref URL: http://localhost:49924/Admin/Config/NoiDungEmai
+Host: localhost:49924
+URL: /Admin/Config/NoiDungEmai
+IP: ::1
+Error: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+Source: EntityFramework
+Trace:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 65
+InnerException : 
+GetBaseException : System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at Edenrose.Data.Service.ConfigService.Add(Config entity) in D:\Edenrose\codegit\edenrose\Edenrose.Data\Service\ConfigService.cs:line 65
+TargetSite : Int32 SaveChanges()

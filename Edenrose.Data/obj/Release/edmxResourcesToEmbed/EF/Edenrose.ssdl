@@ -29,7 +29,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="200" />
-    <Property Name="Value" Type="nvarchar" MaxLength="500" />
+    <Property Name="Value" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Picture">
     <Key>

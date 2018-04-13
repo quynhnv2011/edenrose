@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using Vks.Common.Utils;
@@ -66,8 +67,8 @@ namespace Edenrose.web.Controllers
         }
 
        
-        [HttpGet]
-        public ActionResult Resign(string email, string name, string phone)
+        [HttpPost]
+        public bool Resign(string email, string name, string phone)
         {
             try
             {
@@ -79,44 +80,81 @@ namespace Edenrose.web.Controllers
                     CreatedDate = DateTime.Now
                 };
                 var result = _resignService.Add(obj);
-                var FolderPath = System.Web.HttpContext.Current.Request.MapPath(string.Format("/BangGia"));
 
-                //Define file Type
-                string fileType = "application/octet-stream";
+                //gửi email cho khách hàng
 
-                //Define Output Memory Stream
-                var outputStream = new MemoryStream();
-
-                //Create object of ZipFile library
-                using (ZipFile zipFile = new ZipFile())
+                try
                 {
-                    //Add Root Directory Name "Files" or Any string name
-                    zipFile.AddDirectoryByName("Files");
+                    var noiDungEmail = _configService.GetbyKey("EmailContain").Value;
+                    MailMessage mail = new MailMessage();
+                    mail.To.Add(obj.Email);
+                    mail.From = new MailAddress("noreply.quynhnv@gmail.com");
+                    mail.Body = noiDungEmail;
+                    mail.Subject = "Thông tin dự án ATHENA FULLAND";
+                    mail.IsBodyHtml = true;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new System.Net.NetworkCredential("noreply.quynhnv@gmail.com", "quynhvan"); // Enter seders User name and password  
+                    smtp.EnableSsl = true;
 
-                    //Get all filepath from folder
-                    String[] files = Directory.GetFiles(FolderPath);
-                    foreach (string file in files)
+                    var filePath = System.Web.HttpContext.Current.Request.MapPath(string.Format("/BangGia"));
+                    foreach (var files in Directory.GetFiles(filePath))
                     {
-                        string filePath = file;
-                        //Adding files from filepath into Zip
-                        zipFile.AddFile(filePath, "Files");
+                        //FileInfo info = new FileInfo(files);
+                        //var fileName = Path.GetFileName(info.FullName);
+                        Attachment attachment;
+                        attachment = new Attachment(files);
+                        mail.Attachments.Add(attachment);
                     }
-
-                    Response.ClearContent();
-                    Response.ClearHeaders();
-
-                    //Set zip file name
-                    Response.AppendHeader("content-disposition", "attachment; filename=BangGia.zip");
-
-                    //Save the zip content in output stream
-                    zipFile.Save(outputStream);
+                    smtp.Send(mail);
+                    return true;
                 }
+                catch (Exception ex)
+                {
+                    OutputLog.WriteOutputLog(ex);
+                }
+                return false;
 
-                //Set the cursor to start position
-                outputStream.Position = 0;
+                //var FolderPath = System.Web.HttpContext.Current.Request.MapPath(string.Format("/BangGia"));
 
-                //Dispance the stream
-                return new FileStreamResult(outputStream, fileType);
+                ////Define file Type
+                //string fileType = "application/octet-stream";
+
+                ////Define Output Memory Stream
+                //var outputStream = new MemoryStream();
+
+                ////Create object of ZipFile library
+                //using (ZipFile zipFile = new ZipFile())
+                //{
+                //    //Add Root Directory Name "Files" or Any string name
+                //    zipFile.AddDirectoryByName("Files");
+
+                //    //Get all filepath from folder
+                //    String[] files = Directory.GetFiles(FolderPath);
+                //    foreach (string file in files)
+                //    {
+                //        string filePath = file;
+                //        //Adding files from filepath into Zip
+                //        zipFile.AddFile(filePath, "Files");
+                //    }
+
+                //    Response.ClearContent();
+                //    Response.ClearHeaders();
+
+                //    //Set zip file name
+                //    Response.AppendHeader("content-disposition", "attachment; filename=BangGia.zip");
+
+                //    //Save the zip content in output stream
+                //    zipFile.Save(outputStream);
+                //}
+
+                ////Set the cursor to start position
+                //outputStream.Position = 0;
+
+                ////Dispance the stream
+                //return new FileStreamResult(outputStream, fileType);
             }
             catch(Exception ex)
             {
