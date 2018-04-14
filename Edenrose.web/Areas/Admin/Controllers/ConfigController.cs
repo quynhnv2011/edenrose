@@ -131,7 +131,9 @@ namespace Edenrose.web.Areas.Admin.Controllers
         {
             var model = new SeoConfigItem();
             model.Title = _configService.GetbyKey("title") != null ? _configService.GetbyKey("title").Value : string.Empty;
+            model.IdTitle = _configService.GetbyKey("title").id;
             model.Description = _configService.GetbyKey("description") != null ? _configService.GetbyKey("description").Value: string.Empty;
+            model.IdDescription = _configService.GetbyKey("description").id;
             return View(model);
         }
         [HttpPost]
