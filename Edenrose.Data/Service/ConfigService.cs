@@ -40,7 +40,7 @@ namespace Edenrose.Data.Service
             {
                 return _context.Configs.SingleOrDefault(x => x.Name.Trim().ToLower() == key.Trim().ToLower());
             }
-            catch
+            catch(Exception ex)
             {
                 throw;
             }

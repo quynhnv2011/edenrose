@@ -32,14 +32,14 @@ namespace Edenrose.web.Global
         {
             get
             {
-                return (new ConfigService()).GetbyKey("title").Value;
+                return (new ConfigService()).GetbyKey("title") != null ? (new ConfigService()).GetbyKey("title").Value : string.Empty;
             }
         }
         public static string Description
         {
             get
             {
-                return (new ConfigService()).GetbyKey("description").Value;
+                return (new ConfigService()).GetbyKey("description") != null ? (new ConfigService()).GetbyKey("description").Value: string.Empty;
             }
         }
     }
