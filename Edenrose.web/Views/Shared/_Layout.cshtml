@@ -211,6 +211,7 @@
                     //$('#txtEmailLayout').val('');
                     //$('#txtPhoneLayout').val('');
                     isSubmit = false;
+                    $('.btnformlayout').text("Loading...");
                     $.ajax({
                         url: '../TinTuc/Resign',
                         type: 'post',
@@ -225,6 +226,7 @@
                             $('#notifiLayout').show();
                             $('.btnformlayout').removeAttr('disabled');
                             isSubmit = false;
+                            $('.btnformlayout').text("Nhận thông tin");
                         },
                         error: function () {
                             $('#notifiLayout').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
@@ -232,6 +234,7 @@
                             $('#notifiLayout').show();
                             $('.btnformlayout').removeAttr('disabled');
                             isSubmit = false;
+                            $('.btnformlayout').text("Nhận thông tin");
                         }
                     });
                 }
