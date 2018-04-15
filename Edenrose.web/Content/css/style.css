@@ -22,6 +22,12 @@
         padding-left: 10px
     }
 
+@media (min-width: 992px) {
+    .img-logo {
+        padding-left: 80px !important;
+    }
+}
+
 .gutter-5 {
     margin-left: -5px;
     margin-right: -5px

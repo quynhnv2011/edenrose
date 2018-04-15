@@ -11,7 +11,8 @@ namespace Edenrose.Common.Enum
         TongQuan = 1,
         SanPham = 2,
         ChinhSach = 3,
-        TinTuc = 4
+        TinTuc = 4,
+        BangGia = 5
     }
     public enum TypeTopic
     {

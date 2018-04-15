@@ -41,12 +41,12 @@ namespace Edenrose.Data.Service
                 throw ex;
             }
         }
-        public List<Article> GetData(int pageIndex, int pageSize, out int totalItem)
+        public List<Article> GetData(int pageIndex, int pageSize, out int totalItem, int typeArticle = (int)TypeArticle.TinTuc)
         {
             try
             {
               
-                var lstData = _context.Articles.Where(p => p.TypeArticle == (int)TypeArticle.TinTuc && p.Deleted != true);
+                var lstData = _context.Articles.Where(p => p.TypeArticle == typeArticle && p.Deleted != true);
                 totalItem = lstData.Count();
                 lstData = lstData.OrderBy(t => t.CreatedDate);
                 if (totalItem > ((pageIndex - 1) * pageSize))
@@ -198,11 +198,11 @@ namespace Edenrose.Data.Service
             }
         }
 
-        public List<Article> GetDataNew()
+        public List<Article> GetDataNew(int typeArticle = (int)TypeArticle.TinTuc)
         {
             try
             {
-                var lstData = _context.Articles.Where(x => x.TypeArticle == (int)TypeArticle.TinTuc && x.Deleted != true && x.IsShow == true);
+                var lstData = _context.Articles.Where(x => x.TypeArticle == typeArticle && x.Deleted != true && x.IsShow == true);
                 return lstData.OrderByDescending(m => m.CreatedDate).Take(10).ToList();
             }
             catch (Exception ex)

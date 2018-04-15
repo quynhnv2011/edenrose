@@ -1,13 +1,43 @@
 ﻿@model Edenrose.web.Models.HomeViewModel
 @{
-    ViewBag.Title = "Dự án Biệt thự THE EDEN ROSE Hà Nội";
+    ViewBag.Title = "Dự án biệt thự, liền kề";
 }
 
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        /*font-weight: 700;*/
+    }
+    .thumb-image > img {
+        width: 100%;
+    }
+
+   
+</style>
+
+
+@*<link href="~/plugins/slider/css/slider.css" rel="stylesheet" />*@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div id="section_banner" class="animatedParent animateOnce">
     <a href="/#section_register">
         <img src="@Model.banner">
     </a>
 </div>
+@*<div id="section_banner" class="animatedParent animateOnce">
+    <div id="slider" style="height:510px">
+        <ul>
+            @if (Model.ListBanner != null && Model.ListBanner.Count > 0)
+            {
+                for (int i = 0; i < Model.ListBanner.Count; i++)
+                {
+                    <li><a style="max-width: 100%; height: auto" href="#"><img class="id" src="./@Model.ListBanner[i].Url" /></a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>*@
+
 <div id="section_about" class="animatedParent animateOnce">
     <div class="container">
         <div class="row">
@@ -19,20 +49,18 @@
                     @Html.Raw(Model.ListTongQuan[0].ShortDescription)
                 </div>
                 <div class="text-center">
-                    <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                    <a href="/bang-gia/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                         <div class="btn-text">
                             <span>XEM CHI TIẾT</span>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 video" >
-                <video controls="controls" class=" fadeInRightShort  animated delay-500 go" width='555' style="width:100%; height: auto;" autoplay="autoplay">
-                    <source src="~/video/video-tien-ich.mp4" type="video/mp4" />
-                </video>
-               @* <video id='videoobj' class=" fadeInRightShort  animated delay-500 go" width='555' height='377' type='video/mp4' src='~/video/video-tien-ich.mp4' />*@
-            
-               @*  <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">*@
+            <div class="col-sm-12 col-md-6 video">
+                @*<video controls="controls" class=" fadeInRightShort  animated delay-500 go" width='555' style="width:100%; height: auto;" autoplay="autoplay">
+                        <source src="~/video/video-tien-ich.mp4" type="video/mp4" />
+                    </video>*@
+                <img class="img-responsive fadeInRightShort  animated delay-500 go" src="./@Model.ListTongQuan[0].Picture">
             </div><div class="clearfix"></div>
         </div>
         <div class="row" style="padding-top: 20px;">
@@ -47,7 +75,7 @@
                         </div>
                         @Html.Raw(Model.ListTongQuan[1].ShortDescription)
                         <div class="text-center">
-                            <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                            <a href="/bang-gia/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                                 <div class="btn-text"><span>TÌM HIỂU THÊM</span></div>
                             </a>
                         </div>
@@ -75,7 +103,7 @@
                     <form action="/" method="post" class="wpcf7-form" novalidate="novalidate">
                         <p>
                             <span class="wpcf7-form-control-wrap your-name">
-                                <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên*">
+                                <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên">
                                 <span role="alert" id="txtNameNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
                             </span>
                         </p>
@@ -87,7 +115,7 @@
                         </p>
                         <p>
                             <span class="wpcf7-form-control-wrap your-phone">
-                                <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại*">
+                                <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại">
                                 <span role="alert" id="txtPhoneNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
                             </span>
                         </p>
@@ -118,7 +146,25 @@
         </div>
     </div>
     <div class="block-content animatedParent animateOnce">
-        <div class="container"> <img class="img-responsive fadeInUpShort  animated delay-500 go" src="./@Model.TopicViTri.Picture"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <img class="img-responsive fadeInUpShort  animated delay-500 go" data-imagezoom="true" src="./@Model.TopicViTri.Picture">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div style="padding-top: 30px">
+                        @Html.Raw(Model.TopicViTri.ContentDetail)
+                        @*<ul>
+                            <h3>DỰ ÁN ATHENA FULLAND</h3>
+                            <li><strong>BIỆT THỰ, LIỀN KỀ: DIỆN TÍCH 27HA</strong></li>
+                            <li><strong>MẶT ĐƯỜNG VÀNH ĐAI 3 - ĐẠI KIM, HOÀNG MAI</strong></li>
+                            <li><strong>SỔ ĐỎ VĨNH VIỄN</strong></li>
+                        </ul>*@
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div id="section_utilities">
@@ -137,12 +183,6 @@
                 <div class="col-md-4 left_utilities" style="text-align:justify;">
                     <div class="fadeInLeftShort  animated delay-500 go">
                         @Html.Raw(Model.TopicTienIch.ShortDescription)
-                        @*<p class="des_utility">
-
-                            Với định hướng kiến trúc sinh thái cùng nỗ lực mang đến cho cư dân một cuộc sống hoàn hảo, Vimefulland đã khai thác tối đa diện tích các ô đất quy hoạch, thiết kế chuỗi không gian sinh thái phủ xanh tới 30% diện tích với công viên trung tâm, hồ điều hòa, vườn dạo bộ và khu tập dưỡng sinh.</p>
-                            <p>Đặc biệt, chủ đầu tư Vimefulland cân nhắc kỹ lưỡng việc lựa chọn cây và hoa xen kẽ để cư dân biệt thự liền kề The Eden Rose luôn tận hưởng sắc hoa khắp 4 mùa.</p>
-                            <p>Tại The Eden Rose cũng quy tụ đầy đủ tiện ích giáo dục, thương mại, chăm sóc sức khỏe, mang đến một cuộc sống vẹn tròn hạnh phúc, bao gồm: Trường mẫu giáo (rộng 3.000 m2), nhà trẻ, khu thương mại và dịch vụ tiện ích, vườn BBQ, thư viện cộng đồng, câu lạc bộ kết nối cư dân, bãi gửi xe công nghệ hiện đại (2.710 m2),...</p>*@
-
                     </div>
                 </div>
                 <div class="col-md-7 col-md-offset-1 right_utilities">
@@ -160,21 +200,21 @@
                 @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[0] != null)
                 {
                     <div class="album-item grid-item--width2 _album_0" data-category="_album_0" style="position: absolute; left: 0px; top: 0px;">
-                        <div class="border-hover"></div> 
+                        <div class="border-hover"></div>
                         <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[0].Url" style="height: 230px;">
                         <a href="./@Model.TopicTienIch.ListPicture[0].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
                         <div class="clearfix"></div>
                     </div>
                 }
-               @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[1] != null)
-               {
-                <div class="album-item grid-item _album_0 album_item_s1" data-category="_album_0" style="position: absolute; left: 575px; top: 0px;">
-                    <div class="border-hover"></div> 
-                    <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[1].Url" style="height: 230px;">
-                    <a href="./@Model.TopicTienIch.ListPicture[1].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
-                    <div class="clearfix"></div>
-                </div>              
-               }
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[1] != null)
+                {
+                    <div class="album-item grid-item _album_0 album_item_s1" data-category="_album_0" style="position: absolute; left: 575px; top: 0px;">
+                        <div class="border-hover"></div>
+                        <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[1].Url" style="height: 230px;">
+                        <a href="./@Model.TopicTienIch.ListPicture[1].Url" class="fancybox item-hover fancy-photo" rel="fancy-album-0"> </a>
+                        <div class="clearfix"></div>
+                    </div>
+                }
                 @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[2] != null)
                 {
                     <div class="album-item grid-item _album_0 album_item_s2" data-category="_album_0" style="position: absolute; left: 862px; top: 0px;">
@@ -222,7 +262,6 @@
                 <div class="col-sm-7 right_location">
                     <div class="block-text kanit font-300 fadeInRightShort  animated delay-500 go">
                         @Html.Raw(Model.MatBang.ShortDescription)
-                       @* Dự án The Eden Rose bao gồm 181 căn nhà liền kề và 52 biệt thự được thiết kế theo phong cách hiện đại, các căn biệt thự, liền kề đều được thiết kế thông minh, tối ưu diện tích và công năng sử dụng.*@
                     </div>
                 </div>
             </div>
@@ -266,7 +305,6 @@
                                     <div class="col-xs-12 item-ef">
                                         <div style="border: 1px solid #ddd; font-size: 110%; text-align: center; padding: 30px; color: #d33;">
                                             @Html.Raw(Model.MatBang.ContentDetail)
-                                            @*<p>Xem mặt bằng chi tiết các căn biệt thự và liền kề The Eden Rose tại đây: <a href="#"><strong>CLICK HERE</strong></a></p>*@
                                         </div>
                                     </div>
                                 </div>
@@ -291,153 +329,266 @@
     <div class="block-content animatedParent animateOnce">
         <div class="container">
             <div style="height: 25px;"></div>
-           
+
             <div class="row">
-                @if (Model.ListSanPham != null && Model.ListSanPham[0] != null)
+                @if (Model.ListSanPham != null && Model.ListSanPham.Count > 0)
                 {
-                    <div class="col-xs-12">
-                        <div class="item">
-                            <div class="row">
-                                <div class="thumb col-xs-12 col-sm-6"><img src="./@Model.ListSanPham[0].Picture"></div>
-                                <div class="content col-xs-12 col-sm-6">
-                                    <h3 class="title">@Model.ListSanPham[0].TitleHome</h3>
-                                    @Html.Raw(Model.ListSanPham[0].ShortDescription)
-                               
-                                    <div class="clear"> 
-                                    <a href="/tin-tuc/@Model.ListSanPham[0].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                    for (var i = 0; i < Model.ListSanPham.Count; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            <div class="col-xs-12">
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="thumb col-xs-12 col-sm-6"><img src="./@Model.ListSanPham[i].Picture"></div>
+                                        <div class="content col-xs-12 col-sm-6">
+                                            <h3 class="title">@Model.ListSanPham[i].TitleHome</h3>
+                                            @Html.Raw(Model.ListSanPham[i].ShortDescription)
+
+                                            <div class="clear">
+                                                <a href="/bang-gia/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-xs-12">
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="content col-xs-12 col-sm-6">
+                                            <h3 class="title">@Model.ListSanPham[i].TitleHome</h3>
+                                            @Html.Raw(Model.ListSanPham[i].ShortDescription)
+                                            <div class="clear"> <a href="./bang-gia/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                                        </div>
+                                        <div class="thumb ccol-xs-12 col-sm-6"><img src="./@Model.ListSanPham[i].Picture"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                }
-                @if (Model.ListSanPham != null && Model.ListSanPham[1] != null)
-                {
-                    <div class="col-xs-12">
-                        <div class="item">
-                            <div class="row">
-                                <div class="content col-xs-12 col-sm-6">
-                                    <h3 class="title">@Model.ListSanPham[1].TitleHome</h3>
-                                    @Html.Raw(Model.ListSanPham[1].ShortDescription)
-                                    @*<h3 class="title">Liền kề The Eden Rose</h3>
-                                    <ul>
-                                        <li>Số lượng: 181 căn</li>
-                                        <li>Diện tích: 82m2 - 218m2</li>
-                                        <li>Phòng ngủ: 4 phòng</li>
-                                        <li>Phòng vệ sinh: 5 phòng</li>
-                                        <li>Giá bán: Từ 58 đến 65 triệu/m2</li>
-                                        <li>Mức độ hoàn thiện : Hoàn thiện mặt ngoài và bàn giao thô bên trong</li>
-                                    </ul>*@
-                                    <div class="clear"> <a href="./tin-tuc/@Model.ListSanPham[1].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                        }
+                        @*if (Model.ListSanPham[i].ListPicture != null && Model.ListSanPham[i].ListPicture.Count > 0)
+                        {
+                            <h3 class="text-center title" style="color: #980f21">Hình ảnh @Model.ListSanPham[i].TitleHome.ToLower()</h3>
+                            <div class="text-center inside">Các hình ảnh phối cảnh @Model.ListSanPham[i].TitleHome.ToLower(), click vào hình để xem hình với chất lượng cao.</div>
+                            <div class="column mcb-column one column_image_gallery ">
+                                <div id="gallery-1" class="gallery galleryid-221 gallery-columns-4 gallery-size-full file fancy">
+                                    @for (var k = 0; k < Model.ListSanPham[i].ListPicture.Count; k++)
+                                    {
+                                        if (k % 2 == 0)
+                                        {
+                                            <dl class="gallery-item">
+                                                <dt class="gallery-icon landscape">
+                                                    <div class="image_frame scale-with-grid">
+                                                        <div class="image_wrapper">
+                                                            <a href="@Model.ListSanPham[i].ListPicture[k].Url" class="fancybox" data-type="gallery">
+                                                                <div class="mask"></div>
+                                                                <img width="1203" height="720" src="@Model.ListSanPham[i].ListPicture[k].Url" class="attachment-full size-full" alt="" style="height: auto; width: 100%;">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </dt>
+                                            </dl>
+                                        }
+                                        else
+                                        {
+                                            <dl class="gallery-item">
+                                                <dt class="gallery-icon landscape">
+                                                    <div class="image_frame scale-with-grid">
+                                                        <div class="image_wrapper">
+                                                            <a href="@Model.ListSanPham[i].ListPicture[k].Url" class="fancybox" data-type="gallery">
+                                                                <div class="mask"></div>
+                                                                <img width="1306" height="653" src="@Model.ListSanPham[i].ListPicture[k].Url" class="attachment-full size-full" alt="" sizes="(max-width: 1306px) 100vw, 1306px" style="height: auto; width: 100%;">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </dt>
+                                            </dl>
+                                        }
+                                    }
                                 </div>
-                                <div class="thumb ccol-xs-12 col-sm-6"><img src="./@Model.ListSanPham[1].Picture"></div>
                             </div>
-                        </div>
-                    </div>
+                        }*@
+                    }
                 }
-               
-                
+
                 <div class="clear"></div>
             </div>
+
         </div>
     </div>
 </div>
+<link href="~/css/ArticleCss.css" rel="stylesheet" />
 <div id="section_news">
     <div class="block-top animatedParent animateOnce">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="title fadeInLeftShort  animated delay-500 go"><a href="./tin-tuc/" style="color: inherit;">TIN TỨC &amp; SỰ KIỆN</a></div>
+                    <div class="title fadeInLeftShort  animated delay-500 go"><a href="./bang-gia/" style="color: inherit;">TIN TỨC &amp; SỰ KIỆN</a></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="block-content animatedParent animateOnce text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-5">
-                    <div class="block-logo"> <img class="img-responsive" src="@Model.logoarticle"></div>
-                </div>
-                <div class="col-sm-8 col-md-7">
-                    <div class="block-news">
-                        <div class="media-list post-list">
+    <div class="block-content animatedParent animateOnce text-center" style="background: #f3f3f3">
+        <div class="row">
+            <div class="section_wrapper">
+                <div class="column">
+                    <div style="padding-top: 15px;">
+                        <div class="grid">
                             @if (Model.ListArticleNew != null && Model.ListArticleNew.Count > 0)
                             {
                                 foreach (var item in Model.ListArticleNew)
                                 {
-                                    <a class="media fancybox" href="./tin-tuc/@item.Url/">
-                                        <div class="media-left"><img class="media-object" src="./@item.Picture" alt="@item.Title" style="width: 130px; height: 110px"></div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">@item.Title</h4>
-                                            <p>@item.ShortDescription</p>
-                                            <div class="media-bottom"> <span class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</span> <span class="btn btn-detail">Chi tiết</span></div>
+                                    <div class="post-item">
+                                        <div class="image_frame">
+                                            <div class="image_wrapper">
+                                                <a href="./bang-gia/@item.Url/">
+                                                    <div class="mask"></div>
+                                                    <img width="960" height="750" src="./@item.Picture" data-lazy-type="image" class="lazy scale-with-grid wp-post-image lazy-loaded" alt="@item.Title">
+                                                </a>
+                                                <div class="image_links double">
+                                                    <a href="./@item.Picture" class="fancybox" rel="lightbox" data-type="image">
+                                                        <i class="fa fa-search"></i>
+                                                    </a>
+                                                    <a href="./bang-gia/@item.Url/" class="link">
+                                                        <i class="fa fa-link"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </a>
+                                        <div class="post-desc-wrapper">
+                                            <div class="post-desc">
+                                                <div class="post-title">
+                                                    <h3 class="entry-title" itemprop="headline">
+                                                        <a href="./bang-gia/@item.Url/">@item.Title</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="post-excerpt">@item.ShortDescription...</div>
+                                                <div class="post-footer">
+                                                    <div class="post-links">
+                                                        <i class="fa fa-align-justify"></i>
+                                                        <a href="./bang-gia/@item.Url/" class="post-more">Xem thêm</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 }
                             }
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+@*<script src="~/js/zoom/jquery.js"></script>
+    <link href="~/css/zoom/xzoom.css" rel="stylesheet" media="all" />
+    <script src="~/js/zoom/xzoom.min.js"></script>
+    <script src="~/js/zoom/setup.js"></script>*@
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+@*<script src="~/plugins/slider/vmc.slide.js"></script>
+<script src="~/plugins/slider/vmc.slide.effects.js"></script>*@
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@*<script src="~/js/zoom/jzoom.js"></script>*@
+@*<script src="~/js/zoom/imagezoom.js"></script>*@
 <script>
-        function validatePhone(txtPhone) {
-            var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-            if (filter.test(txtPhone)) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-    $(document).ready(function () {
-        var isSubmit = false;
-            $('.btnform').click(function () {
-                debugger
-                $('.btnform').prop('disabled', true);
-                var name = $('#txtName').val();
-                if (name == null || name.trim() == "") {
-                    $('#txtNameNoti').show();
-                    return false;
-                } else {
-                    $('#txtNameNoti').hide();
-                }
-                var email = $('#txtEmail').val();
-                if (email == null || email.trim() == "") {
-                    $('#txtEmailNoti').show();
-                    return false;
-                } else {
-                    $('#txtEmailNoti').hide();
-                }
+    //$('#slider').vmcSlide({
+    //    duration: 1000,
+    //    speed: 800
+    //    , effects: ['fade', 'slideX', 'slideY', 'page', 'page2', 'rollingX', 'rollingY', 'blindsX', 'blindsY']
+    //    , showText: true
+    //    , random: false
+    //    // ,sideButton:false
+    //    // ,navButton:false
+    //    , flip: function (from, to) {
+    //        // console.log('from:' + from + ' to:' + to);
 
-                var phone = $('#txtPhone').val();
-                if (phone == null || phone.trim() == "") {
-                    $('#txtPhoneNoti').show();
-                    return false;
-                } else {
-                    $('#txtPhoneNoti').hide();
-                }
-                if (!validatePhone(phone)) {
-                    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
-                    $('#notifi').show();
-                    return false;
-                } else {
-                    $('#notifi').text('');
-                }
-                if (!isSubmit) {
-                    isSubmit = true;
-                    window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
-                    $('#notifi').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
-                    $('#notifi').show();
-                    $('.btnform').removeAttr('disabled');
-                    $('#txtName').val('');
-                    $('#txtEmail').val('');
-                    $('#txtPhone').val('');
-                    isSubmit = false;
-                }
-            });
+    //    }
+    //});
+</script>
+
+<script>
+    function validatePhone(txtPhone) {
+        var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+        if (filter.test(txtPhone)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    //$('.jzoom').jzoom({ bgColor: "#222" });
+    $(document).ready(function () {
+       
+        var isSubmit = false;
+        $('.btnform').click(function () {
+            debugger
+            $('.btnform').prop('disabled', true);
+            var name = $('#txtName').val();
+            //if (name == null || name.trim() == "") {
+            //    $('#txtNameNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtNameNoti').hide();
+            //}
+            var email = $('#txtEmail').val();
+            if (email == null || email.trim() == "") {
+                $('#txtEmailNoti').show();
+                return false;
+            } else {
+                $('#txtEmailNoti').hide();
+            }
+
+           var phone = $('#txtPhone').val();
+            //if (phone == null || phone.trim() == "") {
+            //    $('#txtPhoneNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtPhoneNoti').hide();
+            //}
+            //if (!validatePhone(phone)) {
+            //    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+            //    $('#notifi').show();
+            //    return false;
+            //} else {
+            //    $('#notifi').text('');
+            //}
+            if (!isSubmit) {
+                isSubmit = true;
+                $.ajax({
+                    url: '../TinTuc/Resign',
+                    type: 'post',
+                    dataType: 'text',
+                    data: {
+                        email: email,
+                        phone: phone,
+                        name: name
+                    },
+                    success: function (response) {
+                        $('#notifi').text('Đăng ký nhận thông tin thành công!')
+                        $('#notifi').show();
+                        $('.btnform').removeAttr('disabled');
+                    },
+                    error: function () {
+                        $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
+                        $('#notifi').show();
+                        $('.btnform').removeAttr('disabled');
+                    }
+                });
+               //// window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
+               // $('#notifi').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án AThena Fulland. Chúng tôi đã gửi thông tin dự án qua email của anh/chị')
+               // $('#notifi').show();
+               // $('.btnform').removeAttr('disabled');
+               // $('#txtName').val('');
+               // $('#txtEmail').val('');
+               // $('#txtPhone').val('');
+                isSubmit = false;
+            }
         });
+    });
 </script>

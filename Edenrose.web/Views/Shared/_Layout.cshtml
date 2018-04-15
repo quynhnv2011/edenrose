@@ -21,7 +21,7 @@
     <link href="~/Content/css/animations.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
     <link href="~/Content/css/jquery.fancybox.css" data-minify="1" rel="Stylesheet" rev="Stylesheet">
   
-    <title>Dự án chung cư Athana Fulland</title>
+    <title>Dự án biệt thự, liền kề</title>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115986985-1"></script>
@@ -34,13 +34,13 @@
     </script>
 </head>
 <body class="home blog">
-    <header class="page-header navbar navbar-inverse">
-        <div class="container">
+    <header class="page-header navbar navbar-inverse" style="padding: 10px 15px;">
+        <div class="">
             <div class="navbar-header">
                 <div class="logo-wrapper">
                     <div class="logo pull-left">
                         <a href="/" class="logo">
-                            <img class="img-responsive" src="@Edenrose.web.Global.SessionInfo.Logo" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
+                            <img class="img-responsive img-logo" src="@Edenrose.web.Global.SessionInfo.Logo" alt="Dự án Biệt thự liền kề The Eden Rose" title="Dự án Biệt thự liền kề The Eden Rose">
                         </a>
                     </div>
                 </div>
@@ -60,6 +60,7 @@
                             <li class="nd-scroll"><a href="/#section_canho">Sản phẩm</a></li>
                             <li class=""><a href="/tin-tuc/@ViewBag.urlChinhSach">Chính sách</a></li>
                             <li class=""><a href="/tin-tuc/">Tin tức</a></li>
+                            <li class=""><a href="/bang-gia/">Bảng giá</a></li>
                             <li class="nd-scroll"><a href="/#section_register">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -104,7 +105,7 @@
                                         </span>
                                     </p>
                                     <p class="submit">
-                                        <a value="" class="btnformlayout wpcf7-form-control wpcf7-submit btn btn-submit btn-block">TNhận thông tin</a>
+                                        <a value="" class="btnformlayout wpcf7-form-control wpcf7-submit btn btn-submit btn-block">Nhận thông tin</a>
                                        @* <input type="submit" value="Tải về" class="wpcf7-form-control wpcf7-submit btnform btn btn-submit btn-block"><span class="ajax-loader"></span>*@
                                     </p>
                                     <div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" id="notifiLayout" style="display: none;color: white;" role="alert"></div>
@@ -220,15 +221,15 @@
                             name: name
                         },
                         success: function (response) {
-                            $('#notifi').text('Đăng ký nhận thông tin bảng giá thành công!')
-                            $('#notifi').show();
+                            $('#notifiLayout').text('Đăng ký nhận thông tin bảng giá thành công!')
+                            $('#notifiLayout').show();
                             $('.btnformlayout').removeAttr('disabled');
                             isSubmit = false;
                         },
                         error: function () {
-                            //$('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
-                            $('#notifi').text('Đăng ký nhận thông tin bảng giá thành công!')
-                            $('#notifi').show();
+                            $('#notifiLayout').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
+                            //$('#notifiLayout').text('Đăng ký nhận thông tin bảng giá thành công!')
+                            $('#notifiLayout').show();
                             $('.btnformlayout').removeAttr('disabled');
                             isSubmit = false;
                         }

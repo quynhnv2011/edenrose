@@ -1,0 +1,218 @@
+﻿@model Edenrose.web.Areas.Admin.Models.ArticleItemModel
+@{
+    ViewBag.Title = "Thêm mới";
+    if (Model.id > 0)
+    {
+        ViewBag.Title = "Cập nhật";
+    }
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @if (!string.IsNullOrEmpty(Model.ErrMess))
+    {
+        Html.Raw(Model.ErrMess);
+    }
+</div>
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- START ROW -->
+        <div class="row">
+            <!-- NEW COL START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-8" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Bảng giá</h2>
+
+                        <div class="btn-command">
+
+                        </div>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("Create", "BangGiaArticle", FormMethod.Post, new { @id = "addForm", enctype = "multipart/form-data" }))
+                        {
+                            @Html.HiddenFor(model => model.id)
+                            @Html.HiddenFor(model => model.Visits)
+                            @Html.HiddenFor(model => model.CreatedBy)
+                            @Html.HiddenFor(model => model.CreatedDate)
+                            @Html.HiddenFor(model => model.TypeArticle)
+                            <div class="widget-body no-padding  smart-form">
+                                <fieldset>
+
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label class="label">Tiêu đề bảng giá</label>
+                                            <label class="input">
+                                                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @id = "txtName", @onchange = "LoadUrl()" })
+                                                @Html.ValidationMessageFor(model => model.Title)
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Url</label>
+                                            <label class="input">
+                                                @Html.TextBoxFor(model => model.Url, new { @class = "form-control", @id = "txtUlr" })
+                                                @Html.ValidationMessageFor(model => model.Url)
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="label">Nội dung tóm tắt</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control", @id = "txtmota", @rows = "4" })
+                                                @Html.ValidationMessageFor(model => model.ShortDescription)
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Ảnh đại diện</label>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+
+                                                    @Html.TextBoxFor(model => model.Picture, new { @class = "form-control", @id = "txtImage", @readonly = "readonly" })
+                                                    <span class="input-group-btn">
+                                                        <a id="btnSelectImage" class="btn btn-default" style="padding: 7px 12px" href="javascript:void(0);">Chọn</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-9" style=" clear:both; margin-top:10px">
+                                                <img src="@Model.Picture" style="max-width: 1200px; max-height: 100px;" id="imgPreview" />
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label class="label">Tiêu đề Seo</label>
+                                            <label class="input category-parent">
+                                                @Html.TextBoxFor(model => model.SeoTitle, new { @class = "form-control", @id = "txtSeoTitle" })
+                                                @Html.ValidationMessageFor(model => model.SeoTitle)
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="label">Mô tả Seo</label>
+                                            <label class="input">
+                                                @Html.TextBoxFor(model => model.SeoDescription, new { @class = "form-control", @id = "txtSeoDescription" })
+                                                @Html.ValidationMessageFor(model => model.SeoDescription)
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="label">Từ khóa Seo</label>
+                                            <label class="input category-parent">
+                                                @Html.TextBoxFor(model => model.SeoKeywords, new { @class = "form-control", @id = "txtSeoKeywords" })
+                                                @Html.ValidationMessageFor(model => model.SeoKeywords)
+                                            </label>
+                                        </section>
+
+                                        <section class="col col-3">
+                                            <label class="label">Thứ tự</label>
+                                            <label class="input">
+                                                @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control", @style = "width:80px", @id = "OrderIndex" })
+                                            </label>
+                                        </section>
+                                        <section class="col col-3">
+                                            <label class="label">Hiển thị</label>
+                                            <label>
+                                                @Html.CheckBoxFor(x => x.IsShow)
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <section class="col col-12" style="width:100%;">
+                                            <label class="label">Nội dung chi tiết</label>
+                                            <label class="input category-parent">
+                                                @Html.TextAreaFor(model => model.ContentDetail, new { @id = "txtContent" })
+                                                @Html.ValidationMessageFor(model => model.ContentDetail)
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <footer class="text-center">
+                                        <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
+                                        <a href="javascript: void(0);" class="btn btn-primary" onclick="return SubmitForm()">@ViewBag.Title</a>
+                                    </footer>
+                                </fieldset>
+                            </div>
+                        }
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- END COL -->
+        </div>
+        <!-- END ROW -->
+    </section>
+
+    <!-- end widget grid -->
+</div>
+@section Script{
+    <script>
+        $(document).on('click', '#btnSelectImage', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').val(url);
+                $('#imgPreview').attr("src", url);
+            };
+            finder.popup();
+        });
+        var editor = CKEDITOR.replace('txtContent', {
+            customConfig: '/plugins/ckeditor/config.js'
+        });
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $('.btn-command').css({ "position": "fixed", "top": "0px", "z-index": "99999", "right": "13px", "background": "#fafafa", "padding": "0px 5px 5px 5px" });
+                } else {
+                    $('.btn-command').removeAttr("style");
+                }
+
+            });
+        });
+        function LoadUrl() {
+            if ($('#txtUlr').val().length === 0) {
+                ChangeToSlug("txtName", "txtUlr");
+            }
+            if ($('#txtSeoTitle').val().length === 0) {
+                $('#txtSeoTitle').val($('#txtName').val());
+            }
+            if ($('#txtSeoDescription').val().length === 0) {
+                $('#txtSeoDescription').val($('#txtName').val());
+            }
+            if ($('#txtSeoKeywords').val().length === 0) {
+                $('#txtSeoKeywords').val($('#txtName').val());
+            }
+        }
+
+        function SubmitForm() {
+            
+                $('#addForm').submit();
+        }
+
+    </script>
+}
+
+
+
+
+

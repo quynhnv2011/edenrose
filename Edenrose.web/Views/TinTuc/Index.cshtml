@@ -17,11 +17,11 @@
                         {
                             <div class="post-thumb post-thumb-archive">
                                 <div class="row">
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb col-left col-xs-12 col-sm-5 col-md-4"> 
+                                    <a href="/bang-gia/@item.Url" class="img-thumb col-left col-xs-12 col-sm-5 col-md-4"> 
                                     <img src="@item.Picture" width="300" height="auto" alt="@item.Title" class="img-responsive"> </a>
                                     <div class="col-xs-12 col-sm-7 col-md-8">
                                         <h2 class="title-thumb">
-                                        <a href="/tin-tuc/@item.Url">@item.Title</a></h2>
+                                        <a href="/bang-gia/@item.Url">@item.Title</a></h2>
                                         <div class="the-excerpt">
                                             <p>@Html.Raw(item.ShortDescription)</p>
                                         </div>
@@ -34,7 +34,7 @@
 
                     <div class="wp-pagenavi"> 
                         @Html.Raw(Model.GetHtmlPaging)
-                   @* <span class="pages">Trang 1 trên 3</span><span class="current">1</span><a class="page larger" title="Page 2" href="http://duanedenrose.org/tin-tuc/page/2/">2</a><a class="page larger" title="Page 3" href="http://duanedenrose.org/tin-tuc/page/3/">3</a><a class="nextpostslink" rel="next" href="http://duanedenrose.org/tin-tuc/page/2/">»</a>*@
+                   @* <span class="pages">Trang 1 trên 3</span><span class="current">1</span><a class="page larger" title="Page 2" href="http://duanedenrose.org/bang-gia/page/2/">2</a><a class="page larger" title="Page 3" href="http://duanedenrose.org/bang-gia/page/3/">3</a><a class="nextpostslink" rel="next" href="http://duanedenrose.org/bang-gia/page/2/">»</a>*@
                     </div>
                 </div>
             </div>
@@ -79,10 +79,10 @@
                             foreach (var item in Model.ListMoiNhat)
                             {
                                 <li>
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb">
+                                    <a href="/bang-gia/@item.Url" class="img-thumb">
                                         <img src="@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive">
                                     </a>
-                                    <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
+                                    <h3 class="title-thumb"><a href="/bang-gia/@item.Url">@item.Title</a></h3>
                                     <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
                                 </li>
                             }

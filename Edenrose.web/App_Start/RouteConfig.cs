@@ -11,6 +11,26 @@ namespace Edenrose.web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute(
+            name: "IndexBangGia",
+            url: "bang-gia",
+            defaults: new { controller = "BangGia", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "Edenrose.web.Controllers" }
+            );
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+             name: "IndexBangGiaPage",
+             url: "bang-gia/page/{pageindex}",
+             defaults: new { controller = "BangGia", action = "Index", id = UrlParameter.Optional },
+             namespaces: new[] { "Edenrose.web.Controllers" }
+             );
+            routes.MapRoute(
+            name: "BangGiaDetail",
+            url: "bang-gia/{url}",
+            defaults: new { controller = "BangGia", action = "Details", id = UrlParameter.Optional },
+            namespaces: new[] { "Edenrose.web.Controllers" }
+            );
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
              name: "IndexPage",
@@ -18,6 +38,7 @@ namespace Edenrose.web
              defaults: new { controller = "TinTuc", action = "Index", id = UrlParameter.Optional },
              namespaces: new[] { "Edenrose.web.Controllers" }
              );
+
             routes.MapRoute(
               name: "Index",
               url: "tin-tuc",

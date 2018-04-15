@@ -88,7 +88,7 @@ namespace Edenrose.web.Controllers
                     var noiDungEmail = _configService.GetbyKey("EmailContain").Value;
                     MailMessage mail = new MailMessage();
                     mail.To.Add(obj.Email);
-                    mail.From = new MailAddress("noreply.quynhnv@gmail.com");
+                    mail.From = new MailAddress("bdslienke@gmail.com");
                     mail.Body = noiDungEmail;
                     mail.Subject = "Thông tin dự án ATHENA FULLAND";
                     mail.IsBodyHtml = true;
@@ -96,7 +96,7 @@ namespace Edenrose.web.Controllers
                     smtp.Host = "smtp.gmail.com";
                     smtp.Port = 587;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new System.Net.NetworkCredential("noreply.quynhnv@gmail.com", "quynhvan"); // Enter seders User name and password  
+                    smtp.Credentials = new System.Net.NetworkCredential("bdslienke@gmail.com", "hanoi123456"); // Enter seders User name and password  
                     smtp.EnableSsl = true;
 
                     var filePath = System.Web.HttpContext.Current.Request.MapPath(string.Format("/BangGia"));

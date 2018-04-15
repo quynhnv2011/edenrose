@@ -1,0 +1,20 @@
+--------- 20:06:33 ---------
+Ref URL: http://localhost:49924/
+Host: localhost:49924
+URL: /TinTuc/Resign
+IP: ::1
+Error: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+Source: System
+Trace:    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Edenrose.web.Controllers.TinTucController.Resign(String email, String name, String phone) in D:\Edenrose\codegit\edenrose\Edenrose.web\Controllers\TinTucController.cs:line 111
+InnerException : 
+GetBaseException : System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Edenrose.web.Controllers.TinTucController.Resign(String email, String name, String phone) in D:\Edenrose\codegit\edenrose\Edenrose.web\Controllers\TinTucController.cs:line 111
+TargetSite : Void CheckResponse(System.Net.Mail.SmtpStatusCode, System.String)

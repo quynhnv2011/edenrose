@@ -11,6 +11,7 @@ img {
     border: 0;
 }
 
+
 @media print {
     *, :after, :before {
         color: #000 !important;

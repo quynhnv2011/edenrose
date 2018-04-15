@@ -11,9 +11,11 @@
                 <div id="breadcrumbs" class="hidden-xs">
                     <span xmlns:v="#">
                         <span typeof="v:Breadcrumb">
-                            <a href="/" rel="v:url" property="v:title">Trang chủ</a> » 
-                            <span rel="v:child" typeof="v:Breadcrumb"><a href="/tin-tuc/" rel="v:url" property="v:title">Tin tức</a> » 
-                            <span class="breadcrumb_last">@Model.ArtileDetail.Title</span></span>
+                            <a href="/" rel="v:url" property="v:title">Trang chủ</a> »
+                            <span rel="v:child" typeof="v:Breadcrumb">
+                                <a href="/bang-gia/" rel="v:url" property="v:title">Tin tức</a> »
+                                <span class="breadcrumb_last">@Model.ArtileDetail.Title</span>
+                            </span>
                         </span>
                     </span>
                 </div>
@@ -27,7 +29,7 @@
                             </div>
                         </div>
                         <div class="post-content">
-                           @Html.Raw(Model.ArtileDetail.ContentDetail)
+                            @Html.Raw(Model.ArtileDetail.ContentDetail)
                         </div>
                     </div>
                 }
@@ -36,20 +38,37 @@
                     <p>Nội dung bài viết không tồn tại</p>
                 }
 
-              
+
                 <div class="post-related clear">
                     <h3 class="title">Tin tức cùng chủ đề</h3>
                     <div class="row">
                         @if (Model.ListCungChuDe != null && Model.ListCungChuDe.Count > 0)
                         {
+                            var i = 0;
                             foreach (var item in Model.ListCungChuDe)
                             {
-                                <div class="post-thumb col-xs-12 col-sm-6 col-md-6">
-                                    <a href="/tin-tuc/@item.Url"> 
-                                    <img src="@item.Picture" width="100" height="75" alt="@item.Title" class="img-thumb img-responsive"> </a>
-                                    <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
-                                    <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
-                                </div>
+                                if (i % 2 == 0)
+                                {
+                                    <div class="post-thumb col-xs-12 col-sm-6 col-md-6 clear">
+                                        <a href="/bang-gia/@item.Url">
+                                            <img src="@item.Picture" width="100" height="75" alt="@item.Title" class="img-thumb img-responsive">
+                                        </a>
+                                        <h3 class="title-thumb"><a href="/bang-gia/@item.Url">@item.Title</a></h3>
+                                        <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="post-thumb col-xs-12 col-sm-6 col-md-6">
+                                        <a href="/bang-gia/@item.Url">
+                                            <img src="@item.Picture" width="100" height="75" alt="@item.Title" class="img-thumb img-responsive">
+                                        </a>
+                                        <h3 class="title-thumb"><a href="/bang-gia/@item.Url">@item.Title</a></h3>
+                                        <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
+                                    </div>
+                                }
+
+                                i++;
                             }
 
                         }
@@ -68,7 +87,7 @@
                             <form action="#" method="post" class="wpcf7-form invalid" novalidate="novalidate">
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-name">
-                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên*">
+                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên">
                                         <span role="alert" id="txtNameNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
                                     </span>
                                 </p>
@@ -80,7 +99,7 @@
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-phone">
-                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại*">
+                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại">
                                         <span role="alert" id="txtPhoneNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
                                     </span>
                                 </p>
@@ -101,9 +120,10 @@
                             foreach (var item in Model.ListMoiNhat)
                             {
                                 <li>
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb">
-                                    <img src="@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive"> </a>
-                                    <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
+                                    <a href="/bang-gia/@item.Url" class="img-thumb">
+                                        <img src="@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive">
+                                    </a>
+                                    <h3 class="title-thumb"><a href="/bang-gia/@item.Url">@item.Title</a></h3>
                                     <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
                                 </li>
                             }
@@ -118,71 +138,70 @@
 @*@section Script{*@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script>
-        function validatePhone(txtPhone) {
-            var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-            if (filter.test(txtPhone)) {
-                return true;
-            }
-            else {
-                return false;
-            }
+    function validatePhone(txtPhone) {
+        var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+        if (filter.test(txtPhone)) {
+            return true;
         }
-        $(document).ready(function () {
-            $('.btnform').click(function () {
-                debugger
-                $('.btnform').prop('disabled', true);
-                var name = $('#txtName').val();
-                if (name == null || name.trim() == "") {
-                    $('#txtNameNoti').show();
-                    return false;
-                } else {
-                    $('#txtNameNoti').hide();
-                }
-                var email = $('#txtEmail').val();
-                if (email == null || email.trim() == "") {
-                    $('#txtEmailNoti').show();
-                    return false;
-                } else {
-                    $('#txtEmailNoti').hide();
-                }
+        else {
+            return false;
+        }
+    }
+    $(document).ready(function () {
+        $('.btnform').click(function () {
+            debugger
+            $('.btnform').prop('disabled', true);
+            var name = $('#txtName').val();
+            //if (name == null || name.trim() == "") {
+            //    $('#txtNameNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtNameNoti').hide();
+            //}
+            var email = $('#txtEmail').val();
+            if (email == null || email.trim() == "") {
+                $('#txtEmailNoti').show();
+                return false;
+            } else {
+                $('#txtEmailNoti').hide();
+            }
 
-                var phone = $('#txtPhone').val();
-                if (phone == null || phone.trim() == "") {
-                    $('#txtPhoneNoti').show();
-                    return false;
-                } else {
-                    $('#txtPhoneNoti').hide();
-                }
-                if (!validatePhone(phone)) {
-                    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+            var phone = $('#txtPhone').val();
+            //if (phone == null || phone.trim() == "") {
+            //    $('#txtPhoneNoti').show();
+            //    return false;
+            //} else {
+            //    $('#txtPhoneNoti').hide();
+            //}
+            //if (!validatePhone(phone)) {
+            //    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+            //    $('#notifi').show();
+            //    return false;
+            //} else {
+            //    $('#notifi').text('');
+            //}
+
+            $.ajax({
+                url: '../TinTuc/Resign',
+                type: 'post',
+                dataType: 'text',
+                data: {
+                    email: email,
+                    phone: phone,
+                    name: name
+                },
+                success: function (response) {
+                    $('#notifi').text('Đăng ký nhận thông tin thành công!')
                     $('#notifi').show();
-                    return false;
-                } else {
-                    $('#notifi').text('');
+                    $('.btnform').removeAttr('disabled');
+                },
+                error: function () {
+                    $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
+                    $('#notifi').show();
+                    $('.btnform').removeAttr('disabled');
                 }
-
-                $.ajax({
-                    url: '../TinTuc/Resign',
-                    type: 'post',
-                    dataType: 'text',
-                    data: {
-                        email: email,
-                        phone: phone,
-                        name: name
-                    },
-                    success: function (response) {
-
-                        $('#notifi').text('Đăng ký nhận thông tin thành công!')
-                        $('#notifi').show();
-                        $('.btnform').removeAttr('disabled');
-                    },
-                    error: function () {
-                        $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
-                        $('#notifi').show();
-                        $('.btnform').removeAttr('disabled');
-                    }
-                });
             });
         });
+    });
 </script>
 @*}*@

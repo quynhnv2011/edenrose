@@ -39,7 +39,7 @@
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-6">
-                                            <label class="label">Nội dung tóm tắt</label>
+                                            <label class="label">Mô tả tiêu đề</label>
                                             <label class="textarea">
                                                 @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control", @id = "txtmota", @rows = "4" })
                                                 @Html.ValidationMessageFor(model => model.ShortDescription)
@@ -63,10 +63,16 @@
                                         </section>
                                     </div>
 
-                                    @*<div class="clearfix"></div>
+                                    <div class="clearfix"></div>
                                     <div class="row">
-                                        
-                                    </div>*@
+                                        <section class="col col-6">
+                                            <label class="label">Nội dung tóm tắt</label>
+                                            <label class="textarea">
+                                                @Html.TextAreaFor(model => model.ContentDetail, new { @class = "form-control", @id = "txtmotaDetail", @rows = "4" })
+                                                @Html.ValidationMessageFor(model => model.ContentDetail)
+                                            </label>
+                                        </section>
+                                    </div>
                                     <div class="clearfix"></div>
                                     <footer class="text-center">
                                         <a href="javascript:history.back(-1);" class="btn btn-default">Quay lại</a>
@@ -100,9 +106,13 @@
             };
             finder.popup();
         });
+        var editor = CKEDITOR.replace('txtmotaDetail', {
+            customConfig: '/plugins/ckeditor/config1.js'
+        });
         var editor = CKEDITOR.replace('txtmota', {
             customConfig: '/plugins/ckeditor/config1.js'
         });
+        
         $(document).ready(function () {
             $(window).scroll(function () {
                 if ($(window).scrollTop() > 50) {

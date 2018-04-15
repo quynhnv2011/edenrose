@@ -17,11 +17,11 @@
                         {
                             <div class="post-thumb post-thumb-archive">
                                 <div class="row">
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb col-left col-xs-12 col-sm-5 col-md-4"> 
+                                    <a href="/bang-gia/@item.Url" class="img-thumb col-left col-xs-12 col-sm-5 col-md-4"> 
                                     <img src="@item.Picture" width="300" height="auto" alt="@item.Title" class="img-responsive"> </a>
                                     <div class="col-xs-12 col-sm-7 col-md-8">
                                         <h2 class="title-thumb">
-                                        <a href="/tin-tuc/@item.Url">@item.Title</a></h2>
+                                        <a href="/bang-gia/@item.Url">@item.Title</a></h2>
                                         <div class="the-excerpt">
                                             <p>@Html.Raw(item.ShortDescription)</p>
                                         </div>
@@ -34,7 +34,7 @@
 
                     <div class="wp-pagenavi"> 
                         @Html.Raw(Model.GetHtmlPaging)
-                   @* <span class="pages">Trang 1 trên 3</span><span class="current">1</span><a class="page larger" title="Page 2" href="http://duanedenrose.org/tin-tuc/page/2/">2</a><a class="page larger" title="Page 3" href="http://duanedenrose.org/tin-tuc/page/3/">3</a><a class="nextpostslink" rel="next" href="http://duanedenrose.org/tin-tuc/page/2/">»</a>*@
+                   @* <span class="pages">Trang 1 trên 3</span><span class="current">1</span><a class="page larger" title="Page 2" href="http://duanedenrose.org/bang-gia/page/2/">2</a><a class="page larger" title="Page 3" href="http://duanedenrose.org/bang-gia/page/3/">3</a><a class="nextpostslink" rel="next" href="http://duanedenrose.org/bang-gia/page/2/">»</a>*@
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                             <form action="#" method="post" class="wpcf7-form invalid" novalidate="novalidate">
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-name">
-                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên*">
+                                        <input type="text" name="your-name" value="" size="40" class="form-control" id="txtName" placeholder="Họ và tên">
                                         <span role="alert" id="txtNameNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
                                     </span>
                                 </p>
@@ -58,7 +58,7 @@
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-phone">
-                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại*">
+                                        <input type="text" name="your-phone" value="" size="40" id="txtPhone" maxlength="14" minlength="10" class="form-control" aria-required="true" aria-invalid="true" placeholder="Điện thoại">
                                         <span role="alert" id="txtPhoneNoti" style="display: none;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
                                     </span>
                                 </p>
@@ -79,10 +79,10 @@
                             foreach (var item in Model.ListMoiNhat)
                             {
                                 <li>
-                                    <a href="/tin-tuc/@item.Url" class="img-thumb">
+                                    <a href="/bang-gia/@item.Url" class="img-thumb">
                                         <img src="@item.Picture" width="84" height="auto" alt="@item.Title" class="img-responsive">
                                     </a>
-                                    <h3 class="title-thumb"><a href="/tin-tuc/@item.Url">@item.Title</a></h3>
+                                    <h3 class="title-thumb"><a href="/bang-gia/@item.Url">@item.Title</a></h3>
                                     <div class="date-time">@String.Format("{0:dd/MM/yyyy | HH:mm}", item.CreatedDate)</div>
                                 </li>
                             }
@@ -112,12 +112,12 @@
                 debugger
                 $('.btnform').prop('disabled', true);
                 var name = $('#txtName').val();
-                if (name == null || name.trim() == "") {
-                    $('#txtNameNoti').show();
-                    return false;
-                } else {
-                    $('#txtNameNoti').hide();
-                }
+                //if (name == null || name.trim() == "") {
+                //    $('#txtNameNoti').show();
+                //    return false;
+                //} else {
+                //    $('#txtNameNoti').hide();
+                //}
                 var email = $('#txtEmail').val();
                 if (email == null || email.trim() == "") {
                     $('#txtEmailNoti').show();
@@ -127,52 +127,54 @@
                 }
 
                 var phone = $('#txtPhone').val();
-                if (phone == null || phone.trim() == "") {
-                    $('#txtPhoneNoti').show();
-                    return false;
-                } else {
-                    $('#txtPhoneNoti').hide();
-                }
-                if (!validatePhone(phone)) {
-                    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
-                    $('#notifi').show();
-                    return false;
-                } else {
-                    $('#notifi').text('');
-                }
+                //if (phone == null || phone.trim() == "") {
+                //    $('#txtPhoneNoti').show();
+                //    return false;
+                //} else {
+                //    $('#txtPhoneNoti').hide();
+                //}
+                //if (!validatePhone(phone)) {
+                //    $('#notifi').text('Vui lòng nhập đúng định dạng số điện thoại');
+                //    $('#notifi').show();
+                //    return false;
+                //} else {
+                //    $('#notifi').text('');
+                //}
                 if (!isSubmit) {
                     isSubmit = true;
-                    window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
-                    $('#notifi').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
-                    $('#notifi').show();
-                    $('.btnform').removeAttr('disabled');
-                    $('#txtName').val('');
-                    $('#txtEmail').val('');
-                    $('#txtPhone').val('');
+                    //window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
+                    //$('#notifi').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
+                    //$('#notifi').show();
+                    //$('.btnform').removeAttr('disabled');
+                    //$('#txtName').val('');
+                    //$('#txtEmail').val('');
+                    //$('#txtPhone').val('');
+                    $.ajax({
+                        url: '../TinTuc/Resign',
+                        type: 'post',
+                        dataType: 'text',
+                        data: {
+                            email: email,
+                            phone: phone,
+                            name: name
+                        },
+                        success: function (response) {
+
+                            $('#notifi').text('Đăng ký nhận thông tin thành công!')
+                            $('#notifi').show();
+                            $('.btnform').removeAttr('disabled');
+                        },
+                        error: function () {
+                            $('#notifi').text('Đăng ký nhận thông tin thành công!')
+                           // $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
+                            $('#notifi').show();
+                            $('.btnform').removeAttr('disabled');
+                        }
+                    });
                     isSubmit = false;
                 }
 
-                //$.ajax({
-                //    url: '../TinTuc/Resign',
-                //    type: 'post',
-                //    dataType: 'text',
-                //    data: {
-                //        email: email,
-                //        phone: phone,
-                //        name: name
-                //    },
-                //    success: function (response) {
-
-                //        $('#notifi').text('Đăng ký nhận thông tin thành công!')
-                //        $('#notifi').show();
-                //        $('.btnform').removeAttr('disabled');
-                //    },
-                //    error: function () {
-                //        $('#notifi').text('Thông tin không hợp lệ. Vui lòng kiểm tra lại!')
-                //        $('#notifi').show();
-                //        $('.btnform').removeAttr('disabled');
-                //    }
-                //});
+                
             });
         });
 </script>

@@ -215,6 +215,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BangGiaArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\BangGiaController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Areas\Admin\Models\TienIch\TienIchViewModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanItemModel.cs" />
     <Compile Include="Areas\Admin\Models\TongQuan\TongQuanViewModel.cs" />
+    <Compile Include="Controllers\BangGiaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TinTucController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1397,6 +1399,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\Config\NoiDungEmai.cshtml" />
+    <Content Include="Areas\Admin\Views\BangGiaArticle\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BangGiaArticle\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1453,7 +1457,6 @@
     <Content Include="Areas\Admin\Views\DanhSachDangKy\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Config\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Config\Create.cshtml" />
-    <Content Include="BangGia\Diffusers-brochure-6582.pdf" />
     <Content Include="Areas\Admin\Views\Config\_CreateFile.cshtml" />
     <Content Include="Areas\Admin\Views\Config\CauHinhSeo.cshtml" />
     <Content Include="Areas\Admin\Views\BangGia\Index.cshtml" />
@@ -1478,10 +1481,13 @@
     <Content Include="Views\TinTuc\Details.cshtml" />
     <Content Include="Views\TinTuc\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\BangGia\Index.cshtml" />
+    <Content Include="Views\BangGia\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="BangGia\" />
     <Folder Include="Upload\file\" />
     <Folder Include="Views\Cache\" />
   </ItemGroup>

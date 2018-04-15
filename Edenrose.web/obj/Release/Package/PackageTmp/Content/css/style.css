@@ -253,7 +253,7 @@ ul.bxslider {
         margin: 0 2px 0 2px;
         text-decoration: none;
         text-transform: uppercase;
-        color: #980f21;
+        color: #1b7e72;
         border-radius: 0;
         background: transparent;
         font-size: 15px;
@@ -634,7 +634,7 @@ ul.bxslider {
         font-size: 30px;
         line-height: 1.2em;
         margin-bottom: 25px;
-        color: #980f21
+        color: #1b7e72
     }
 
         #section_about .title .font-700 {
@@ -654,7 +654,7 @@ ul.bxslider {
         top: 0;
         width: 4px;
         height: 100%;
-        background: #980f21
+        background: #1b7e72
     }
 
     #section_about .block-info p {
@@ -724,7 +724,7 @@ ul.bxslider {
     }
 
 #section_location .block-top, #section_mb .block-top {
-    background: #980f21;
+    background: #1b7e72;
     padding: 25px 0;
     color: #fff
 }
@@ -923,7 +923,7 @@ ul.bxslider {
 }
 
     #section_utilities .block-top {
-        background: #980f21;
+        background: #1b7e72;
         padding: 30px 0;
         color: #fff
     }
@@ -1450,7 +1450,7 @@ h3.cont_utility {
 }
 
 #section_news .block-top, #section_canho .block-top {
-    background: #980f21;
+    background: #1b7e72;
     padding: 30px 0;
     color: #fff
 }
@@ -2736,7 +2736,23 @@ h3.cont_utility {
     #section_banner, #section_about, #section_location, #section_utilities, #section_register {
         overflow: hidden
     }
-
+        #slider{
+            height: 160px !important;
+        }
+    .vui-slide-side-button {
+        height: 60px !important;
+        width: 30px !important;
+       
+    }
+    .vui-slide-side-buttons .next {
+        top: -30px !important;
+    }
+    .vui-slide-side-buttons .prev {
+        top: -30px !important;
+    }
+    .tab-mat-bang .navTabs ul li {
+        margin-bottom: 10px;
+    }
         #section_register .mobile, #section_register .mobile a {
             font-size: 42px
         }
