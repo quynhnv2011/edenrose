@@ -322,6 +322,7 @@
     <Content Include="image\icon-next.png" />
     <Content Include="image\icon-zoom.svg" />
     <Content Include="image\khu-vui-choi-the-eden-rose.jpg" />
+    <Content Include="image\xloading.gif" />
     <Content Include="image\logo2.png" />
     <Content Include="image\overlay-01.png" />
     <Content Include="image\TheEdenRose-BT-13.jpg" />
@@ -329,7 +330,6 @@
     <Content Include="image\tien-ich2_1.jpg" />
     <Content Include="image\vi-tri.jpg" />
     <Content Include="image\vimefulland.jpg" />
-    <Content Include="image\xloading.gif" />
     <Content Include="js\app.config.js" />
     <Content Include="js\app.min.js" />
     <Content Include="js\bootstrap-multiselect.js" />
@@ -355,7 +355,6 @@
     <Content Include="js\slider\revolution.extension.slideanims.min.js" />
     <Content Include="js\zoom\imagezoom.js" />
     <Content Include="js\zoom\jquery.js" />
-    <Content Include="js\zoom\jquery.wm-zoom-1.0.js" />
     <Content Include="js\zoom\jzoom.js" />
     <Content Include="js\zoom\setup.js" />
     <Content Include="js\zoom\xzoom.min.js" />
@@ -1397,6 +1396,9 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\Config\NoiDungEmai.cshtml" />
+    <Content Include="Areas\Admin\Views\BangGiaArticle\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BangGiaArticle\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1453,7 +1455,6 @@
     <Content Include="Areas\Admin\Views\DanhSachDangKy\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Config\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Config\Create.cshtml" />
-    <Content Include="BangGia\Diffusers-brochure-6582.pdf" />
     <Content Include="Areas\Admin\Views\Config\_CreateFile.cshtml" />
     <Content Include="Areas\Admin\Views\Config\CauHinhSeo.cshtml" />
     <Content Include="Areas\Admin\Views\BangGia\Index.cshtml" />
@@ -1478,10 +1479,13 @@
     <Content Include="Views\TinTuc\Details.cshtml" />
     <Content Include="Views\TinTuc\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\BangGia\Index.cshtml" />
+    <Content Include="Views\BangGia\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="BangGia\" />
     <Folder Include="Upload\file\" />
     <Folder Include="Views\Cache\" />
   </ItemGroup>
