@@ -49,7 +49,7 @@
                     @Html.Raw(Model.ListTongQuan[0].ShortDescription)
                 </div>
                 <div class="text-center">
-                    <a href="/bang-gia/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                    <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                         <div class="btn-text">
                             <span>XEM CHI TIẾT</span>
                         </div>
@@ -75,7 +75,7 @@
                         </div>
                         @Html.Raw(Model.ListTongQuan[1].ShortDescription)
                         <div class="text-center">
-                            <a href="/bang-gia/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
+                            <a href="/tin-tuc/@Model.ListTongQuan[0].Url" class="nd-readmore btn kanit btn-scroll" style="margin: 0;" target="_blank">
                                 <div class="btn-text"><span>TÌM HIỂU THÊM</span></div>
                             </a>
                         </div>
@@ -197,7 +197,7 @@
         <div class="container">
             <div id="album_container" style="position: relative; height: 484.156px;">
                 <div class="grid-sizer"></div>
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[0] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 0 && Model.TopicTienIch.ListPicture[0] != null)
                 {
                     <div class="album-item grid-item--width2 _album_0" data-category="_album_0" style="position: absolute; left: 0px; top: 0px;">
                         <div class="border-hover"></div>
@@ -206,7 +206,7 @@
                         <div class="clearfix"></div>
                     </div>
                 }
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[1] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 1 && Model.TopicTienIch.ListPicture[1] != null)
                 {
                     <div class="album-item grid-item _album_0 album_item_s1" data-category="_album_0" style="position: absolute; left: 575px; top: 0px;">
                         <div class="border-hover"></div>
@@ -215,7 +215,7 @@
                         <div class="clearfix"></div>
                     </div>
                 }
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[2] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 2 && Model.TopicTienIch.ListPicture[2] != null)
                 {
                     <div class="album-item grid-item _album_0 album_item_s2" data-category="_album_0" style="position: absolute; left: 862px; top: 0px;">
                         <div class="border-hover"></div> <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[2].Url" style="height: 230px;">
@@ -223,7 +223,7 @@
                         <div class="clearfix"></div>
                     </div>
                 }
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[3] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 3 && Model.TopicTienIch.ListPicture[3] != null)
                 {
                     <div class="album-item grid-item--width2 " data-category="_album_0" style="position: absolute; left: 0px; top: 242px;">
                         <div class="border-hover"></div> <img class="img-responsive" src="./@Model.TopicTienIch.ListPicture[3].Url" style="height: 230px;">
@@ -231,7 +231,7 @@
                         <div class="clearfix"></div>
                     </div>
                 }
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[4] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 4 && Model.TopicTienIch.ListPicture[4] != null)
                 {
                     <div class="album-item grid-item _album_0 album_item_s3" data-category="_album_0" style="position: absolute; left: 575px; top: 242px;">
                         <div class="border-hover"></div>
@@ -239,7 +239,7 @@
                         <div class="clearfix"></div>
                     </div>
                 }
-                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture[5] != null)
+                @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 5 && Model.TopicTienIch.ListPicture[5] != null)
                 {
                     <div class="album-item grid-item _album_0 album_item_s4" data-category="_album_0" style="position: absolute; left: 862px; top: 242px;">
                         <div class="border-hover"></div>
@@ -346,7 +346,7 @@
                                             @Html.Raw(Model.ListSanPham[i].ShortDescription)
 
                                             <div class="clear">
-                                                <a href="/bang-gia/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a>
+                                                <a href="/tin-tuc/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a>
                                             </div>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@
                                         <div class="content col-xs-12 col-sm-6">
                                             <h3 class="title">@Model.ListSanPham[i].TitleHome</h3>
                                             @Html.Raw(Model.ListSanPham[i].ShortDescription)
-                                            <div class="clear"> <a href="./bang-gia/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
+                                            <div class="clear"> <a href="./tin-tuc/@Model.ListSanPham[i].Url/" target="_blank" class="read-more">Xem chi tiết</a></div>
                                         </div>
                                         <div class="thumb ccol-xs-12 col-sm-6"><img src="./@Model.ListSanPham[i].Picture"></div>
                                     </div>
@@ -427,7 +427,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="title fadeInLeftShort  animated delay-500 go"><a href="./bang-gia/" style="color: inherit;">TIN TỨC &amp; SỰ KIỆN</a></div>
+                    <div class="title fadeInLeftShort  animated delay-500 go"><a href="./tin-tuc/" style="color: inherit;">TIN TỨC &amp; SỰ KIỆN</a></div>
                 </div>
             </div>
         </div>
@@ -445,7 +445,7 @@
                                     <div class="post-item">
                                         <div class="image_frame">
                                             <div class="image_wrapper">
-                                                <a href="./bang-gia/@item.Url/">
+                                                <a href="./tin-tuc/@item.Url/">
                                                     <div class="mask"></div>
                                                     <img width="960" height="750" src="./@item.Picture" data-lazy-type="image" class="lazy scale-with-grid wp-post-image lazy-loaded" alt="@item.Title">
                                                 </a>
@@ -453,7 +453,7 @@
                                                     <a href="./@item.Picture" class="fancybox" rel="lightbox" data-type="image">
                                                         <i class="fa fa-search"></i>
                                                     </a>
-                                                    <a href="./bang-gia/@item.Url/" class="link">
+                                                    <a href="./tin-tuc/@item.Url/" class="link">
                                                         <i class="fa fa-link"></i>
                                                     </a>
                                                 </div>
@@ -463,14 +463,14 @@
                                             <div class="post-desc">
                                                 <div class="post-title">
                                                     <h3 class="entry-title" itemprop="headline">
-                                                        <a href="./bang-gia/@item.Url/">@item.Title</a>
+                                                        <a href="./tin-tuc/@item.Url/">@item.Title</a>
                                                     </h3>
                                                 </div>
                                                 <div class="post-excerpt">@item.ShortDescription...</div>
                                                 <div class="post-footer">
                                                     <div class="post-links">
                                                         <i class="fa fa-align-justify"></i>
-                                                        <a href="./bang-gia/@item.Url/" class="post-more">Xem thêm</a>
+                                                        <a href="./tin-tuc/@item.Url/" class="post-more">Xem thêm</a>
                                                     </div>
                                                 </div>
                                             </div>

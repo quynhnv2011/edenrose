@@ -330,7 +330,7 @@ ul.bxslider {
 
 .banner-button {
     position: fixed;
-    bottom: 15px;
+    bottom: 35px;
     width: 100%;
     z-index: 999
 }
@@ -2700,7 +2700,7 @@ h3.cont_utility {
 
     .banner-button {
         right: auto;
-        bottom: 10px
+        bottom: 35px
     }
 
     #section_location .block-top .block-text {
