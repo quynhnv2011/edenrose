@@ -21,12 +21,57 @@
 </style>
 
 
-<link href="~/plugins/slider/css/slider.css" rel="stylesheet" />
+@*<link href="~/plugins/slider/css/slider.css" rel="stylesheet" />*@
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <div id="section_banner" class="animatedParent animateOnce">
-    <div id="slider" style="height:510px">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+
+        <ol class="carousel-indicators">
+            @if (Model.ListBanner != null && Model.ListBanner.Count > 0)
+            {
+                for (int i = 0; i < Model.ListBanner.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    }
+                    else
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@i"></li>
+                    }
+                }
+            }
+        </ol>
+        <div class="carousel-inner">
+            @if (Model.ListBanner != null && Model.ListBanner.Count > 0)
+            {
+                for (int i = 0; i < Model.ListBanner.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <div class="item active">
+                            <img src="./@Model.ListBanner[i].Url" style="width:100%" alt="@Model.ListBanner[i].Title">
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="item">
+                            <img src="./@Model.ListBanner[i].Url" style="width:100%" data-src="" alt="@Model.ListBanner[i].Title">
+
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    @*<div id="slider" style="height:510px">
         <ul>
             @if (Model.ListBanner != null && Model.ListBanner.Count > 0)
             {
@@ -36,7 +81,7 @@
                 }
             }
         </ul>
-    </div>
+    </div>*@
 </div>
 
 <div id="section_about" class="animatedParent animateOnce">
@@ -483,12 +528,12 @@
     </div>
 </div>
 <script src="~/Scripts/jquery-1.11.3.min.js"></script>
-<script src="~/plugins/slider/vmc.slide.js"></script>
-<script src="~/plugins/slider/vmc.slide.effects.js"></script>
+@*<script src="~/plugins/slider/vmc.slide.js"></script>
+<script src="~/plugins/slider/vmc.slide.effects.js"></script>*@
 
 <script src="~/js/zoom/imagezoom.js"></script>
 
-<script>
+@*<script>
     $('#slider').vmcSlide({
         duration: 1000,
         speed: 800
@@ -502,7 +547,7 @@
 
         }
     });
-</script>
+</script>*@
 
 <script>
     function validatePhone(txtPhone) {
