@@ -44,14 +44,14 @@
                                     <div class="widget-body no-padding  smart-form">
                                         <fieldset>
                                             <div class="row">
-                                                <section class="col col-6">
+                                                <section class="col col-12">
                                                     <label class="label">Nội dung tóm tắt</label>
                                                     <label class="textarea">
                                                         @Html.TextAreaFor(model => model.ShortDescription, new { @class = "form-control", @id = "txtmota", @rows = "4" })
                                                         @Html.ValidationMessageFor(model => model.ShortDescription)
                                                     </label>
                                                 </section>
-                                                <section class="col col-6">
+                                                @*<section class="col col-6">
                                                     <label class="label">Ảnh đại diện</label>
                                                     <div class="col-md-12">
                                                         <div class="input-group">
@@ -65,7 +65,7 @@
                                                     <div class="col-md-9" style=" clear:both; margin-top:10px">
                                                         <img src="@Model.Picture" style="max-width: 1200px; max-height: 100px;" id="imgPreview" />
                                                     </div>
-                                                </section>
+                                                </section>*@
                                             </div>
                                             @*<div class="clearfix"></div>
                                             <footer class="text-center">
@@ -83,7 +83,7 @@
 
                     <div class="tab-pane fade" id="s2">
                         <div id="content">
-                            <div class="widget-body no-padding  smart-form">
+                            <div style="display: none" class="widget-body no-padding  smart-form">
                                 <div id="tablePicture">
                                     @Html.Action("GetListPicture", "TienIch")
                                 </div>
@@ -196,17 +196,17 @@
         });
 
         var editor = CKEDITOR.replace('txtmota', {
-            customConfig: '/plugins/ckeditor/config1.js'
+            customConfig: '/plugins/ckeditor/config.js'
         });
         function SubmitForm() {
             if ($('#txtmota').val() == undefined || $('#txtmota').val().trim() == "") {
                 toastr["error"]("Vui lòng nhập mô tả ngắn", "Thông báo");
                 return false;
             }
-            if ($('#txtImage').val() == undefined || $('#txtImage').val().trim() == "") {
-                toastr["error"]("Vui lòng chọn ảnh", "Thông báo");
-                return false;
-            }
+            //if ($('#txtImage').val() == undefined || $('#txtImage').val().trim() == "") {
+            //    toastr["error"]("Vui lòng chọn ảnh", "Thông báo");
+            //    return false;
+            //}
             $('#addForm').submit();
         }
         function SaveImage() {

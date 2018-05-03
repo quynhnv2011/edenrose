@@ -12,7 +12,9 @@
         width: 100%;
     }
 
-   
+    table tr td {
+        padding: 3px 10px;
+    }
 </style>
 
 
@@ -179,7 +181,8 @@
     </div>
     <div class="block-content animatedParent animateOnce">
         <div class="container">
-            <div class="row">
+            @Html.Raw(Model.TopicTienIch.ShortDescription)
+            @*<div class="row">
                 <div class="col-md-4 left_utilities" style="text-align:justify;">
                     <div class="fadeInLeftShort  animated delay-500 go">
                         @Html.Raw(Model.TopicTienIch.ShortDescription)
@@ -192,9 +195,9 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-            </div>
+            </div>*@
         </div>
-        <div class="container">
+        @*<div class="container">
             <div id="album_container" style="position: relative; height: 484.156px;">
                 <div class="grid-sizer"></div>
                 @if (Model.TopicTienIch.ListPicture != null && Model.TopicTienIch.ListPicture.Count > 0 && Model.TopicTienIch.ListPicture[0] != null)
@@ -249,7 +252,7 @@
                 }
                 <div class="preloader" style="opacity: 0; display: none;"><i class="fa fa-cog fa-spin" style="display: none;"></i></div>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 <div id="section_mb" class="">

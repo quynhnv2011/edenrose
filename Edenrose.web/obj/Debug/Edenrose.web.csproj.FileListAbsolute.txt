@@ -217,3 +217,6 @@ D:\Edenrose\codegit\edenrose\Edenrose.web\obj\Debug\Edenrose.web.csprojResolveAs
 D:\Edenrose\codegit\edenrose\Edenrose.web\obj\Debug\Edenrose.web.csproj.CoreCompileInputs.cache
 D:\Edenrose\codegit\edenrose\Edenrose.web\obj\Debug\Edenrose.web.dll
 D:\Edenrose\codegit\edenrose\Edenrose.web\obj\Debug\Edenrose.web.pdb
+D:\Edenrose\codegit\edenrose\Edenrose.web\bin\Edenrose.web.dll.config
+D:\Edenrose\codegit\edenrose\Edenrose.web\bin\Edenrose.web.dll
+D:\Edenrose\codegit\edenrose\Edenrose.web\bin\Edenrose.web.pdb
