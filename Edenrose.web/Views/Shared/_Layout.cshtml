@@ -137,20 +137,70 @@
         </div>
     </footer>
     <div class="banner-button">
-        <a href="#section_register" class="btn btn-register kanit btn-scroll">
+        <a href="tel:@ViewBag.phone" class="btn btn-register kanit btn-scroll">
             <div class="btn-text">
-                <span class="uppercase">Đăng ký nhận</span>
-                <br>Thông tin dự án
+                <span class="uppercase">Hotline</span>
+                <br>@ViewBag.phone
             </div>
         </a>
-        <a href="tel:@ViewBag.phone" target="_blank" class="btn btn-hotline kanit uppercase">
+        @*<a href="tel:@ViewBag.phone" target="_blank" class="btn btn-hotline kanit uppercase">
             <div class="btn-text">
                 hotline
                 <br><span class="font-500">@ViewBag.phone</span>
             </div>
-        </a>
+        </a>*@
     </div>
     <div id="top"></div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="padding-top: 80px;">
+            <!-- Modal content-->
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chào mừng bạn đến với The Eden Rose. Hãy để chúng tôi gửi cho bạn toàn bộ thông tin về dự án</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-content">
+                        <div id="formRegister">
+                            <div role="form" class="wpcf7" id="wpcf7-f945-o2" lang="vi" dir="ltr">
+                                <div class="screen-reader-response"></div>
+                                <form action="/?utm_source=GSN&amp;utm_medium=CPC&amp;utm_campaign=EdenRose&amp;utm_term=duan_edenrose&amp;utm_content=duan_edenrose#wpcf7-f945-o2" method="post" class="wpcf7-form" novalidate="novalidate">
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-name">
+                                            <input type="text" name="your-name" id="txtNamePopup" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên*">
+                                            <span role="alert" id="txtNamePopupNoti" style="display: none; color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập họ và tên</span>
+                                        </span>
+                                    </p>
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-email">
+                                            <input type="email" name="your-email" id="txtEmailPopup" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email*">
+                                            <span role="alert" id="txtEmailPopupNoti" style="display: none;color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập email.</span>
+                                        </span>
+                                    </p>
+                                    <p class="form-group">
+                                        <span class="wpcf7-form-control-wrap your-phone">
+                                            <input type="text" id="txtPhonePopup" name="your-phone" value="" size="40" maxlength="14" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại*">
+                                            <span role="alert" id="txtPhonePopupNoti" style="display: none;color: red;" class="wpcf7-not-valid-tip">Vui lòng nhập số điện thoại.</span>
+                                        </span>
+                                    </p>
+                                    <p class="submit">
+                                        <a value="" class="btnformPopup wpcf7-form-control wpcf7-submit btn btn-submit btn-block">Nhận thông tin</a>
+                                        @* <input type="submit" value="Tải về" class="wpcf7-form-control wpcf7-submit btnform btn btn-submit btn-block"><span class="ajax-loader"></span>*@
+                                    </p>
+                                    <div class="wpcf7-response-output wpcf7-display-none wpcf7-validation-errors" id="notifiPopup" style="display: none;color: white;" role="alert"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>*@
+            </div>
+
+        </div>
+    </div>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
@@ -168,6 +218,11 @@
             }
         }
         $(document).ready(function () {
+            setTimeout(function () {
+                $('#myModal').modal();
+            }, 12000);
+
+          
             var isSubmit = false;
             $('.btnformlayout').click(function () {
                 debugger
@@ -236,7 +291,67 @@
                 }
               
             });
+
+            var isSubmitNew = false;
+            $('.btnformPopup').click(function () {
+                $('.btnformPopup').prop('disabled', true);
+                var name = $('#txtNamePopup').val();
+                if (name == null || name.trim() == "") {
+                    $('#txtNamePopupNoti').show();
+                    return false;
+                } else {
+                    $('#txtNamePopupNoti').hide();
+                }
+                var email = $('#txtEmailPopup').val();
+                if (email == null || email.trim() == "") {
+                    $('#txtEmailPopupNoti').show();
+                    return false;
+                } else {
+                    $('#txtEmailPopupNoti').hide();
+                }
+
+                var phone = $('#txtPhonePopup').val();
+                if (phone == null || phone.trim() == "") {
+                    $('#txtPhonePopupNoti').show();
+                    return false;
+                } else {
+                    $('#txtPhonePopupNoti').hide();
+                }
+                if (!validatePhone(phone)) {
+                    $('#notifiPopup').text('Vui lòng nhập đúng định dạng số điện thoại');
+                    $('#notifiPopup').show();
+                    return false;
+                } else {
+                    $('#notifiPopup').text('');
+                }
+                if (!isSubmitNew) {
+                    isSubmitNew = true;
+                    window.location = '../TinTuc/Resign?email=' + email + '&phone=' + phone + '&name=' + name;
+                    $('#notifiPopup').text('Cảm ơn bạn ' + name + ' đã đăng ký nhận thông tin dự án The Eden Rose. Chúng tôi sẵn sàng phục vụ bạn 24/7')
+                    $('#notifiPopup').show();
+                    $('.btnformPopup').removeAttr('disabled');
+                    $('#txtNamePopup').val('');
+                    $('#txtEmailPopup').val('');
+                    $('#txtPhonePopup').val('');
+                    $('#myModal').modal('hide');
+                    isSubmitNew = false;
+                }
+
+            });
         });
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5adc91285f7cdf4f05337345/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
