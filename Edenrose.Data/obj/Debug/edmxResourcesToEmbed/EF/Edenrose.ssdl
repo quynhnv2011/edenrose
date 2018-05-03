@@ -29,7 +29,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="200" />
-    <Property Name="Value" Type="nvarchar" MaxLength="500" />
+    <Property Name="Value" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Picture">
     <Key>
@@ -38,9 +38,19 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="500" />
     <Property Name="Url" Type="varchar" MaxLength="500" />
-    <Property Name="TopicId" Type="int" />
+    <Property Name="ReferenceId" Type="int" />
     <Property Name="Key" Type="int" />
     <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="Resignation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Phone" Type="varchar" MaxLength="13" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
   </EntityType>
   <EntityType Name="Topics">
     <Key>
@@ -57,21 +67,11 @@
     <Property Name="UpdateDate" Type="datetime" />
     <Property Name="Picture" Type="varchar" MaxLength="200" />
   </EntityType>
-  <EntityType Name="Resignation">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="500" />
-    <Property Name="Phone" Type="varchar" MaxLength="13" />
-    <Property Name="Name" Type="nvarchar" MaxLength="500" />
-    <Property Name="CreatedDate" Type="datetime" />
-  </EntityType>
   <EntityContainer Name="EdenroseModelStoreContainer">
     <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resignation" EntityType="Self.Resignation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Resignation" EntityType="Self.Resignation" Schema="edenrose" store:Type="Tables" />
   </EntityContainer>
 </Schema>
