@@ -33,8 +33,13 @@ namespace Edenrose.web.Models
             get
             {
                 var str = new StringBuilder();
-               
-                str.AppendFormat("<span class=\"pages\">Trang {0} trên {1}</span>", PageIndex, TotalItem / PageSize);
+                var totalPage = TotalItem / PageSize;
+                var dongdu = TotalItem % PageSize;
+                if (dongdu != 0)
+                {
+                    totalPage = totalPage + 1;
+                }
+                str.AppendFormat("<span class=\"pages\">Trang {0} trên {1}</span>", PageIndex, totalPage);
                 if (TotalItem <= PageSize)
                 {
                     return string.Empty;
@@ -44,12 +49,7 @@ namespace Edenrose.web.Models
                 {
                     return string.Empty;
                 }
-                var totalPage = TotalItem / PageSize;
-                var dongdu = TotalItem % PageSize;
-                if (dongdu != 0)
-                {
-                    totalPage = totalPage + 1;
-                }
+               
 
                 if (totalPage == 1)
                 {
@@ -66,14 +66,14 @@ namespace Edenrose.web.Models
                     {
                         if (i >= PageIndex - 3 && i <= PageIndex + 3)
                         {
-                            str.AppendFormat("<a href='{0}' class=\"page larger\" onclick=\"_global.unBlockUI('#content')\">{1}</a>", string.Format("/bang-gia/page/{0}", i), i);
+                            str.AppendFormat("<a href='{0}' class=\"page larger\" onclick=\"_global.unBlockUI('#content')\">{1}</a>", string.Format("/tin-tuc/page/{0}", i), i);
                         }
                     }
                 }
 
                 if (PageIndex != totalPage)
                 {
-                    str.AppendFormat("<a class=\"nextpostslink\" rel=\"next\" href=\"{0}\">»</a>", string.Format("/bang-gia/page/{0}", PageIndex + 1));
+                    str.AppendFormat("<a class=\"nextpostslink\" rel=\"next\" href=\"{0}\">»</a>", string.Format("/tin-tuc/page/{0}", PageIndex + 1));
                 }
                 return str.ToString();
             }
