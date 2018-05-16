@@ -48,7 +48,7 @@ namespace Edenrose.Data.Service
               
                 var lstData = _context.Articles.Where(p => p.TypeArticle == typeArticle && p.Deleted != true);
                 totalItem = lstData.Count();
-                lstData = lstData.OrderBy(t => t.CreatedDate);
+                lstData = lstData.OrderByDescending(t => t.CreatedDate);
                 if (totalItem > ((pageIndex - 1) * pageSize))
                     lstData = lstData.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
