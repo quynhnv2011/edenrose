@@ -1,0 +1,66 @@
+public class UnitOfWork : IUnitOfWork, System.IDisposable
+    {
+        private readonly DbContext context;
+        private IGenericRepository<TblUser> _userRepository;
+        public UnitOfWork(DbContext context)
+        {
+            this.context = context;
+        }
+
+        public IGenericRepository<TblUser> UserRepository
+        {
+            get { return _userRepository ?? (_userRepository = new GenericRepository<TblUser>(context)); }
+        }
+       
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+        public void BeginTransaction()
+        {
+            _dbContextTransaction = context.Database.BeginTransaction();
+        }
+
+        public void CommitTransaction()
+        {
+            try
+            {
+                Save();
+                _dbContextTransaction.Commit();
+            }
+            finally
+            {
+                _dbContextTransaction.Dispose();
+            }
+        }
+        public void RollbackTransaction()
+        {
+            _dbContextTransaction.Rollback();
+            _dbContextTransaction.Dispose();
+        }
+
+        public async Task SaveAsync()
+        {
+            await context.SaveChangesAsync();
+        }
+
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                    if (_dbContextTransaction != null)
+                        _dbContextTransaction.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            System.GC.SuppressFinalize(this);
+        }
+    }
