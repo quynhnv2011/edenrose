@@ -1,0 +1,229 @@
+public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+	{
+		private DbContext context;
+		private DbSet<TEntity> dbSet;
+
+		public GenericRepository(DbContext context)
+		{
+			this.context = context;
+			this.dbSet = context.Set<TEntity>();
+		}
+		public virtual List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return query.ToList();
+		}
+
+		public virtual List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return query.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+		}
+
+		public virtual IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return query;
+		}
+
+		public virtual IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return query.Skip((page - 1) * pageSize).Take(pageSize);
+		}
+
+		public virtual TEntity GetById(object id)
+		{
+			return dbSet.Find(id);
+		}
+
+		public virtual TEntity Insert(TEntity entity)
+		{
+			dbSet.Add(entity);
+			return entity;
+		}
+
+		public List<TEntity> BulkInsert(List<TEntity> entities)
+		{
+			dbSet.BulkInsert(entities);
+			return entities;
+		}
+
+		public virtual void Update(TEntity entity)
+		{
+			dbSet.Attach(entity);
+			context.Entry(entity).State = EntityState.Modified;
+		}
+		public virtual IQueryable<TEntity> All(bool tracking = false)
+		{
+			return tracking ? dbSet : dbSet.AsNoTracking();
+		}
+
+		public int Update(Expression<Func<TEntity, bool>> filter = null, Expression<Func<TEntity, TEntity>> update = null)
+		{
+			int affectedRowCount = dbSet.Where(filter).Update(update);
+			return affectedRowCount;
+		}
+
+		public int Delete(Expression<Func<TEntity, bool>> filter = null)
+		{
+			var rows = dbSet.Where(filter).ToList();
+			foreach (var entityToDelete in rows)
+			{
+				if (context.Entry(entityToDelete).State == EntityState.Detached)
+				{
+					dbSet.Attach(entityToDelete);
+				}
+				dbSet.Remove(entityToDelete);
+			}
+			return rows.Count();
+		}
+
+		public List<TEntity> Insert(List<TEntity> entities)
+		{
+			foreach (var entity in entities)
+				dbSet.Add(entity);
+			return entities;
+		}
+
+		#region func async
+		public virtual async Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return await query.ToListAsync();
+		}
+
+		public virtual async Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			if (orderBy != null)
+				query = orderBy(query);
+
+			return await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+		}
+
+		public virtual async Task<TEntity> GetByIdAsync(object id)
+		{
+			return await dbSet.FindAsync(id);
+		}
+
+		public virtual async Task<TEntity> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes)
+		{
+			IQueryable<TEntity> query = tracking ? dbSet : dbSet.AsNoTracking();
+
+			foreach (Expression<Func<TEntity, object>> include in includes)
+				query = query.Include(include);
+
+			return await query.FirstOrDefaultAsync(filter);
+		}
+
+		public virtual async Task<TEntity> InsertAsync(TEntity entity)
+		{
+			await dbSet.AddAsync(entity);
+			return entity;
+		}
+
+		public virtual async Task DeleteAsync(object id)
+		{
+			TEntity entityToDelete = await dbSet.FindAsync(id);
+			if (context.Entry(entityToDelete).State == EntityState.Detached)
+			{
+				dbSet.Attach(entityToDelete);
+			}
+			dbSet.Remove(entityToDelete);
+		}
+
+		public async Task<int> UpdateAsync(Expression<Func<TEntity, bool>> filter = null, Expression<Func<TEntity, TEntity>> update = null)
+		{
+			return await dbSet.Where(filter).UpdateAsync(update);
+		}
+
+		public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> filter = null)
+		{
+			var rows = await dbSet.Where(filter).ToListAsync();
+			foreach (var entityToDelete in rows)
+			{
+				if (context.Entry(entityToDelete).State == EntityState.Detached)
+				{
+					dbSet.Attach(entityToDelete);
+				}
+				dbSet.Remove(entityToDelete);
+			}
+			return rows.Count();
+		}
+
+		public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter = null)
+		{
+			return await dbSet.AnyAsync(filter);
+		}
+
+		public async Task<int> CountAsync(Expression<Func<TEntity, bool>> filter = null)
+		{
+			return await dbSet.CountAsync(filter);
+		}
+
+		public async Task<List<TEntity>> InsertAsync(List<TEntity> entities)
+		{
+			foreach (var entity in entities)
+				await dbSet.AddAsync(entity);
+			return entities;
+		}
+		#endregion
+	}
