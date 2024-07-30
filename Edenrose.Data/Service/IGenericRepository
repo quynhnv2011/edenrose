@@ -1,0 +1,43 @@
+public interface IGenericRepository<TEntity>
+	{
+		List<TEntity> Get(
+			Expression<Func<TEntity, bool>> filter = null,
+			Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false,
+			params Expression<Func<TEntity, object>>[] includes);
+
+		List<TEntity> Get(
+			Expression<Func<TEntity, bool>> filter = null,
+			Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false,
+			params Expression<Func<TEntity, object>>[] includes);
+
+		IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
+
+		IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
+		TEntity GetById(object id);
+
+		TEntity Insert(TEntity entity);
+		List<TEntity> Insert(List<TEntity> entities);
+
+		List<TEntity> BulkInsert(List<TEntity> entities);
+
+		void Update(TEntity entity);
+		int Update(Expression<Func<TEntity, bool>> filter = null, Expression<Func<TEntity, TEntity>> update = null);
+
+		int Delete(Expression<Func<TEntity, bool>> filter = null);
+
+		IQueryable<TEntity> All(bool tracking = false);
+
+		#region func async
+		Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
+		Task<List<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, int page = 1, int pageSize = 50, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
+		Task<TEntity> GetByIdAsync(object id);
+		Task<TEntity> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter = null, bool tracking = false, params Expression<Func<TEntity, object>>[] includes);
+		Task<TEntity> InsertAsync(TEntity entity);
+		Task DeleteAsync(object id);
+		Task<int> UpdateAsync(Expression<Func<TEntity, bool>> filter = null, Expression<Func<TEntity, TEntity>> update = null);
+		Task<int> DeleteAsync(Expression<Func<TEntity, bool>> filter = null);
+		Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter = null);
+		Task<int> CountAsync(Expression<Func<TEntity, bool>> filter = null);
+		Task<List<TEntity>> InsertAsync(List<TEntity> entities);
+		#endregion
+	}
